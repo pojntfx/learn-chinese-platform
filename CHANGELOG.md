@@ -1,5 +1,11 @@
 ## <small>0.0.1-0-monorepo (2018-11-25)</small>
 
+
+
+
+## <small>0.0.1-alpha.2 (2018-11-25)</small>
+
+* v0.0.1-alpha.2 ([7aa72d6](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7aa72d6))
 * feat(site): Add basic starter site ([b1b35fc](https://gitlab.com/pojntfx/learn-chinese-platform/commit/b1b35fc))
 
 

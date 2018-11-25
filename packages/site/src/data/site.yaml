@@ -18,21 +18,21 @@
       help:
         title: GitLab
         text: The central place for Learn Chinese Platform's development.
-        docsLink: https://chinese.pojtinger.com/docs/
+        docsLink: https://learn-chinese.tk/docs/
     - title: GitHub
       img: https://img.shields.io/badge/GitHub-%40pojntfx%2Flearn--chinese--platform-181717.svg?logo=github&logoColor=ffffff
       link: https://github.com/pojntfx/learn-chinese-platform
       help:
         title: GitHub
         text: A mirror of the Learn Chinese Platform.
-        docsLink: https://chinese.pojtinger.com/docs/
+        docsLink: https://learn-chinese.tk/docs/
     - title: NPM
       img: https://img.shields.io/badge/npm-%7elearn--chinese--platform-CB3837.svg?logo=npm
       link: https://www.npmjs.com/~learn-chinese-platform
       help:
         title: NPM
         text: The Learn Chinese Platform as NodeJS packages.
-        docsLink: https://chinese.pojtinger.com/docs/
+        docsLink: https://learn-chinese.tk/docs/
   legal:
     global:
       product: Learn Chinese Platform Site
@@ -44,7 +44,7 @@
           This is the individual or organization that holds the copyright of this
           product.
         command: "$ lcpctl"
-        docsLink: https://chinese.pojtinger.com/source-code
+        docsLink: https://learn-chinese.tk/source-code
     licenses:
       - product: Learn Chinese Platform Site
         type: Media
@@ -65,7 +65,7 @@
           title: Media License
           text: This is the license that applies to this product's media.
           command: "$ lcpctl"
-          docsLink: https://chinese.pojtinger.com/source-code
+          docsLink: https://learn-chinese.tk/source-code
       - product: Learn Chinese Platform Site
         type: Code
         icon: code
@@ -86,4 +86,4 @@
           title: Code License
           text: This is the license that applies to this product's source code.
           command: "$ lcpctl"
-          docsLink: https://chinese.pojtinger.com/source-code
+          docsLink: https://learn-chinese.tk/source-code
