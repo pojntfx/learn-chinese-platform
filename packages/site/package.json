@@ -1,6 +1,6 @@
 {
   "name": "@learn-chinese-platform/site",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "The central access point for all information on the Learn Chinese Platform",
   "scripts": {
     "dev": "run-p app.dev--watch",
