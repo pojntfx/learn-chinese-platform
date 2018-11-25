@@ -8,10 +8,10 @@
     - [ ] list-backend/
     - [ ] voice-core/
     - [ ] voice-backend/
-    - [ ] character-core/
-    - [ ] character-backend/
     - [ ] translator-core/
     - [ ] translator-backend/
+    - [ ] character-core/
+    - [ ] character-backend/
     - [ ] platform-core/
     - [ ] platform-backend/
     - [ ] platform-frontend/
