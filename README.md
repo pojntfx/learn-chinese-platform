@@ -1,5 +1,7 @@
 # Learn Chinese Platform
 
+![Learn Chinese Platform Logo](./packages/site/static/img/logo.png)
+
 A modern and libre way to learn Chinese.
 
 ## Usage

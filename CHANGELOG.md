@@ -1,5 +1,12 @@
 ## <small>0.0.1-0-monorepo (2018-11-25)</small>
 
+* docs: Use double hyphens for demo site ([415ff7d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/415ff7d))
+
+
+
+## <small>0.0.1-alpha.3 (2018-11-25)</small>
+
+* v0.0.1-alpha.3 ([f8d2c30](https://gitlab.com/pojntfx/learn-chinese-platform/commit/f8d2c30))
 * refactor(site): Use new domain name ([8e565f2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/8e565f2))
 
 
