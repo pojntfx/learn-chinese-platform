@@ -16,7 +16,7 @@ $ npm install
 # Start development versions of all packages
 $ npm run dev
 # Start development versions of and debugger for all packages (connect by pressing F5 in VSCode)
-$ npm run dev:debug
+$ npm run dev--debug
 ```
 
 ```bash

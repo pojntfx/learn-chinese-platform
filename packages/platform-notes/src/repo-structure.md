@@ -16,6 +16,7 @@
     - [ ] platform-backend/
     - [ ] platform-frontend/
     - [x] platform-notes/
+    - [x] site/
   - [x] README.md
   - [x] CONTRIBUTING.md
   - [x] LICENSE.md

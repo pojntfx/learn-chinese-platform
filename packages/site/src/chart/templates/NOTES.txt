@@ -1,0 +1,13 @@
+Release {{ .Release.Name }} of {{ .Chart.Name }} has been installed.
+
+To get {{ .Release.Name }}'s status, run:
+
+  $ helm status {{ .Release.Name }}
+
+To delete {{ .Release.Name }}, run:
+
+  $ helm delete {{ .Release.Name }}
+
+{{ .Release.Name }}'s end user domain: https://{{ .Values.domain }}
+
+For more, check out {{ .Chart.Name }}'s documentation: {{ .Chart.Home }}

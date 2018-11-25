@@ -1,0 +1,11 @@
+apiVersion: v1
+name: learn-chinese-platform-site
+version: 0.0.1-0
+description: The Learn Chinese Platform Website
+home: https://chinese.pojtinger.com/docs/services/site.html
+sources:
+  - https://gitlab.com/pojntfx/learn-chinese-platform.git
+maintainers:
+  - name: Felicitas Pojtinger
+    email: felicitas@pojtinger.com
+    url: https://twitter.com/pojntfx

@@ -1,0 +1,88 @@
+- brand:
+    title: Learn Chinese Platform
+    img: /img/logo.png
+    link: "/"
+    disabled: false
+    help:
+      title: Learn Chinese Platform
+      text: A modern and libre way to learn Chinese.
+      command: "$ lcpctl"
+      docsLink: https://chinese.pojtinger.com
+  firstItems:
+    - title: Site
+      link: /about
+      icon: globe
+      disabled: true
+      help:
+        title: Website
+        text: The central access point for all information on the Learn Chinese Platform.
+  startItems:
+    - title: Home
+      link: /
+      icon: home
+      help:
+        title: Home Page
+        text: Get an overview of the project.
+    - title: Clients
+      link: /clients
+      icon: app store
+      disabled: true
+      help:
+        title: Clients
+        text: Use the Learn Chinese Platform.
+    - title: Services
+      link: /services
+      icon: server
+      disabled: true
+      help:
+        title: Services
+        text: Develop with the Learn Chinese Platform.
+    - title: Docs
+      link: /docs
+      icon: book
+      disabled: true
+      help:
+        title: Documentation
+        text: Learn how to use the Learn Chinese Platform.
+  endItems:
+    - title: Blog
+      link: /blog
+      icon: rss
+      help:
+        title: Blog
+        text: Posts on all things that are relevant to the Learn Chinese Platform.
+    - title: Demo
+      link: /demo
+      icon: eye
+      disabled: true
+      help:
+        title: Demo
+        text: Try out a public demo of the Learn Chinese Platform.
+    - title: Imprint
+      link: /imprint
+      icon: legal
+      disabled: false
+      help:
+        title: Imprint
+        text: Legal information about this page.
+    - title: Search
+      link: /search
+      icon: search
+      help:
+        title: Site Search
+        text: Search for anything on this site.
+  lastItems:
+    - title: Download
+      link: /download
+      icon: download
+      disabled: false
+      help:
+        title: Download
+        text: Download the Learn Chinese Platform.
+    - title: Source Code
+      link: /source-code
+      icon: fork
+      disabled: false
+      help:
+        title: Source Code
+        text: Contribute to or get the Learn Chinese Platform.

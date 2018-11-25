@@ -1,0 +1,39 @@
+---
+author: Felicitas Pojtinger
+date: 2018-08-30
+---
+
+import Site from "../layouts/Site.js";
+import { ActionCards } from "@libresat/frontend-components";
+import { Link } from "../components/Link.js";
+
+export default props => (
+  <Site {...props} title="Source Code" subheader="Free as in Freedom." />
+);
+
+# Source Code
+
+We develop the Learn Chinese Platform as Free/Libre and Open Source Software on GitLab. We'd love to see your contribution!
+
+<ActionCards
+  header={{ content: "Collaboration Platforms" }}
+  text="Choose your favorite collaboration platform! We use GitLab, but feel free to use anything you like."
+  linksPerRow={2}
+  links={[
+    {
+      title: "GitLab",
+      icon: "gitlab",
+      link: "https://gitlab.com/pojntfx/learn-chinese-platform",
+      text: "The central place for Learn Chinese Platform's development."
+    },
+    {
+      title: "GitHub",
+      icon: "github",
+      link: "https://github.com/pojntfx/learn-chinese-platform",
+      text: "A mirror of the Learn Chinese Platform."
+    }
+  ]}
+  linkComponent={Link}
+/>
+
+For instructions on how to contribute, see the README in the repository. If you know JavaScript/TypeScript, you'll be able to start quickly.
