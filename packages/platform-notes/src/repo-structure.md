@@ -15,11 +15,12 @@
     - [ ] platform-core/
     - [ ] platform-backend/
     - [ ] platform-frontend/
-    - [ ] platform-notes/
+    - [x] platform-notes/
   - [x] README.md
   - [x] CONTRIBUTING.md
   - [x] LICENSE.md
-  - [ ] CHANGELOG.md
+  - [x] CHANGELOG.md
   - [ ] TODO.md
-  - [ ] package.json
-  - [ ] lerna.json
+  - [x] package.json
+  - [x] lerna.json
+  - [x] .gitignore
