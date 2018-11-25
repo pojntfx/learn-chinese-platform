@@ -7,7 +7,7 @@
       title: Learn Chinese Platform
       text: A modern and libre way to learn Chinese.
       command: "$ lcpctl"
-      docsLink: https://chinese.pojtinger.com
+      docsLink: https://learn-chinese.tk
   firstItems:
     - title: Site
       link: /about
