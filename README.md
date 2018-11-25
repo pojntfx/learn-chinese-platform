@@ -23,7 +23,7 @@ $ npm run dev:debug
 # Start development version of inidividual package
 $ npm run dev -- --scope @learn-chinese-platform/deck-backend
 # Start development version of and debugger for individual package (connect by pressing F5 in VSCode)
-$ npm run dev:debug -- --scope @learn-chinese-platform/deck-core
+$ npm run dev--debug -- --scope @learn-chinese-platform/deck-core
 ```
 
 ## Deployment

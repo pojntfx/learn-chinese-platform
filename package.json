@@ -1,0 +1,101 @@
+{
+  "name": "@pojntfx/learn-chinese-platform",
+  "version": "0.0.1-0-monorepo",
+  "description": "A modern and libre way to learn Chinese",
+  "author": "Felicitas Pojtinger <felicitas@pojtinger.com>",
+  "license": "AGPL-3.0",
+  "homepage": "https://gitlab.com/pojntfx/learn-chinese-platform#README",
+  "scripts": {
+    "dev": "lerna run dev --parallel",
+    "build": "lerna run build --parallel",
+    "start": "lerna run start --parallel",
+    "install--binary": "lerna run install--binary --parallel",
+    "test": "lerna run test --parallel",
+    "dev--watch": "lerna run dev--watch --parallel",
+    "build--watch": "lerna run build--watch --parallel",
+    "start--watch": "lerna run start--watch --parallel",
+    "test--watch": "lerna run test--watch --parallel",
+    "app.prod": "lerna run app.prod --parallel",
+    "app.prod::build": "lerna run app.prod::build --parallel",
+    "app.prod::start": "lerna run app.prod::start --parallel",
+    "app.prod::test": "lerna run app.prod::test --parallel",
+    "app.prod::build--watch": "lerna run app.prod::build--watch --parallel",
+    "app.prod::start--watch": "lerna run app.prod::start--watch --parallel",
+    "app.prod::test--watch": "lerna run app.prod::test--watch --parallel",
+    "app.dev": "lerna run app.dev --parallel",
+    "app.dev::build": "lerna run app.dev::build --parallel",
+    "app.dev::start": "lerna run app.dev::start --parallel",
+    "app.dev::test": "lerna run app.dev::test --parallel",
+    "app.dev--watch": "lerna run app.dev--watch --parallel",
+    "app.dev::build--watch": "lerna run app.dev::build--watch --parallel",
+    "app.dev::start--watch": "lerna run app.dev::start--watch --parallel",
+    "app.dev::test--watch": "lerna run app.dev::test--watch --parallel",
+    "web.prod": "lerna run web.prod --parallel",
+    "web.prod::build": "lerna run web.prod::build --parallel",
+    "web.prod::start": "lerna run web.prod::start --parallel",
+    "web.prod::test": "lerna run web.prod::test --parallel",
+    "web.prod--watch": "lerna run web.prod--watch --parallel",
+    "web.prod::build--watch": "lerna run web.prod::build--watch --parallel",
+    "web.prod::start--watch": "lerna run web.prod::start--watch --parallel",
+    "web.prod::test--watch": "lerna run web.prod::test--watch --parallel",
+    "web.prod--binary": "lerna run web.prod--binary --parallel",
+    "web.prod::build--binary": "lerna run web.prod::build--binary --parallel",
+    "web.prod::start--binary": "lerna run web.prod::start--binary --parallel",
+    "web.prod::build--watch--binary": "lerna run web.prod::build--watch--binary --parallel",
+    "web.prod::start--watch--binary": "lerna run web.prod::start--watch--binary --parallel",
+    "web.dev": "lerna run web.dev --parallel",
+    "web.dev::build": "lerna run web.dev::build --parallel",
+    "web.dev::start": "lerna run web.dev::start --parallel",
+    "web.dev::test": "lerna run web.dev::test --parallel",
+    "web.dev--watch": "lerna run web.dev--watch --parallel",
+    "web.dev::build--watch": "lerna run web.dev::build--watch --parallel",
+    "web.dev::start--watch": "lerna run web.dev::start--watch --parallel",
+    "web.dev::test--watch": "lerna run web.dev::test--watch --parallel",
+    "lib.prod": "lerna run lib.prod --parallel",
+    "lib.prod::build": "lerna run lib.prod::build --parallel",
+    "lib.prod::test": "lerna run lib.prod::test --parallel",
+    "lib.prod--watch": "lerna run lib.prod--watch --parallel",
+    "lib.prod::build--watch": "lerna run lib.prod::build--watch --parallel",
+    "lib.prod::test--watch": "lerna run lib.prod::test--watch --parallel",
+    "lib.dev": "lerna run lib.dev --parallel",
+    "lib.dev::build": "lerna run lib.dev::build --parallel",
+    "lib.dev::test": "lerna run lib.dev::test --parallel",
+    "lib.dev--watch": "lerna run lib.dev--watch --parallel",
+    "lib.dev::build--watch": "lerna run lib.dev::build--watch --parallel",
+    "lib.dev::test--watch": "lerna run lib.dev::test--watch --parallel",
+    "prepare": "lerna bootstrap",
+    "link": "lerna link",
+    "clean": "lerna clean",
+    "commit": "git add . && git-cz",
+    "commit--staged": "git-cz",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "update": "lerna exec npm update",
+    "publish": "lerna publish"
+  },
+  "devDependencies": {
+    "commitizen": "^3.0.2",
+    "conventional-changelog-cli": "^2.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "ghooks": "^2.0.4",
+    "lerna": "^3.4.3"
+  },
+  "main": "lerna.json",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/pojntfx/learn-chinese-platform.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/pojntfx/learn-chinese-platform/issues"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "echo 'Generating changelog ...' & conventional-changelog -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
