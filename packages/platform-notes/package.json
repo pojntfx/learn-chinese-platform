@@ -1,6 +1,6 @@
 {
   "name": "@learn-chinese-platform/platform-notes",
-  "version": "0.0.1-0",
+  "version": "0.0.1-alpha.0",
   "description": "Notes on the Learn Chinese platform as a whole",
   "main": "src/repo-structure.md",
   "scripts": {
