@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-11-25)</small>
 
+* refactor(site): Use new domain name ([8e565f2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/8e565f2))
 
 
 
