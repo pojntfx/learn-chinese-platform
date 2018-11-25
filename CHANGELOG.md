@@ -1,6 +1,7 @@
 ## <small>0.0.1-0-monorepo (2018-11-25)</small>
 
 * docs: Add names of potentially useful NPM packages ([39a4bcf](https://gitlab.com/pojntfx/learn-chinese-platform/commit/39a4bcf))
+* docs: Add service mockups ([7919cef](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7919cef))
 
 
 
