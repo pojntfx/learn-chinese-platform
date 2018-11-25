@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-11-25)</small>
 
+* feat(site): Add basic starter site ([b1b35fc](https://gitlab.com/pojntfx/learn-chinese-platform/commit/b1b35fc))
 
 
 
