@@ -4,7 +4,7 @@ A modern and libre way to learn Chinese.
 
 ## Usage
 
-[![Demo Site](https://img.shields.io/badge/Demo-learn-chinese.tk-black.svg)](https://learn-chinese.tk)
+[![Demo Site](https://img.shields.io/badge/Demo-learn--chinese.tk-black.svg)](https://learn-chinese.tk)
 [![Developed on GNU/Linux](https://img.shields.io/badge/developed%20on-GNU/Linux%20and%20BSD-D2AA30.svg?logo=linux)](https://getfedora.org/)
 
 ```bash
