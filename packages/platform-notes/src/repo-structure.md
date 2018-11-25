@@ -2,24 +2,24 @@
 
 - learn-chinese-platform
   - packages/
-    - deck-core/
-    - deck-backend/
-    - list-core/
-    - list-backend/
-    - voice-core/
-    - voice-backend/
-    - character-core/
-    - character-backend/
-    - translator-core/
-    - translator-backend/
-    - platform-core/
-    - platform-backend/
-    - platform-frontend/
-    - platform-notes/
-  - README.md
-  - CONTRIBUTING.md
-  - LICENSE.md
-  - CHANGELOG.md
-  - TODO.md
-  - package.json
-  - lerna.json
+    - [ ] deck-core/
+    - [ ] deck-backend/
+    - [ ] list-core/
+    - [ ] list-backend/
+    - [ ] voice-core/
+    - [ ] voice-backend/
+    - [ ] character-core/
+    - [ ] character-backend/
+    - [ ] translator-core/
+    - [ ] translator-backend/
+    - [ ] platform-core/
+    - [ ] platform-backend/
+    - [ ] platform-frontend/
+    - [ ] platform-notes/
+  - [x] README.md
+  - [x] CONTRIBUTING.md
+  - [x] LICENSE.md
+  - [ ] CHANGELOG.md
+  - [ ] TODO.md
+  - [ ] package.json
+  - [ ] lerna.json
