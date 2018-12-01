@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-01)</small>
 
+* feat(notes): Add notes on new repo structure and service mockups ([83a2ebb](https://gitlab.com/pojntfx/learn-chinese-platform/commit/83a2ebb))
 * docs: Add logo to README ([067841c](https://gitlab.com/pojntfx/learn-chinese-platform/commit/067841c))
 * docs: Use double hyphens for demo site ([415ff7d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/415ff7d))
 
