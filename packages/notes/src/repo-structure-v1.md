@@ -1,4 +1,4 @@
-# Learn Chinese Platform Repo Structure
+# Learn Chinese Platform Repo Structure V1
 
 - learn-chinese-platform
   - packages/
