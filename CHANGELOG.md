@@ -1,5 +1,6 @@
-## <small>0.0.1-0-monorepo (2018-11-25)</small>
+## <small>0.0.1-0-monorepo (2018-12-01)</small>
 
+* docs: Add logo to README ([067841c](https://gitlab.com/pojntfx/learn-chinese-platform/commit/067841c))
 * docs: Use double hyphens for demo site ([415ff7d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/415ff7d))
 
 

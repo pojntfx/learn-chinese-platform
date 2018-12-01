@@ -1,4 +1,4 @@
-# Learn Chinese Platform Service Mockups
+# Learn Chinese Platform Service Mockups V1
 
 Blobs are shared using `minio`.
 
