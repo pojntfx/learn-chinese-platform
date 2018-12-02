@@ -3,8 +3,10 @@ import {
   getTraditionalHanziForPinyin,
   getPinyinForHanzi,
   getEnglishForHanzi,
-  getEnglishForPinyin
-} from "../utils/mdbg";
+  getEnglishForPinyin,
+  getHanziForEnglish,
+  getPinyinForEnglish
+} from "../utils/translator";
 
 it("Should get simplified hanzi for pinyin", async () => {
   const hanzi = await getSimplifiedHanziForPinyin("me2n");
@@ -60,4 +62,16 @@ it("Should get english for pinyin", async () => {
     })
   );
   expect(isDoor).toBe(true);
+});
+
+it("Should get hanzi for english", async () => {
+  const hanzi = await getHanziForEnglish("door");
+  // 门 is door
+  expect(hanzi.includes("门")).toBe(true);
+});
+
+it("Should get pinyin for english", async () => {
+  const hanzi = await getPinyinForEnglish("door");
+  // mén is door
+  expect(hanzi.includes("mén")).toBe(true);
 });
