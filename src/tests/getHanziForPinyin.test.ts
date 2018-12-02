@@ -1,7 +1,9 @@
 import {
   getSimplifiedHanziForPinyin,
   getTraditionalHanziForPinyin,
-  getPinyinForHanzi
+  getPinyinForHanzi,
+  getEnglishForHanzi,
+  getEnglishForPinyin
 } from "../utils/mdbg";
 
 it("Should get simplified hanzi for pinyin", async () => {
@@ -17,14 +19,45 @@ it("Should get traditional hanzi for pinyin", async () => {
 });
 
 it("Should get pinyin for simplified hanzi", async () => {
-  const hanzi = await getPinyinForHanzi("门");
-  console.log(hanzi);
+  const pinyin = await getPinyinForHanzi("门");
   // 门 is mén (door)
-  expect(hanzi.includes("mén")).toBe(true);
+  expect(pinyin.includes("mén")).toBe(true);
 });
 
 it("Should get pinyin for traditional hanzi", async () => {
-  const hanzi = await getPinyinForHanzi("門");
+  const pinyin = await getPinyinForHanzi("門");
   // 門 is mén (door)
-  expect(hanzi.includes("mén")).toBe(true);
+  expect(pinyin.includes("mén")).toBe(true);
+});
+
+it("Should get english for simplified hanzi", async () => {
+  const english = await getEnglishForHanzi("门");
+  let isDoor = false;
+  // 门 is door
+  await english.map(translation => {
+    if (translation.includes("door")) isDoor = true;
+  });
+  expect(isDoor).toBe(true);
+});
+
+it("Should get english for traditional hanzi", async () => {
+  const english = await getEnglishForHanzi("門");
+  let isDoor = false;
+  // 門 is door
+  await english.map(translation => {
+    if (translation.includes("door")) isDoor = true;
+  });
+  expect(isDoor).toBe(true);
+});
+
+it("Should get english for pinyin", async () => {
+  const english = await getEnglishForPinyin("me2n");
+  let isDoor = false;
+  // me2n is door
+  await english.map(definition =>
+    definition.map(translation => {
+      if (translation.includes("door")) isDoor = true;
+    })
+  );
+  expect(isDoor).toBe(true);
 });
