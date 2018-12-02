@@ -4,7 +4,7 @@ import {
   assignCardToDeck,
   IDeck,
   ICard
-} from "../utils/entity.util";
+} from "./entity.util";
 
 const decks: IDeck[] = [];
 const cards: ICard[] = [];
