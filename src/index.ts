@@ -8,3 +8,4 @@ export {
   getPinyinForEnglish
 } from "./utils/translator.util";
 export { getVoiceForHanzi, getVoiceForPinyin } from "./utils/voice.util";
+export { getVectorForHanzi } from "./utils/hanzi.util";
