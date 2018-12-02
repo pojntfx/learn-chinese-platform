@@ -6,4 +6,5 @@ export {
   getEnglishForPinyin,
   getHanziForEnglish,
   getPinyinForEnglish
-} from "./utils/translator";
+} from "./utils/translator.util";
+export { getVoiceForHanzi, getVoiceForPinyin } from "./utils/voice.util";

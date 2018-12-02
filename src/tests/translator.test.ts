@@ -6,7 +6,7 @@ import {
   getEnglishForPinyin,
   getHanziForEnglish,
   getPinyinForEnglish
-} from "../utils/translator";
+} from "../utils/translator.util";
 
 it("Should get simplified hanzi for pinyin", async () => {
   const hanzi = await getSimplifiedHanziForPinyin("me2n");
