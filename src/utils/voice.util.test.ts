@@ -1,4 +1,4 @@
-import { getVoiceForHanzi, getVoiceForPinyin } from "../utils/voice.util";
+import { getVoiceForHanzi, getVoiceForPinyin } from "./voice.util";
 
 it("Should get voice url for simplified hanzi", async () => {
   const voiceUrl = await getVoiceForHanzi("门");
