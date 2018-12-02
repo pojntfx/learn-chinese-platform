@@ -8,5 +8,5 @@ export {
   getPinyinForEnglish
 } from "./utils/translator.util";
 export { getVoiceForHanzi, getVoiceForPinyin } from "./utils/voice.util";
-export { getVectorForHanzi } from "./utils/hanzi.util";
+export { getVectorForHanzi } from "./utils/character.util";
 export { createDeck, createCard, assignCardToDeck } from "./utils/entity.util";
