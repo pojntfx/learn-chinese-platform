@@ -10,3 +10,6 @@ export {
 export { getVoiceForHanzi, getVoiceForPinyin } from "./utils/voice.util";
 export { getVectorForHanzi } from "./utils/character.util";
 export { createDeck, createCard, assignCardToDeck } from "./utils/entity.util";
+export { Character } from "./services/character.service";
+export { Voice } from "./services/voice.service";
+export { Translator } from "./services/translator.service";
