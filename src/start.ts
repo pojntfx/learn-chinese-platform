@@ -34,7 +34,7 @@ broker.createService({
 broker.start().then(() => {
   console.log("[INFO] Learn Chinese Platform has started successfully!");
   console.log(
-    '[INFO] HTTP Gateway URL: http://localhost:3000/version/service/action?paramname=paramvalue'
+    '[INFO] HTTP Gateway URL: http://localhost:3000'
   );
-  console.log("[INFO] WS Gateway URL: ws://localhost:3001/socket.io");
+  console.log("[INFO] WS Gateway URL: ws://localhost:3001");
 });
