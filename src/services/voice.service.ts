@@ -1,21 +1,53 @@
-import { getVoiceForHanzi, getVoiceForPinyin } from "../utils/voice.util";
+import {
+  getVoiceForPinyinAlt,
+  getVoiceForHanziAlt,
+  getFemaleVoiceForHanzi,
+  getFemaleVoicesForPinyin,
+  getMaleVoicesForPinyin
+} from "../utils/voice.util";
 import { ServiceSchema } from "moleculer";
 
 const Voice: ServiceSchema = {
   name: "voice",
   version: 1,
   actions: {
-    getVoiceForHanzi: {
+    getFemaleVoiceForHanzi: {
       params: {
         hanzi: "string"
       },
-      handler: ctx => getVoiceForHanzi(ctx.params.hanzi)
+      handler: ctx => getFemaleVoiceForHanzi(ctx.params.hanzi)
     },
-    getVoiceForPinyin: {
+    getMaleVoiceForHanzi: {
+      params: {
+        hanzi: "string"
+      },
+      handler: ctx => getFemaleVoiceForHanzi(ctx.params.hanzi)
+    },
+    getFemaleVoicesForPinyin: {
       params: {
         pinyin: "string"
       },
-      handler: ctx => getVoiceForPinyin(ctx.params.pinyin)
+      handler: async ctx =>
+        await Promise.all(await getFemaleVoicesForPinyin(ctx.params.pinyin))
+    },
+    getMaleVoicesForPinyin: {
+      params: {
+        pinyin: "string"
+      },
+      handler: async ctx =>
+        await Promise.all(await getMaleVoicesForPinyin(ctx.params.pinyin))
+    },
+    getVoiceForHanziAlt: {
+      params: {
+        hanzi: "string"
+      },
+      handler: ctx => getVoiceForHanziAlt(ctx.params.hanzi)
+    },
+    getVoiceForPinyinAlt: {
+      params: {
+        pinyin: "string"
+      },
+      handler: ctx => getVoiceForPinyinAlt(ctx.params.pinyin)
     }
   }
 };

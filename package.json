@@ -25,6 +25,7 @@
     "mkanki": "^1.1.0",
     "moleculer": "^0.13.4",
     "moleculer-io": "^0.13.1",
-    "moleculer-web": "^0.8.5"
+    "moleculer-web": "^0.8.5",
+    "oddcast-tts-demo": "^1.1.1"
   }
 }
