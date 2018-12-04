@@ -19,13 +19,15 @@ const {
 const description = `Learn Chinese Platform Site
 ${pkgDescription}
 
-    Started successfully on port 5000!
+    Started successfully on port ${process.env.PORT || 5000}!
 
 Version: ${name}#${version} by ${author}
 License: ${license}
 More info: ${homepage}`;
 
-const server = app.listen(5000, () => console.log(description));
+const server = app.listen(process.env.PORT || 5000, () =>
+  console.log(description)
+);
 
 module.exports = {
   server

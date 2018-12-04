@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-04)</small>
 
+* build: Add VSCode launch.json ([e267543](https://gitlab.com/pojntfx/learn-chinese-platform/commit/e267543))
 
 
 
