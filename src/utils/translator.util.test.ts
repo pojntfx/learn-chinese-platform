@@ -5,7 +5,9 @@ import {
   getEnglishForHanzi,
   getEnglishForPinyin,
   getHanziForEnglish,
-  getPinyinForEnglish
+  getPinyinForEnglish,
+  getSimplifiedHanziForTraditionalHanzi,
+  getTraditionalHanziForSimplifiedHanzi
 } from "./translator.util";
 
 it("Should get simplified hanzi for pinyin", async () => {
@@ -18,6 +20,18 @@ it("Should get traditional hanzi for pinyin", async () => {
   const hanzi = await getTraditionalHanziForPinyin("me2n");
   // me3n is 門 (door)
   expect(hanzi.includes("門")).toBe(true);
+});
+
+it("Should get simplified hanzi for traditional hanzi", async () => {
+  const hanzi = await getSimplifiedHanziForTraditionalHanzi("門");
+  // 門 is 门 (door)
+  expect(hanzi).toBe("门");
+});
+
+it("Should get traditional hanzi for simplified hanzi", async () => {
+  const hanzi = await getTraditionalHanziForSimplifiedHanzi("门");
+  // 门 is 門 (door)
+  expect(hanzi).toBe("門");
 });
 
 it("Should get pinyin for simplified hanzi", async () => {

@@ -18,6 +18,22 @@ const getTraditionalHanziForPinyin = async (
   mdbg.getByPinyin(pinyin).then(hanzi => hanzi.map(hanzi => hanzi.traditional));
 
 /**
+ * Get simplified hanzi for traditional hanzi
+ * @param hanzi Traditional hanzi to get the simplified one for
+ */
+const getSimplifiedHanziForTraditionalHanzi = async (
+  hanzi: string
+): Promise<string> => mdbg.getByHanzi(hanzi).then(hanzi => hanzi.simplified);
+
+/**
+ * Get traditional hanzi for simplified hanzi
+ * @param hanzi Simplified hanzi to get the traditonal one for
+ */
+const getTraditionalHanziForSimplifiedHanzi = async (
+  hanzi: string
+): Promise<string> => mdbg.getByHanzi(hanzi).then(hanzi => hanzi.traditional);
+
+/**
  * Get all pinyin for hanzi
  * @param hanzi Hanzi to find pinyin for
  */
@@ -34,7 +50,7 @@ const getPinyinForHanzi = async (hanzi: string): Promise<string[]> =>
  * Get all english for hanzi
  * @param hanzi Hanzi to find english for
  */
-const getEnglishForHanzi = async (hanzi: string): Promise<string[]> =>
+const getEnglishForHanzi = async (hanzi: string): Promise<string[][]> =>
   mdbg
     .getByHanzi(hanzi)
     .then(pinyin =>
@@ -77,6 +93,8 @@ const getPinyinForEnglish = async (english: string): Promise<string[]> =>
 export {
   getSimplifiedHanziForPinyin,
   getTraditionalHanziForPinyin,
+  getSimplifiedHanziForTraditionalHanzi,
+  getTraditionalHanziForSimplifiedHanzi,
   getPinyinForHanzi,
   getEnglishForHanzi,
   getEnglishForPinyin,
