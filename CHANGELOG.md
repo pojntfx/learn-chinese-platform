@@ -1,9 +1,7 @@
 ## <small>0.0.1-0-monorepo (2018-12-04)</small>
 
-* refactor(core): Adapt to new repo structure ([2aef90e](https://gitlab.com/pojntfx/learn-chinese-platform/commit/2aef90e))
-* refactor(services): Adapt to new repo structure ([0d18785](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0d18785))
-* chore: prepare for merge into monorepo ([7a8e7d2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7a8e7d2))
 * feat: add playground for the learn chinese platform ([0d05b65](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0d05b65))
+* feat(gateway): Adapt to new repo structure ([1292774](https://gitlab.com/pojntfx/learn-chinese-platform/commit/1292774))
 * feat(learn-chinese-platform-playground): Add context service for pinyin ([54b1ae9](https://gitlab.com/pojntfx/learn-chinese-platform/commit/54b1ae9))
 * feat(learn-chinese-platform-playground): add Dockerfile deployment ([037a68b](https://gitlab.com/pojntfx/learn-chinese-platform/commit/037a68b))
 * feat(learn-chinese-platform-playground): add documentation and english -> chinese translations ([a7141b2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/a7141b2))
@@ -17,6 +15,9 @@
 * feat(learn-chinese-platform-playground): add utilities for getting english for hanzi ([c5c1040](https://gitlab.com/pojntfx/learn-chinese-platform/commit/c5c1040))
 * feat(learn-chinese-platform-playground): add voice service and tests for it ([a603276](https://gitlab.com/pojntfx/learn-chinese-platform/commit/a603276))
 * feat(learn-chinese-playground): add voice generator ([b129fa5](https://gitlab.com/pojntfx/learn-chinese-platform/commit/b129fa5))
+* refactor(core): Adapt to new repo structure ([2aef90e](https://gitlab.com/pojntfx/learn-chinese-platform/commit/2aef90e))
+* refactor(services): Adapt to new repo structure ([0d18785](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0d18785))
+* chore: prepare for merge into monorepo ([7a8e7d2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7a8e7d2))
 * fix(learn-chinese-platform-playground): use correct link to WSGateway ([b6efc6e](https://gitlab.com/pojntfx/learn-chinese-platform/commit/b6efc6e))
 
 

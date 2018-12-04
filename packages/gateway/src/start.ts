@@ -41,16 +41,33 @@ const start = async (
     }
   });
 
-  broker.start().then(() => {
-    console.log("[INFO] Learn Chinese Platform has started successfully!");
-    console.log(`[INFO] HTTP Gateway URL: http://localhost:${httpGatewayPort}`);
-    console.log(`[INFO] WS Gateway URL: ws://localhost:${wsGatewayPort}`);
-  });
+  await broker.start();
 };
+
+const {
+  name,
+  description: pkgDescription,
+  version,
+  author,
+  license,
+  homepage
+} = require("../package.json");
+
+const description = `Learn Chinese Platform Gateway
+${pkgDescription}
+
+    HTTP Gateway started successfully on port ${process.env.HTTP_GATEWAY_PORT ||
+      8080}!
+    WebSocket Gateway started successfully on port ${process.env
+      .WS_GATEWAY_PORT || 8081}!
+
+Version: ${name}#${version} by ${author}
+License: ${license}
+More info: ${homepage}`;
 
 start(
   process.env.HTTP_GATEWAY_PORT || 8080,
   process.env.WS_GATEWAY_PORT || 8081
-);
+).then(() => console.log(description));
 
 export { start };
