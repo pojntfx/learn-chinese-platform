@@ -7,7 +7,7 @@ import {
   getEnglishForPinyin,
   getHanziForEnglish,
   getPinyinForEnglish
-} from "../utils/translator.util";
+} from "@learn-chinese-platform/core";
 
 const Translator: ServiceSchema = {
   name: "translator",

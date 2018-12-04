@@ -1,5 +1,6 @@
 import { ServiceBroker } from "moleculer";
-import { Context } from "./context.service";
+import { Context } from "./context";
+import { IContextForPinyin } from "@learn-chinese-platform/core";
 
 it("Should get the context for pinyin", async () => {
   const broker = new ServiceBroker({
@@ -12,7 +13,7 @@ it("Should get the context for pinyin", async () => {
   });
   expect(
     context.find(
-      context =>
+      (context: IContextForPinyin) =>
         context.definitions.map(definition =>
           definition.text.includes('(question particle for "yes-no" questions)')
         ).length >= 1

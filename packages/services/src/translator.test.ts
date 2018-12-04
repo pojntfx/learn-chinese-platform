@@ -1,5 +1,5 @@
 import { ServiceBroker } from "moleculer";
-import { Translator } from "./translator.service";
+import { Translator } from "./translator";
 
 it("Should get simplified hanzi for pinyin", async () => {
   const broker = new ServiceBroker({
@@ -67,7 +67,7 @@ it("Should get english for simplified hanzi", async () => {
   });
   let isDoor = false;
   // 门 is door
-  await english.map(translation => {
+  await english.map((translation: string[]) => {
     if (translation.includes("door")) isDoor = true;
   });
   expect(isDoor).toBe(true);
@@ -84,7 +84,7 @@ it("Should get english for traditional hanzi", async () => {
   });
   let isDoor = false;
   // 門 is door
-  await english.map(translation => {
+  await english.map((translation: string[]) => {
     if (translation.includes("door")) isDoor = true;
   });
   expect(isDoor).toBe(true);
@@ -101,7 +101,7 @@ it("Should get english for pinyin", async () => {
   });
   let isDoor = false;
   // me2n is door
-  await english.map(definition =>
+  await english.map((definition: string[]) =>
     definition.map(translation => {
       if (translation.includes("door")) isDoor = true;
     })

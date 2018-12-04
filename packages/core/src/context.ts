@@ -47,4 +47,4 @@ const getContextForPinyin = async (
   );
 };
 
-export { getContextForPinyin };
+export { getContextForPinyin, IContextForPinyin };

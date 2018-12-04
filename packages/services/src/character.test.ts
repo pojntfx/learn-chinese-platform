@@ -1,5 +1,5 @@
 import { ServiceBroker } from "moleculer";
-import { Character } from "./character.service";
+import { Character } from "./character";
 
 it("Should get vector for hanzi", async () => {
   const stroke =

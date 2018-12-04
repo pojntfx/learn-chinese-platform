@@ -19,3 +19,4 @@ export {
 } from "./voice";
 export { getVectorForHanzi } from "./character";
 export { createDeck, createCard, assignCardToDeck } from "./entity";
+export { getContextForPinyin, IContextForPinyin } from "./context";

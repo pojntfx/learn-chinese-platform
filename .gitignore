@@ -4,3 +4,4 @@ public/
 .cache/
 # MDBG data
 cedict_db
+lerna-debug.log
