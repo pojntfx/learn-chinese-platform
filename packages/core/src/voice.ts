@@ -1,6 +1,6 @@
-import * as googleTTS from "google-tts-api";
+import googleTTS from "google-tts-api";
 import { buildUrl, voices, languages } from "oddcast-tts-demo";
-import { getSimplifiedHanziForPinyin } from "./translator.util";
+import { getSimplifiedHanziForPinyin } from "./translator";
 
 /**
  * Get female voice for a hanzi

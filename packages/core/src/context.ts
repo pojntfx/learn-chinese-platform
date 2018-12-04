@@ -2,9 +2,9 @@ import {
   getSimplifiedHanziForPinyin,
   getEnglishForHanzi,
   getTraditionalHanziForSimplifiedHanzi
-} from "./translator.util";
-import { getVectorForHanzi, IVector } from "./character.util";
-import { getFemaleVoiceForHanzi, getMaleVoiceForHanzi } from "./voice.util";
+} from "./translator";
+import { getVectorForHanzi, IVector } from "./character";
+import { getFemaleVoiceForHanzi, getMaleVoiceForHanzi } from "./voice";
 
 interface IContextForPinyin {
   hanzi: {

@@ -1,4 +1,4 @@
-import { getVectorForHanzi } from "./character.util";
+import { getVectorForHanzi } from "./character";
 
 it("Should get vector for hanzi", async () => {
   const stroke =

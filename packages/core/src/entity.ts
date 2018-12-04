@@ -65,9 +65,9 @@ const createCard = async (
 const assignCardToDeck = async (
   cardId: ICard["id"],
   deckId: IDeck["id"],
-  cardGetter: (id) => Promise<ICard>,
-  deckGetter: (id) => Promise<IDeck>,
-  deckUpdater: (id, newDeck: IDeck) => Promise<IDeck>
+  cardGetter: (id: ICard["id"]) => Promise<ICard>,
+  deckGetter: (id: ICard["id"]) => Promise<IDeck>,
+  deckUpdater: (id: ICard["id"], newDeck: IDeck) => Promise<IDeck>
 ): Promise<IDeck> => {
   const card = await cardGetter(cardId);
   const deck = await deckGetter(deckId);
