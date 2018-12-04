@@ -49,6 +49,9 @@
     "type": "git",
     "url": "git+ssh://git@gitlab.com/pojntfx/learn-chinese-platform.git"
   },
+  "bugs": {
+    "url": "https://gitlab.com/pojntfx/learn-chinese-platform/issues"
+  },
   "keywords": [
     "chinese"
   ],

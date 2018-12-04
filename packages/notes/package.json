@@ -2,23 +2,23 @@
   "name": "@learn-chinese-platform/notes",
   "version": "0.0.1-alpha.4",
   "description": "Notes on the Learn Chinese platform as a whole",
-  "main": "src/repo-structure.md",
+  "author": "Felicitas Pojtinger <felicitas@pojtinger.com>",
+  "license": "AGPL-3.0",
+  "homepage": "https://gitlab.com/pojntfx/learn-chinese-platform#README",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "main": "README.md",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@gitlab.com/pojntfx/learn-chinese-platform.git"
   },
-  "keywords": [
-    "chinese"
-  ],
-  "author": "Felicitas Pojtinger <felicitas@pojtinger.com>",
-  "license": "AGPL-3.0",
   "bugs": {
     "url": "https://gitlab.com/pojntfx/learn-chinese-platform/issues"
   },
-  "homepage": "https://gitlab.com/pojntfx/learn-chinese-platform#README",
+  "keywords": [
+    "chinese"
+  ],
   "publishConfig": {
     "access": "public"
   }
