@@ -1,4 +1,4 @@
-import { getContextForPinyin } from "./context.util";
+import { getContextForPinyin } from "./context";
 
 it("Should get the context for pinyin", async () => {
   const context = await getContextForPinyin("ma");

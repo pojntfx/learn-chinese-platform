@@ -6,7 +6,7 @@
     - [ ] frontend/
     - [ ] gateway/
     - [ ] services/
-    - [ ] core/
+    - [x] core/
     - [x] notes/
   - [x] README.md
   - [x] CONTRIBUTING.md

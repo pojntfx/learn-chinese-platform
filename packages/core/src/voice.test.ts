@@ -5,7 +5,7 @@ import {
   getMaleVoiceForHanzi,
   getFemaleVoicesForPinyin,
   getMaleVoicesForPinyin
-} from "./voice.util";
+} from "./voice";
 
 it("Should get voice url for simplified hanzi with alt implementation", async () => {
   const voiceUrl = await getVoiceForHanziAlt("门");

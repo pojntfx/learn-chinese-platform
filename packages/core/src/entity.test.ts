@@ -4,7 +4,7 @@ import {
   assignCardToDeck,
   IDeck,
   ICard
-} from "./entity.util";
+} from "./entity";
 
 const decks: IDeck[] = [];
 const cards: ICard[] = [];
@@ -19,11 +19,11 @@ const cardCreator = async (card: ICard): Promise<ICard> => {
 };
 
 const deckGetter = async (id: string): Promise<IDeck> =>
-  decks.find(deck => deck.id === id);
+  decks.find(deck => deck.id === id) as IDeck;
 const cardGetter = async (id: string): Promise<ICard> =>
-  cards.find(card => card.id === id);
+  cards.find(card => card.id === id) as ICard;
 
-const deckUpdater = async (id, newDeck) => {
+const deckUpdater = async (id: IDeck["id"], newDeck: IDeck) => {
   const oldDeck = await deckGetter(id);
   return {
     ...oldDeck,

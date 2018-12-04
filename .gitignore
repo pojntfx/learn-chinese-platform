@@ -2,3 +2,5 @@ node_modules/
 dist/
 public/
 .cache/
+# MDBG data
+cedict_db
