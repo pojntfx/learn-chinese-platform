@@ -1,5 +1,11 @@
 ## <small>0.0.1-0-monorepo (2018-12-04)</small>
 
+
+
+
+## <small>0.0.1-alpha.5 (2018-12-04)</small>
+
+* v0.0.1-alpha.5 ([2d9672d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/2d9672d))
 * refactor(core): Adapt to new repo structure ([2aef90e](https://gitlab.com/pojntfx/learn-chinese-platform/commit/2aef90e))
 * refactor(gateway): Improve startup procedure ([743c89b](https://gitlab.com/pojntfx/learn-chinese-platform/commit/743c89b))
 * refactor(services): Adapt to new repo structure ([0d18785](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0d18785))
