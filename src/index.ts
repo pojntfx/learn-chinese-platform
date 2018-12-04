@@ -7,7 +7,14 @@ export {
   getHanziForEnglish,
   getPinyinForEnglish
 } from "./utils/translator.util";
-export { getVoiceForHanzi, getVoiceForPinyin } from "./utils/voice.util";
+export {
+  getFemaleVoiceForHanzi,
+  getMaleVoiceForHanzi,
+  getFemaleVoicesForPinyin,
+  getMaleVoicesForPinyin,
+  getVoiceForHanziAlt,
+  getVoiceForPinyinAlt
+} from "./utils/voice.util";
 export { getVectorForHanzi } from "./utils/character.util";
 export { createDeck, createCard, assignCardToDeck } from "./utils/entity.util";
 export { Character } from "./services/character.service";

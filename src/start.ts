@@ -5,8 +5,8 @@ import { Character } from "./services/character.service";
 import * as WSGateway from "moleculer-io";
 import * as HTTPGateway from "moleculer-web";
 
-const HTTP_GATEWAY_PORT = 3000;
-const WS_GATEWAY_PORT = 3001;
+const HTTP_GATEWAY_PORT = process.env.PORT || 8080;
+const WS_GATEWAY_PORT = 8081;
 
 const broker = new ServiceBroker({
   transporter: "TCP"
@@ -33,8 +33,6 @@ broker.createService({
 
 broker.start().then(() => {
   console.log("[INFO] Learn Chinese Platform has started successfully!");
-  console.log(
-    '[INFO] HTTP Gateway URL: http://localhost:3000'
-  );
-  console.log("[INFO] WS Gateway URL: ws://localhost:3001");
+  console.log(`[INFO] HTTP Gateway URL: http://localhost:${HTTP_GATEWAY_PORT}`);
+  console.log(`[INFO] WS Gateway URL: ws://localhost:${WS_GATEWAY_PORT}`);
 });
