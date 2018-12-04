@@ -22,6 +22,11 @@
     "app.prod::build--watch": "lerna run app.prod::build--watch --parallel",
     "app.prod::start--watch": "lerna run app.prod::start--watch --parallel",
     "app.prod::test--watch": "lerna run app.prod::test--watch --parallel",
+    "app.prod--binary": "lerna run app.prod--binary --parallel",
+    "app.prod::build--binary": "lerna run app.prod::build--binary --parallel",
+    "app.prod::start--binary": "lerna run app.prod::start--binary --parallely",
+    "app.prod::build--watch--binary": "lerna run app.prod::build--watch--binary --parallel",
+    "app.prod::start--watch--binary": "lerna run app.prod::start--watch--binary --parallel",
     "app.dev": "lerna run app.dev --parallel",
     "app.dev::build": "lerna run app.dev::build --parallel",
     "app.dev::start": "lerna run app.dev::start --parallel",
@@ -69,15 +74,16 @@
     "commit": "git add . && git-cz",
     "commit--staged": "git-cz",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "outdated": "lerna exec npm outdated",
     "update": "lerna exec npm update",
     "publish": "lerna publish"
   },
   "devDependencies": {
-    "commitizen": "^3.0.2",
+    "commitizen": "^3.0.5",
     "conventional-changelog-cli": "^2.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "ghooks": "^2.0.4",
-    "lerna": "^3.4.3"
+    "lerna": "^3.5.1"
   },
   "main": "lerna.json",
   "repository": {

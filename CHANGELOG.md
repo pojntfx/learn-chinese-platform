@@ -1,6 +1,7 @@
 ## <small>0.0.1-0-monorepo (2018-12-04)</small>
 
 * refactor(core): Adapt to new repo structure ([2aef90e](https://gitlab.com/pojntfx/learn-chinese-platform/commit/2aef90e))
+* refactor(services): Adapt to new repo structure ([0d18785](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0d18785))
 * chore: prepare for merge into monorepo ([7a8e7d2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7a8e7d2))
 * feat: add playground for the learn chinese platform ([0d05b65](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0d05b65))
 * feat(learn-chinese-platform-playground): Add context service for pinyin ([54b1ae9](https://gitlab.com/pojntfx/learn-chinese-platform/commit/54b1ae9))

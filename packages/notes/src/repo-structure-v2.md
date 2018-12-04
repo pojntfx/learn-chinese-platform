@@ -4,7 +4,7 @@
   - packages/
     - [x] site/
     - [ ] frontend/
-    - [ ] gateway/
+    - [x] gateway/
     - [x] services/
     - [x] core/
     - [x] notes/
