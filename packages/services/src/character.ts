@@ -1,5 +1,5 @@
 import { ServiceSchema } from "moleculer";
-import { getVectorForHanzi } from "../utils/character.util";
+import { getVectorForHanzi } from "@learn-chinese-platform/core";
 
 const Character: ServiceSchema = {
   name: "character",

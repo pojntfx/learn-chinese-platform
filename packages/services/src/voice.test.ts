@@ -1,5 +1,5 @@
 import { ServiceBroker } from "moleculer";
-import { Voice } from "./voice.service";
+import { Voice } from "./voice";
 
 it("Should get voice url for simplified hanzi with alt implementation", async () => {
   const broker = new ServiceBroker({

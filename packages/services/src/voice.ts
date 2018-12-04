@@ -4,7 +4,7 @@ import {
   getFemaleVoiceForHanzi,
   getFemaleVoicesForPinyin,
   getMaleVoicesForPinyin
-} from "../utils/voice.util";
+} from "@learn-chinese-platform/core";
 import { ServiceSchema } from "moleculer";
 
 const Voice: ServiceSchema = {

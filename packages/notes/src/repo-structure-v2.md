@@ -5,7 +5,7 @@
     - [x] site/
     - [ ] frontend/
     - [ ] gateway/
-    - [ ] services/
+    - [x] services/
     - [x] core/
     - [x] notes/
   - [x] README.md

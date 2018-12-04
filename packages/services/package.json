@@ -1,7 +1,7 @@
 {
-  "name": "@learn-chinese-platform/core",
+  "name": "@learn-chinese-platform/services",
   "version": "0.0.1-0",
-  "description": "Core functionality of the Learn Chinese Platform",
+  "description": "Services which can expose the Learn Chinese Platform core functionality using the API gateway",
   "author": "Felix Pojtinger <felix@pojtinger.com>",
   "license": "AGPL-3.0",
   "homepage": "https://gitlab.com/pojntfx/learn-chinese-platform#README",
@@ -27,23 +27,21 @@
     "prepare": "run-s build"
   },
   "dependencies": {
-    "baidu-translate-api": "^0.3.1",
-    "google-tts-api": "0.0.4",
-    "hanzi-writer-data": "^2.0.1",
-    "md-to-pdf": "^2.4.2",
-    "mdbg": "^1.34.0",
-    "mkanki": "^1.1.0",
-    "oddcast-tts-demo": "^1.1.1"
+    "@learn-chinese-platform/core": "^0.0.1-0",
+    "moleculer": "^0.13.4",
+    "moleculer-io": "^0.13.1",
+    "moleculer-web": "^0.8.5"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.24",
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.12",
     "jest": "^23.6.0",
+    "nodemon": "^1.18.4",
+    "npm-run-all": "^4.1.3",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
-    "typescript": "^3.2.1",
-    "nodemon": "^1.18.4",
-    "npm-run-all": "^4.1.3"
+    "typescript": "^3.2.1"
   },
   "main": "dist/index.js",
   "source": "src/index.ts",

@@ -1,5 +1,5 @@
 import { ServiceSchema } from "moleculer";
-import { getContextForPinyin } from "../utils/context.util";
+import { getContextForPinyin } from "@learn-chinese-platform/core";
 
 const Context: ServiceSchema = {
   name: "context",
