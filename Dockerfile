@@ -6,7 +6,7 @@ LABEL maintainer="Felix Pojtinger <felix@pojtinger.com> @pojntfx"
 LABEL license="AGPL-3.0"
 
 # Setup work dir
-RUN mkdir -p /opt/learn-chinese-platform
+RUN mkdir -p /opt/learn-chinese-platform/cedict_db
 WORKDIR /opt/learn-chinese-platform
 
 # Update the system and install dependencies
@@ -21,6 +21,9 @@ COPY tsconfig.json .
 
 # Install dependencies
 RUN npm install
+
+# Share CC-CEDICT database
+VOLUME [ "/opt/learn-chinese-platform/cedict_db" ]
 
 # Start the app
 CMD npm start
