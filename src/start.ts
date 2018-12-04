@@ -4,6 +4,7 @@ import { Voice } from "./services/voice.service";
 import { Character } from "./services/character.service";
 import * as WSGateway from "moleculer-io";
 import * as HTTPGateway from "moleculer-web";
+import { Context } from "./services/context.service";
 
 const HTTP_GATEWAY_PORT = process.env.PORT || 8080;
 const WS_GATEWAY_PORT = 8081;
@@ -15,6 +16,7 @@ const broker = new ServiceBroker({
 broker.createService(Translator);
 broker.createService(Voice);
 broker.createService(Character);
+broker.createService(Context);
 
 broker.createService({
   name: "httpgateway",
