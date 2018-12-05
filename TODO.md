@@ -1,3 +1,6 @@
 # Learn Chinese Platform TODO
 
-- [ ] Implement Anki deck generator using `@libresat/service`
+- [x] Add frontend with `@libresat/frontend-framework`
+- [ ] Add service for entity with `@libresat/service-framework`
+- [x] Deploy docker images
+- [ ] Add hashbangs to start scripts

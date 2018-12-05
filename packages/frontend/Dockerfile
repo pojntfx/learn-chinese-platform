@@ -7,20 +7,17 @@ LABEL license="AGPL-3.0"
 
 # Update the system and install dependencies
 RUN apk update
-RUN apk add npm python alpine-sdk
-RUN apk add vips --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
+RUN apk add npm
 
 # Setup work dir
-RUN mkdir -p /opt/learn-chinese-platform/site
-WORKDIR /opt/learn-chinese-platform/site
+RUN mkdir -p /opt/learn-chinese-platform/frontend
+WORKDIR /opt/learn-chinese-platform/frontend
 
 # Add source code
 COPY src src
-COPY static static
-COPY gatsby-config.js .
-COPY gatsby-node.js .
 COPY package.json .
 COPY package-lock.json .
+COPY README.md .
 
 # Install dependencies
 RUN npm install

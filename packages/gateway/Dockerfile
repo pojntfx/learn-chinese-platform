@@ -5,13 +5,13 @@ FROM node:11.3.0-alpine
 LABEL maintainer="Felicitas Pojtinger <felicitas@pojtinger.com> @pojntfx"
 LABEL license="AGPL-3.0"
 
-# Setup work dir
-RUN mkdir -p /opt/learn-chinese-platform/gateway/cedict_db
-WORKDIR /opt/learn-chinese-platform/gateway
-
 # Update the system and install dependencies
 RUN apk update
 RUN apk add npm python alpine-sdk
+
+# Setup work dir
+RUN mkdir -p /opt/learn-chinese-platform/gateway/cedict_db
+WORKDIR /opt/learn-chinese-platform/gateway
 
 # Add source code
 COPY src src
@@ -22,10 +22,13 @@ COPY tsconfig.json .
 # Install dependencies
 RUN npm install
 
+# Build the app
+RUN npm run build
+
 # Share CC-CEDICT database
 VOLUME [ "/opt/learn-chinese-platform/gateway/cedict_db" ]
 
-# Configure the container
+# Configure the app
 ENV HTTP_GATEWAY_PORT=8080
 ENV WS_GATEWAY_PORT=8081
 
