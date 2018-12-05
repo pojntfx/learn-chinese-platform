@@ -1,6 +1,6 @@
 {
   "name": "@learn-chinese-platform/services",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1-alpha.6",
   "description": "Services which can expose the Learn Chinese Platform core functionality using the API gateway",
   "author": "Felicitas Pojtinger <felicitas@pojtinger.com>",
   "license": "AGPL-3.0",
@@ -27,7 +27,7 @@
     "prepare": "run-s build"
   },
   "dependencies": {
-    "@learn-chinese-platform/core": "^0.0.1-alpha.5",
+    "@learn-chinese-platform/core": "^0.0.1-alpha.6",
     "moleculer": "^0.13.4",
     "moleculer-io": "^0.13.1",
     "moleculer-web": "^0.8.5"
