@@ -7,17 +7,17 @@ LABEL license="AGPL-3.0"
 
 # Update the system and install dependencies
 RUN apk update
-RUN apk add npm python alpine-sdk
+RUN apk add npm
 
 # Setup work dir
-RUN mkdir -p /opt/learn-chinese-platform/gateway/cedict_db
-WORKDIR /opt/learn-chinese-platform/gateway
+RUN mkdir -p /opt/learn-chinese-platform/frontend
+WORKDIR /opt/learn-chinese-platform/frontend
 
 # Add source code
 COPY src src
 COPY package.json .
 COPY package-lock.json .
-COPY tsconfig.json .
+COPY README.md .
 
 # Install dependencies
 RUN npm install
@@ -25,17 +25,11 @@ RUN npm install
 # Build the app
 RUN npm run build
 
-# Share CC-CEDICT database
-VOLUME [ "/opt/learn-chinese-platform/gateway/cedict_db" ]
-
 # Configure the app
-ENV HTTP_GATEWAY_PORT=8080
-ENV WS_GATEWAY_PORT=8081
+ENV PORT=5000
 
 # Start the app
 CMD npm start
 
 # Expose HTTP gateway
-EXPOSE 8080
-# Expose WS gateway
-EXPOSE 8081
+EXPOSE 5000

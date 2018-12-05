@@ -3,7 +3,7 @@
 - learn-chinese-platform
   - packages/
     - [x] site/
-    - [ ] frontend/
+    - [x] frontend/
     - [x] gateway/
     - [x] services/
     - [x] core/

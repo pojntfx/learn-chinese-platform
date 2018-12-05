@@ -42,6 +42,7 @@ const start = async (
   });
 
   await broker.start();
+  return broker;
 };
 
 const {
