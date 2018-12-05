@@ -1,8 +1,14 @@
 ## <small>0.0.1-0-monorepo (2018-12-05)</small>
 
+
+
+
+## <small>0.0.1-alpha.6 (2018-12-05)</small>
+
+* build(site, gateway): Add docker and exoframe configs ([1e1c2a0](https://gitlab.com/pojntfx/learn-chinese-platform/commit/1e1c2a0))
+* v0.0.1-alpha.6 ([8c00463](https://gitlab.com/pojntfx/learn-chinese-platform/commit/8c00463))
 * fix(frontend): Use correct package name ([9b4960d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/9b4960d))
 * feat: Add simple frontend shell ([d1fdbb6](https://gitlab.com/pojntfx/learn-chinese-platform/commit/d1fdbb6))
-* build(site, gateway): Add docker and exoframe configs ([1e1c2a0](https://gitlab.com/pojntfx/learn-chinese-platform/commit/1e1c2a0))
 * build: Add VSCode launch.json ([e267543](https://gitlab.com/pojntfx/learn-chinese-platform/commit/e267543))
 
 
