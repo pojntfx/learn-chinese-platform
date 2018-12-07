@@ -1,4 +1,6 @@
-const footerData = {
+import { common } from "./common";
+
+const footer = {
   socialLinks: [
     {
       title: "GitLab",
@@ -7,8 +9,8 @@ const footerData = {
       link: "https://gitlab.com/pojntfx/learn-chinese-platform",
       help: {
         title: "GitLab",
-        text: "The central place for Learn Chinese Platform's development.",
-        docsLink: "https://learn-chinese.tk/docs/"
+        text: `The central place for ${common.title}'s development.`,
+        docsLink: `${common.site}/docs/gitlab`
       }
     },
     {
@@ -18,8 +20,8 @@ const footerData = {
       link: "https://github.com/pojntfx/learn-chinese-platform",
       help: {
         title: "GitHub",
-        text: "A mirror of the Learn Chinese Platform.",
-        docsLink: "https://learn-chinese.tk/docs/"
+        text: `A mirror of the ${common.title}.`,
+        docsLink: `${common.site}/docs/github`
       }
     },
     {
@@ -29,31 +31,30 @@ const footerData = {
       link: "https://www.npmjs.com/~learn-chinese-platform",
       help: {
         title: "NPM",
-        text: "The Learn Chinese Platform as NodeJS packages.",
-        docsLink: "https://learn-chinese.tk/docs/"
+        text: `The ${common.title} as NodeJS packages.`,
+        docsLink: `${common.site}/docs/npm`
       }
     }
   ],
   legal: {
     global: {
-      product: "Learn Chinese Platform Site",
+      product: `${common.title} App`,
       timeSpan: "2018",
-      holder: "Felix Pojtinger",
+      holder: common.author,
       help: {
         title: "Copyright Holder",
         text:
           "This is the individual or organization that holds the copyright of this product.",
-        command: "$ lcpctl",
-        docsLink: "https://learn-chinese.tk/source-code"
+        docsLink: `${common.site}/docs/copyright`
       }
     },
     licenses: [
       {
-        product: "Learn Chinese Platform Site",
+        product: `${common.title} App`,
         type: "Media",
         icon: "images",
         timeSpan: "2018",
-        holder: "Felix Pojtinger",
+        holder: common.author,
         spdxLicenseIdentifier: "CC-BY-SA-4.0",
         text:
           "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.",
@@ -68,16 +69,15 @@ const footerData = {
         help: {
           title: "Media License",
           text: "This is the license that applies to this product's media.",
-          command: "$ lcpctl",
-          docsLink: "https://learn-chinese.tk/source-code"
+          docsLink: `${common.site}/docs/copyright/media`
         }
       },
       {
-        product: "Learn Chinese Platform Site",
+        product: `${common.title} App`,
         type: "Code",
         icon: "code",
         timeSpan: "2018",
-        holder: "Felix Pojtinger",
+        holder: common.author,
         spdxLicenseIdentifier: "AGPL-3.0",
         text:
           "This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.\nYou should have received a copy of the GNU Affero General Public License along with this program. If not, see https://www.gnu.org/licenses/.",
@@ -93,8 +93,7 @@ const footerData = {
           title: "Code License",
           text:
             "This is the license that applies to this product's source code.",
-          command: "$ lcpctl",
-          docsLink: "https://learn-chinese.tk/source-code"
+          docsLink: `${common.site}/docs/copyright/code`
         }
       }
     ]
@@ -106,9 +105,9 @@ const footerData = {
     help: {
       title: "Keyboard Shortcuts",
       text: "Get information on the available keyboard shortcuts in this app.",
-      docsLink: "https://learn-chinese.tk/docs/"
+      docsLink: `${common.site}/docs/app/shortcuts`
     }
   }
 };
 
-export { footerData };
+export { footer };
