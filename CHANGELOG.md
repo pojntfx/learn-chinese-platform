@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-07)</small>
 
+* refactor(frontend): Improve PWA functionality ([fc5b9cb](https://gitlab.com/pojntfx/learn-chinese-platform/commit/fc5b9cb))
 
 
 
