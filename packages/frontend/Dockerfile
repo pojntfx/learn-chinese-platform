@@ -13,14 +13,16 @@ RUN apk add npm
 RUN mkdir -p /opt/learn-chinese-platform/frontend
 WORKDIR /opt/learn-chinese-platform/frontend
 
-# Add source code
-COPY src src
+# Install dependencies
 COPY package.json .
 COPY package-lock.json .
-COPY README.md .
-
-# Install dependencies
 RUN npm install
+
+# Add source code
+COPY src src
+COPY manifest.webmanifest .
+COPY tsconfig.json .
+COPY README.md .
 
 # Build the app
 RUN npm run build

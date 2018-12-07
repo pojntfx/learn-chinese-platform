@@ -21,10 +21,7 @@ const start = async (httpGatewayPort: number | string) => {
     );
   }
 
-  const server = app.listen(process.env.PORT || 8080, () =>
-    console.log(description)
-  );
-  return server;
+  return app.listen(process.env.PORT || 8080);
 };
 
 const {
