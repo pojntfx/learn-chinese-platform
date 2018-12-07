@@ -7,21 +7,21 @@ import * as path from "path";
  * @param httpGatewayPort Port that the frontend should listen on
  */
 const start = async (httpGatewayPort: number | string) => {
-  const app = express();
-
   if (process.env.NODE_ENV === "production") {
-    app.use(express.static(__dirname));
-    app.get("*", (_, res) =>
-      res.sendFile(path.join(__dirname + "/index.html"))
-    );
+    const app = express();
+    app.use(express.static(path.join(__dirname)));
+    app.get("/*", function(_, res) {
+      res.sendFile(path.join(__dirname, "index.html"));
+    });
+    return app.listen(process.env.PORT || 8080);
   } else {
-    app.use(express.static(__dirname + "/../dist"));
-    app.get("*", (_, res) =>
-      res.sendFile(path.join(__dirname + "/../dist/index.html"))
-    );
+    const app = express();
+    app.use(express.static(path.join(__dirname, "/../dist")));
+    app.get("/*", function(_, res) {
+      res.sendFile(path.join(__dirname, "/../dist/index.html"));
+    });
+    return app.listen(process.env.PORT || 8080);
   }
-
-  return app.listen(process.env.PORT || 8080);
 };
 
 const {

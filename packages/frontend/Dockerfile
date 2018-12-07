@@ -29,6 +29,7 @@ RUN npm run build
 
 # Configure the app
 ENV PORT=5000
+ENV NODE_ENV="production"
 
 # Start the app
 CMD npm start

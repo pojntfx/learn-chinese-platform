@@ -1,11 +1,11 @@
 {
-  "name": "Learn Chinese Platform",
+  "name": "Learn Chinese Platform App",
   "short_name": "LCP App",
   "theme_color": "#e31818",
   "background_color": "#e31818",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": ".",
   "icons": [
     {
       "src": "./src/assets/icon-72x72.png",
