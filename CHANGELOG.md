@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-07)</small>
 
+* feat(frontend): Add more configuration, placeholders for pages and improve standardization ([ba01fb6](https://gitlab.com/pojntfx/learn-chinese-platform/commit/ba01fb6))
 * docs: Add notes on next actions on the frontend side ([d01bf00](https://gitlab.com/pojntfx/learn-chinese-platform/commit/d01bf00))
 
 
