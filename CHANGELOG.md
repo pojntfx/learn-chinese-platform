@@ -1,6 +1,12 @@
 ## <small>0.0.1-0-monorepo (2018-12-08)</small>
 
+
+
+
+## <small>0.0.1-alpha.9 (2018-12-08)</small>
+
 * refactor(frontend, site): Start standardizing frontend and site ([226b98e](https://gitlab.com/pojntfx/learn-chinese-platform/commit/226b98e))
+* v0.0.1-alpha.9 ([3598708](https://gitlab.com/pojntfx/learn-chinese-platform/commit/3598708))
 
 
 

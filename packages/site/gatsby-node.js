@@ -62,3 +62,23 @@ createPosts = async (graphql, createPage) => {
     throw e;
   }
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: "html-loader"
+            },
+            {
+              loader: "markdown-loader"
+            }
+          ]
+        }
+      ]
+    }
+  });
+};
