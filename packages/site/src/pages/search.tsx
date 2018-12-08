@@ -20,8 +20,8 @@ const Search = () => (
   >
     <Header
       as="h1"
-      content="Search"
-      subheader="Filter the Learn Chinese Platform"
+      content={search.head.title}
+      subheader={search.head.description}
     />
     <SearchSection />
   </Shell>

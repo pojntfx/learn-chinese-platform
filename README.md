@@ -23,9 +23,9 @@ $ npm run dev--debug
 
 ```bash
 # Start development version of inidividual package
-$ npm run dev -- --scope @learn-chinese-platform/deck-backend
+$ npm run dev -- --scope @learn-chinese-platform/gateway
 # Start development version of and debugger for individual package (connect by pressing F5 in VSCode)
-$ npm run dev--debug -- --scope @learn-chinese-platform/deck-core
+$ npm run dev--debug -- --scope @learn-chinese-platform/core
 ```
 
 ## Deployment
@@ -43,9 +43,9 @@ $ npm run start
 
 ```bash
 # Build production version of inidividual package
-$ npm run build -- --scope @learn-chinese-platform/deck-backend
+$ npm run build -- --scope @learn-chinese-platform/gateway
 # Start production version of inidividual package
-$ npm run start -- --scope @learn-chinese-platform/deck-backend
+$ npm run start -- --scope @learn-chinese-platform/gateway
 ```
 
 ```bash

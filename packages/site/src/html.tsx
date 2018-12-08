@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import * as React from "react";
+import * as PropTypes from "prop-types";
 
-const HTML = props => (
+const HTML = (props: any) => (
   <html {...props.htmlAttributes}>
     <head>
       <script
