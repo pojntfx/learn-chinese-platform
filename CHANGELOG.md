@@ -1,9 +1,10 @@
 ## <small>0.0.1-0-monorepo (2018-12-08)</small>
 
-* refactor(site): De-duplicate data ([6c1b82c](https://gitlab.com/pojntfx/learn-chinese-platform/commit/6c1b82c))
 * feat(site): Add default layout for posts ([30ad2ff](https://gitlab.com/pojntfx/learn-chinese-platform/commit/30ad2ff))
 * feat(site): Add Hero and BroadcastSection to home ([7c8fc22](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7c8fc22))
+* feat(site): Show notification to reload the page if there is new data ([0bd742e](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0bd742e))
 * feat(site): Use MDX for all pages ([30e87f1](https://gitlab.com/pojntfx/learn-chinese-platform/commit/30e87f1))
+* refactor(site): De-duplicate data ([6c1b82c](https://gitlab.com/pojntfx/learn-chinese-platform/commit/6c1b82c))
 
 
 
