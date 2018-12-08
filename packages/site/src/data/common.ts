@@ -1,12 +1,21 @@
 import favicon from "../assets/icon.png";
 import background from "../assets/bg.jpg";
+import {
+  title,
+  shortName,
+  author,
+  site,
+  language,
+  color
+} from "./metadata.json";
 
 const common = {
-  title: "Learn Chinese Platform",
-  author: "Felicitas Pojtinger",
-  site: "", // this is an internal link!
-  language: "en",
-  color: "#e31818",
+  title,
+  shortName,
+  author,
+  site,
+  language,
+  color,
   favicon,
   background
 };

@@ -3,7 +3,7 @@ import { common } from "./common";
 const services = {
   head: {
     title: "Services",
-    description: "Develop with the Learn Chinese Platform.",
+    description: `Develop with the ${common.title}.`,
     author: common.author,
     keywords: ["services", "servers", "libraries"],
     favicon: common.favicon,

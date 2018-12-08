@@ -28,7 +28,7 @@ const home = {
     secondaryAction: {
       title: "Watch video",
       icon: "video",
-      text: "Introduction to the Learn Chinese Platform",
+      text: `Introduction to the ${common.title}`,
       video: "http://lunduke.com/720classic/LinuxSucks-2016.mp4",
       disabled: true
     }
