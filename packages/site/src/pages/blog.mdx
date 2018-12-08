@@ -1,0 +1,40 @@
+---
+author: Felix Pojtinger
+date: "2018-12-08"
+title: Blog
+---
+
+import { Base } from "../downstream/Base";
+import { blog } from "../data/blog";
+import { Header as BlogHeader, Paper } from "@libresat/frontend-components";
+import { PostsGallerySection } from "../downstream/PostsGallerySection";
+import { Header } from "semantic-ui-react";
+import { PostsCoverflowSection } from "../downstream/PostsCoverflowSection";
+
+export default () => (
+  <Base head={blog.head} background={blog.background}>
+    <BlogHeader
+      as="h1"
+      content={blog.head.title}
+      subheader={blog.head.description}
+    />
+    <Paper>
+      <Header
+        as="h2"
+        content={blog.headers.featured.title}
+        subheader={blog.headers.featured.text}
+        icon={blog.headers.featured.icon}
+      />
+    </Paper>
+    <PostsCoverflowSection featured />
+    <Paper>
+      <Header
+        as="h2"
+        content={blog.headers.latest.title}
+        subheader={blog.headers.latest.text}
+        icon={blog.headers.latest.icon}
+      />
+    </Paper>
+    <PostsGallerySection />
+  </Base>
+);

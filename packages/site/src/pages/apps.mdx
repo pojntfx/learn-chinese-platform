@@ -1,0 +1,23 @@
+---
+author: Felix Pojtinger
+date: "2018-12-08"
+title: Apps
+---
+
+import { Base } from "../downstream/Base";
+import { apps } from "../data/apps";
+import { Link } from "../downstream/Link";
+import { AppMenu } from "@libresat/frontend-components";
+
+export default () => (
+  <Base head={apps.head} background={apps.background}>
+    <AppMenu
+      apps={apps.appMenu.apps}
+      search={{
+        onSearch: () => console.log("Searching for app ..."),
+        ...apps.appMenu.search
+      }}
+      linkComponent={(to, children) => <Link to={to}>{children}</Link>}
+    />
+  </Base>
+);

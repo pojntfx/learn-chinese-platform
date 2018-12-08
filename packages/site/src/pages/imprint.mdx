@@ -3,6 +3,20 @@ author: Felix Pojtinger
 date: "2018-12-08"
 ---
 
+import { Base } from "../downstream/Base";
+import { imprint } from "../data/imprint";
+import { Divider, Flag } from "semantic-ui-react";
+
+export default ({ children }) => (
+  <Base head={imprint.head} background={imprint.background} segment>
+    {children}
+  </Base>
+);
+
+<Divider horizontal>
+  <Flag name="us" /> English
+</Divider>
+
 # Imprint
 
 ## Data according to § 5 TMG:
@@ -47,6 +61,10 @@ However, a permanent control of the contents of the linked pages is not possible
 See "Media License" and "Code License". The code of this website is licensed AGPL-3.0, the media is licensed CC-BY-SA-4.0.
 
 As far as the contents on this site were not created by the operator, the copyrights of third parties are protected. observed. In particular, the contents of third parties are marked as such. If you should nevertheless click on If you become aware of a copyright infringement, we ask you to inform us accordingly. On becoming known we will remove such contents immediately.
+
+<Divider horizontal>
+  <Flag name="de" /> Deutsch
+</Divider>
 
 # Impressum
 

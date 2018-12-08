@@ -1,0 +1,15 @@
+---
+author: Felix Pojtinger
+date: "2018-12-08"
+---
+
+import { Base } from "../downstream/Base";
+import { docs } from "../data/docs";
+
+export default ({ children }) => (
+  <Base head={docs.head} background={docs.background} segment>
+    {children}
+  </Base>
+);
+
+# Docs

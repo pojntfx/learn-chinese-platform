@@ -6,7 +6,7 @@ import { navbar } from "../data/navbar";
 import { footer } from "../data/footer";
 import { noscript } from "../data/noscript";
 import { shortcuts } from "../data/shortcuts";
-import { Link } from "../tmp/Link";
+import { Link } from "../downstream/Link";
 
 const Apps = (props: any) => (
   <Shell

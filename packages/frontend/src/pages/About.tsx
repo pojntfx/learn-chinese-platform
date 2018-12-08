@@ -13,7 +13,7 @@ import { noscript } from "../data/noscript";
 import { shortcuts } from "../data/shortcuts";
 import { footer } from "../data/footer";
 import { apps } from "../data/apps";
-import { Link } from "../tmp/Link";
+import { Link } from "../downstream/Link";
 
 const About = (props: any) => (
   <Shell

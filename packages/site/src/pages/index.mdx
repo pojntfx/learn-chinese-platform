@@ -1,0 +1,34 @@
+---
+author: Felix Pojtinger
+date: "2018-12-08"
+title: Home
+---
+
+import { Base } from "../downstream/Base";
+import { home } from "../data/home";
+import { BroadcastSection } from "../downstream/BroadcastSection";
+import { Hero } from "@libresat/frontend-components";
+import { Link } from "../downstream/Link";
+
+export default () => (
+  <Base head={home.head} background={home.background}>
+    <Hero
+      title={home.hero.title}
+      subtitle={home.hero.text}
+      primaryAction={
+        {
+          header: home.hero.primaryAction.title,
+          ...home.hero.primaryAction
+        }
+      }
+      secondaryAction={
+        {
+          header: home.hero.secondaryAction.title,
+          ...home.hero.secondaryAction
+        }
+      }
+      linkComponent={Link}
+    />
+    <BroadcastSection {...home.broadcast} />
+  </Base>
+)
