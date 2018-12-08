@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "**/node_modules/": true,
+    "**/dist/": true,
+    "**/public/": true,
+    "**/.cache/": true,
+    "**/cedict_db/": true
+  }
+}

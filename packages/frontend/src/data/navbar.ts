@@ -21,7 +21,7 @@ const navbar = {
   firstItems: [
     {
       title: about.head.title,
-      icon: "app store",
+      icon: "info",
       link: "/about",
       help: {
         title: about.head.title,

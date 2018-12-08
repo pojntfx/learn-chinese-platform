@@ -1,14 +1,18 @@
 import * as React from "react";
-import { AppMenu, IAppMenuProps } from "@libresat/frontend-components";
-import { Shell, IShellProps } from "@libresat/frontend-components";
-import { apps } from "../data/apps";
+import {
+  Shell,
+  IShellProps,
+  AppMenu,
+  IAppMenuProps
+} from "@libresat/frontend-components";
 import { navbar } from "../data/navbar";
-import { footer } from "../data/footer";
+import { apps } from "../data/apps";
 import { noscript } from "../data/noscript";
 import { shortcuts } from "../data/shortcuts";
+import { footer } from "../data/footer";
 import { Link } from "../tmp/Link";
 
-const Apps = (props: any) => (
+export default () => (
   <Shell
     head={apps.head}
     navbar={navbar as IShellProps["navbar"]}
@@ -16,8 +20,7 @@ const Apps = (props: any) => (
     noScript={noscript}
     shortcuts={shortcuts}
     background={apps.background}
-    linkComponent={Link}
-    {...props}
+    linkComponent={Link as any}
   >
     <AppMenu
       apps={apps.appMenu.apps as IAppMenuProps["apps"]}
@@ -29,5 +32,3 @@ const Apps = (props: any) => (
     />
   </Shell>
 );
-
-export { Apps };

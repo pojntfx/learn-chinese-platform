@@ -1,22 +1,6 @@
 module.exports = {
   plugins: [
-    "gatsby-transformer-yaml",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "data",
-        path: `${__dirname}/src/data`
-      }
-    },
-    {
-      resolve: "gatsby-mdx",
-      options: {
-        defaultLayouts: {
-          posts: require.resolve("./src/layouts/Post.js"),
-          default: require.resolve("./src/layouts/Default.js")
-        }
-      }
-    },
+    "gatsby-mdx",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -36,15 +20,16 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Learn Chinese Platform",
-        short_name: "LCP",
+        name: "Learn Chinese Platform Site",
+        short_name: "LCP Site",
         start_url: "/",
-        background_color: "#E31818",
-        theme_color: "#E31818",
+        background_color: "#e31818",
+        theme_color: "#e31818",
         display: "standalone",
-        icon: "static/img/icon.png"
+        icon: "src/assets/icon.png"
       }
     },
-    "gatsby-plugin-offline"
+    "gatsby-plugin-offline",
+    "gatsby-plugin-typescript"
   ]
 };

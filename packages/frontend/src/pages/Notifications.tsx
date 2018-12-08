@@ -6,7 +6,7 @@ import { navbar } from "../data/navbar";
 import { footer } from "../data/footer";
 import { noscript } from "../data/noscript";
 import { shortcuts } from "../data/shortcuts";
-import { Link } from "../temp/Link";
+import { Link } from "../tmp/Link";
 
 const Notifications = (props: any) => (
   <Shell
