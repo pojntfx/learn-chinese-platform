@@ -22,13 +22,15 @@ const home = {
     primaryAction: {
       title: "Get started",
       icon: "rocket",
-      link: "/docs"
+      link: "/docs",
+      disabled: false
     },
     secondaryAction: {
       title: "Watch video",
       icon: "video",
       text: "Introduction to the Learn Chinese Platform",
-      video: "http://lunduke.com/720classic/LinuxSucks-2016.mp4"
+      video: "http://lunduke.com/720classic/LinuxSucks-2016.mp4",
+      disabled: true
     }
   },
   background: common.background
