@@ -35,6 +35,16 @@ const navbar = {
   ],
   startItems: [
     {
+      title: home.head.title,
+      link: "/",
+      icon: "home",
+      help: {
+        title: home.head.title,
+        text: home.head.description,
+        docsLink: `${common.site}/docs/site/home`
+      }
+    },
+    {
       title: clients.head.title,
       link: "/clients",
       icon: "app store",
@@ -52,16 +62,6 @@ const navbar = {
         title: services.head.title,
         text: services.head.description,
         docsLink: `${common.site}/docs/site/servers`
-      }
-    },
-    {
-      title: home.head.title,
-      link: "/",
-      icon: "home",
-      help: {
-        title: home.head.title,
-        text: home.head.description,
-        docsLink: `${common.site}/docs/site/home`
       }
     }
   ],

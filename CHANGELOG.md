@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-08)</small>
 
+* docs: Fix link to logo in README ([e720ede](https://gitlab.com/pojntfx/learn-chinese-platform/commit/e720ede))
 * feat(site): Render README on about page ([982fc0d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/982fc0d))
 
 

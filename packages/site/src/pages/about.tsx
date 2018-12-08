@@ -15,7 +15,7 @@ import { footer } from "../data/footer";
 import { apps } from "../data/apps";
 import { Link } from "../tmp/Link";
 
-export default () => (
+const About = () => (
   <Shell
     head={about.head}
     navbar={navbar as IShellProps["navbar"]}
@@ -39,3 +39,5 @@ export default () => (
     </Paper>
   </Shell>
 );
+
+export default About;
