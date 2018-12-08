@@ -1,0 +1,21 @@
+---
+author: Felicitas Pojtinger
+date: "2018-12-08"
+title: Search
+---
+
+import { Base } from "../downstream/Base";
+import { search } from "../data/search";
+import { SearchSection } from "../downstream/SearchSection";
+import { Header } from "@libresat/frontend-components";
+
+export default () => (
+  <Base head={search.head} background={search.background}>
+    <Header
+      as="h1"
+      content={search.head.title}
+      subheader={search.head.description}
+    />
+    <SearchSection />
+  </Base>
+);

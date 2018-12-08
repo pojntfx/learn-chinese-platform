@@ -1,0 +1,29 @@
+---
+author: Felicitas Pojtinger
+date: "2018-12-08"
+title: About
+---
+
+import { Base } from "../downstream/Base";
+import { about } from "../data/about";
+import { apps } from "../data/apps";
+import { Link } from "../downstream/Link";
+import { Paper, AppMenu } from "@libresat/frontend-components";
+import readme from "../../README.md";
+
+export default () => (
+  <Base head={about.head} background={about.background}>
+    <Paper dangerouslySetInnerHTML={{ __html: readme }} />
+    <Paper>
+      <h2>More Apps</h2>
+      <AppMenu
+        apps={apps.appMenu.apps}
+        search={{
+          onSearch: () => console.log("Searching for app ..."),
+          ...apps.appMenu.search
+        }}
+        linkComponent={(to, children) => <Link to={to}>{children}</Link>}
+      />
+    </Paper>
+  </Base>
+);

@@ -6,7 +6,7 @@ import {
   Head
 } from "@libresat/frontend-components";
 import { withPrefix } from "gatsby";
-import { Link } from "../tmp/Link";
+import { Link } from "../downstream/Link";
 import pageNotFoundImage from "../assets/404-rabbit.png";
 import { home } from "../data/home";
 import { navbar } from "../data/navbar";

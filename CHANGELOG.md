@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-08)</small>
 
+* feat(site): Add Hero and BroadcastSection to home ([7c8fc22](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7c8fc22))
 
 
 

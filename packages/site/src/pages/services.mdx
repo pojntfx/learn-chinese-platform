@@ -1,0 +1,15 @@
+---
+author: Felicitas Pojtinger
+date: "2018-12-08"
+---
+
+import { Base } from "../downstream/Base";
+import { services } from "../data/services";
+
+export default ({ children }) => (
+  <Base head={services.head} background={services.background} segment>
+    {children}
+  </Base>
+);
+
+# Services
