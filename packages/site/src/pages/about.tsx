@@ -1,5 +1,5 @@
 import * as React from "react";
-// import Readme from "../../README.md";
+import readme from "../../README.md";
 import {
   Shell,
   IShellProps,
@@ -25,9 +25,7 @@ export default () => (
     background={about.background}
     linkComponent={Link as any}
   >
-    <Paper>
-      {/* <Readme /> */}
-    </Paper>
+    <Paper dangerouslySetInnerHTML={{ __html: readme }} />
     <Paper>
       <h1>More Apps</h1>
       <AppMenu
