@@ -1,5 +1,11 @@
-## <small>0.0.1-0-monorepo (2018-12-07)</small>
+## <small>0.0.1-0-monorepo (2018-12-08)</small>
 
+
+
+
+## <small>0.0.1-alpha.8 (2018-12-07)</small>
+
+* v0.0.1-alpha.8 ([912dfd4](https://gitlab.com/pojntfx/learn-chinese-platform/commit/912dfd4))
 * refactor(frontend): Improve PWA functionality ([fc5b9cb](https://gitlab.com/pojntfx/learn-chinese-platform/commit/fc5b9cb))
 
 

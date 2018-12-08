@@ -4,23 +4,23 @@ import * as path from "path";
 
 /**
  * Start the frontend
- * @param httpGatewayPort Port that the frontend should listen on
+ * @param port Port that the frontend should listen on
  */
-const start = async (httpGatewayPort: number | string) => {
+const start = async (port: number | string) => {
   if (process.env.NODE_ENV === "production") {
     const app = express();
     app.use(express.static(path.join(__dirname)));
     app.get("/*", function(_, res) {
       res.sendFile(path.join(__dirname, "index.html"));
     });
-    return app.listen(process.env.PORT || 8080);
+    return app.listen(port);
   } else {
     const app = express();
     app.use(express.static(path.join(__dirname, "/../dist")));
     app.get("/*", function(_, res) {
       res.sendFile(path.join(__dirname, "/../dist/index.html"));
     });
-    return app.listen(process.env.PORT || 8080);
+    return app.listen(port);
   }
 };
 

@@ -14,22 +14,24 @@ RUN apk add vips --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing
 RUN mkdir -p /opt/learn-chinese-platform/site
 WORKDIR /opt/learn-chinese-platform/site
 
+# Install dependencies
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+
 # Add source code
 COPY src src
-COPY static static
 COPY gatsby-config.js .
 COPY gatsby-node.js .
 COPY package.json .
 COPY package-lock.json .
-
-# Install dependencies
-RUN npm install
 
 # Build the app
 RUN npm run build
 
 # Configure the app
 ENV PORT=5000
+ENV NODE_ENV="production"
 
 # Start the app
 CMD npm start

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Readme from "../../README.md";
+// import Readme from "../../README.md";
 import {
   Shell,
   IShellProps,
@@ -15,7 +15,7 @@ import { footer } from "../data/footer";
 import { apps } from "../data/apps";
 import { Link } from "../tmp/Link";
 
-const About = (props: any) => (
+export default () => (
   <Shell
     head={about.head}
     navbar={navbar as IShellProps["navbar"]}
@@ -23,11 +23,10 @@ const About = (props: any) => (
     noScript={noscript}
     shortcuts={shortcuts}
     background={about.background}
-    linkComponent={Link}
-    {...props}
+    linkComponent={Link as any}
   >
     <Paper>
-      <Readme />
+      {/* <Readme /> */}
     </Paper>
     <Paper>
       <h1>More Apps</h1>
@@ -37,10 +36,8 @@ const About = (props: any) => (
           onSearch: () => console.log("Searching for app ..."),
           ...apps.appMenu.search
         }}
-        linkComponent={(to, children) => <Link to={to}>{children}</Link>}
+        linkComponent={(to, children) => <Link to={to}>{children}</Link> as any}
       />
     </Paper>
   </Shell>
 );
-
-export { About };
