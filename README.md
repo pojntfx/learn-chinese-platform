@@ -1,6 +1,6 @@
 # Learn Chinese Platform
 
-![Learn Chinese Platform Logo](./packages/site/static/img/logo.png)
+![Learn Chinese Platform Logo](./packages/site/src/assets/logo.png)
 
 A modern and libre way to learn Chinese.
 
