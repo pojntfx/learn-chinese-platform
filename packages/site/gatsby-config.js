@@ -27,11 +27,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: "Learn Chinese Platform Site",
-        short_name: "LCP Site",
+        name: `${require("./src/data/metadata.json").title} Site`,
+        short_name: `${require("./src/data/metadata.json").shortTitle} Site`,
         start_url: "/",
-        background_color: "#e31818",
-        theme_color: "#e31818",
+        background_color: require("./src/data/metadata.json").color,
+        theme_color: require("./src/data/metadata.json").color,
         display: "standalone",
         icon: "src/assets/icon.png"
       }

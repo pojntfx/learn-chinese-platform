@@ -3,8 +3,9 @@ import { common } from "./common";
 const blog = {
   head: {
     title: "Blog",
-    description:
-      "Posts on all things that are relevant to the Learn Chinese Platform.",
+    description: `Posts on all things that are relevant to the ${
+      common.title
+    }.`,
     author: common.author,
     keywords: ["blog", "news", "updates"],
     favicon: common.favicon,
@@ -16,8 +17,7 @@ const blog = {
   headers: {
     blog: {
       title: `The ${common.title} Blog`,
-      text:
-        "Posts on all things that are relevant to the Learn Chinese Platform."
+      text: `Posts on all things that are relevant to the ${common.title}.`
     },
     featured: {
       title: "Featured Posts",

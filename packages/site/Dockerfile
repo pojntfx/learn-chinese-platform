@@ -23,8 +23,7 @@ RUN npm install
 COPY src src
 COPY gatsby-config.js .
 COPY gatsby-node.js .
-COPY package.json .
-COPY package-lock.json .
+COPY README.md .
 
 # Build the app
 RUN npm run build

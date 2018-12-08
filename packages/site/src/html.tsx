@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
+import { common } from "./data/common";
 
 const HTML = (props: any) => (
   <html {...props.htmlAttributes}>
@@ -11,8 +12,8 @@ const HTML = (props: any) => (
 @licstart  The following is the entire license notice for the 
 JavaScript code in this page.
 
-Learn Chinese Platform Site
-Copyright (C) 2018 Felix Pojtinger
+${common.title} Site
+Copyright (C) 2018 ${common.author}
 
 This program is free software: you can redistribute it and/or modify 
 it under the terms of the GNU Affero General Public License as published 
