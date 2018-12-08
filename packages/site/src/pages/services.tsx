@@ -7,7 +7,7 @@ import { shortcuts } from "../data/shortcuts";
 import { footer } from "../data/footer";
 import { Link } from "../tmp/Link";
 
-export default () => (
+const Services = () => (
   <Shell
     head={services.head}
     navbar={navbar as IShellProps["navbar"]}
@@ -21,3 +21,5 @@ export default () => (
     <h1>Services</h1>
   </Shell>
 );
+
+export default Services;

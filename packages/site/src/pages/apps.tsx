@@ -12,7 +12,7 @@ import { shortcuts } from "../data/shortcuts";
 import { footer } from "../data/footer";
 import { Link } from "../tmp/Link";
 
-export default () => (
+const Apps = () => (
   <Shell
     head={apps.head}
     navbar={navbar as IShellProps["navbar"]}
@@ -32,3 +32,5 @@ export default () => (
     />
   </Shell>
 );
+
+export default Apps;

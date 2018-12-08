@@ -14,7 +14,7 @@ import { footer } from "../data/footer";
 import { noscript } from "../data/noscript";
 import { shortcuts } from "../data/shortcuts";
 
-export default () => (
+const PageNotFoundPage = () => (
   <Shell
     head={home.head}
     navbar={navbar as IShellProps["navbar"]}
@@ -32,3 +32,5 @@ export default () => (
     />
   </Shell>
 );
+
+export default PageNotFoundPage;

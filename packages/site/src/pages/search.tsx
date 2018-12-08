@@ -1,13 +1,14 @@
 import * as React from "react";
-import { Shell, IShellProps } from "@libresat/frontend-components";
+import { Shell, IShellProps, Header } from "@libresat/frontend-components";
 import { navbar } from "../data/navbar";
 import { search } from "../data/search";
 import { noscript } from "../data/noscript";
 import { shortcuts } from "../data/shortcuts";
 import { footer } from "../data/footer";
 import { Link } from "../tmp/Link";
+import { SearchSection } from "../tmp/SearchSection";
 
-export default () => (
+const Search = () => (
   <Shell
     head={search.head}
     navbar={navbar as IShellProps["navbar"]}
@@ -16,8 +17,14 @@ export default () => (
     shortcuts={shortcuts}
     background={search.background}
     linkComponent={Link as any}
-    segment
   >
-    <h1>Search</h1>
+    <Header
+      as="h1"
+      content="Search"
+      subheader="Filter the Learn Chinese Platform"
+    />
+    <SearchSection />
   </Shell>
 );
+
+export default Search;
