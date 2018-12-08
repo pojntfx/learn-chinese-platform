@@ -1,6 +1,13 @@
 module.exports = {
   plugins: [
-    "gatsby-mdx",
+    {
+      resolve: "gatsby-mdx",
+      options: {
+        defaultLayouts: {
+          posts: require.resolve("./src/downstream/Post.tsx")
+        }
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
