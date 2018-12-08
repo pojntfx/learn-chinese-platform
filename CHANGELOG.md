@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-08)</small>
 
+* feat(site): Add posts listing to blog ([6e2f021](https://gitlab.com/pojntfx/learn-chinese-platform/commit/6e2f021))
 * feat(site): Add search ([5c787bd](https://gitlab.com/pojntfx/learn-chinese-platform/commit/5c787bd))
 * feat(site): Render README on about page ([982fc0d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/982fc0d))
 * docs: Fix link to logo in README ([e720ede](https://gitlab.com/pojntfx/learn-chinese-platform/commit/e720ede))
