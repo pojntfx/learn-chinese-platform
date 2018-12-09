@@ -2,7 +2,7 @@ import favicon from "../assets/icon.png";
 import background from "../assets/bg.jpg";
 import {
   title,
-  shortName,
+  shortTitle,
   author,
   site,
   language,
@@ -11,7 +11,7 @@ import {
 
 const common = {
   title,
-  shortName,
+  shortTitle,
   author,
   site,
   language,
