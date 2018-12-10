@@ -1,6 +1,7 @@
 ## <small>0.0.1-0-monorepo (2018-12-10)</small>
 
 * feat(frontend): Add experimental context element ([736072d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/736072d))
+* feat(frontend): Add list for contexts ([29acacd](https://gitlab.com/pojntfx/learn-chinese-platform/commit/29acacd))
 * ci: Add deployment scripts ([7f89cac](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7f89cac))
 
 
