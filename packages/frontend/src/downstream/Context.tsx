@@ -28,7 +28,7 @@ interface IContextProps {
   className?: string;
 }
 
-const Tab = styled(TabTemplate)`
+const ContextTab = styled(TabTemplate)`
   &:not(:last-child) {
     margin-bottom: 2em;
   }
@@ -61,7 +61,7 @@ class ContextTemplate extends Component<IContextProps> {
       <Grid columns={2} stackable className={this.props.className}>
         <Grid.Row stretched>
           <Grid.Column>
-            <Tab
+            <ContextTab
               panes={[
                 {
                   menuItem: "Simplified",
@@ -85,7 +85,7 @@ class ContextTemplate extends Component<IContextProps> {
                 }
               ]}
             />
-            <Tab
+            <ContextTab
               menu={{ tabular: true, attached: "bottom" }}
               panes={[
                 {
@@ -149,4 +149,4 @@ const Context = styled(ContextTemplate)`
   }
 `;
 
-export { Context, IContextProps, IVector };
+export { Context, IContextProps, IVector, ContextTab, EmphasisTab };

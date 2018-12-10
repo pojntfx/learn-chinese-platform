@@ -1,13 +1,13 @@
 # Base image
-FROM node:11.3.0-alpine
+FROM node:8.14.0-jessie
 
 # Metadata
 LABEL maintainer="Felix Pojtinger <felix@pojtinger.com> @pojntfx"
 LABEL license="AGPL-3.0"
 
 # Update the system and install dependencies
-RUN apk update
-RUN apk add npm python alpine-sdk
+RUN apt update -y
+RUN apt install -y python build-essential
 
 # Setup work dir
 RUN mkdir -p /opt/learn-chinese-platform/gateway/cedict_db

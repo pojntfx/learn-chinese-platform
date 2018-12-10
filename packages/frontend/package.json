@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "run-p app.dev--watch",
     "build": "run-p app.prod::build web.prod::build",
-    "start": "run-p web.prod::start",
+    "start": "pm2-runtime start npm -- run web.prod::start",
     "install--binary": "sudo install bin/learn-chinese-platform-frontend /usr/bin",
     "test": "run-p app.prod::test web.prod::test",
     "deploy": "exoframe",
@@ -61,9 +61,11 @@
     "react": "^16.5.2",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.5.2",
+    "react-fetch-component": "^7.0.1",
     "react-router-dom": "^4.3.1",
     "semantic-ui-react": "^0.83.0",
-    "styled-components": "^4.0.2"
+    "styled-components": "^4.0.2",
+    "pm2": "^3.2.3"
   },
   "devDependencies": {
     "@mdx-js/parcel-plugin-mdx": "^0.15.6",

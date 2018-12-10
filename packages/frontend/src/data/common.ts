@@ -17,7 +17,9 @@ const common = {
   language,
   color,
   favicon,
-  background
+  background,
+  httpGatewayUrl:
+    "https://gateway.exoframe.services.learn-chinese.tk/v1/context/getContextForPinyin?pinyin="
 };
 
 export { common };

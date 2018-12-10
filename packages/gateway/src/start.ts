@@ -30,7 +30,15 @@ const start = async (
     name: "httpgateway",
     mixins: [HTTPGateway],
     settings: {
-      port: httpGatewayPort
+      port: httpGatewayPort,
+      cors: {
+        origin: "*",
+        methods: ["GET", "OPTIONS", "POST", "PUT", "DELETE"],
+        allowedHeaders: [],
+        exposedHeaders: [],
+        credentials: false,
+        maxAge: 3600
+      }
     }
   });
   broker.createService({
