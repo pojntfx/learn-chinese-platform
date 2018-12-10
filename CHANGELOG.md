@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-10)</small>
 
+* feat(frontend, gateway): Fetch data from gateway, implement basic pinyin search, fix Docker containe ([95029ec](https://gitlab.com/pojntfx/learn-chinese-platform/commit/95029ec))
 
 
 
