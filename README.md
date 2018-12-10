@@ -33,6 +33,7 @@ $ npm run dev--debug -- --scope @learn-chinese-platform/core
 [![Built for GNU/Linux](https://img.shields.io/badge/built%20for-GNU/Linux%20and%20BSD-D2AA30.svg?logo=linux)](https://getfedora.org/)
 [![Built for Docker](https://img.shields.io/badge/built%20for-Docker-34A0EF.svg?logo=docker)](https://www.docker.com/)
 [![Built for Kubernetes](https://img.shields.io/badge/built%20for-Kubernetes-326DE6.svg?logo=cloud)](https://kubernetes.io/)
+[![Built for Exoframe](https://img.shields.io/badge/built%20for-Exoframe-2479E0.svg?logo=cloud)](https://github.com/exoframejs/exoframe)
 
 ```bash
 # Build production versions of all packages
@@ -51,6 +52,18 @@ $ npm run start -- --scope @learn-chinese-platform/gateway
 ```bash
 # Publish all packages to npm
 $ npm run publish
+```
+
+```bash
+# Install deployment dependencies
+$ npm install -g exoframe
+# Connect to the Learn Chinese Platform's Exoframe
+$ exoframe endpoint https://exoframe.services.learn-chinese.tk
+$ exoframe login
+# Deploy all services to Exoframe
+$ npm run deploy # No logs, just sit tight until it finishes (~10 minutes)
+# Deploy individual service to Exoframe
+$ npm run deploy -- --scope @learn-chinese-platform/gateway
 ```
 
 ## Contributing
