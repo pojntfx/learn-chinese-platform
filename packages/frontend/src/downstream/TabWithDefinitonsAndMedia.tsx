@@ -9,8 +9,8 @@ interface ITabWithDefinitionsAndMedia {
 const TabWithDefinitionsAndMedia = (props: ITabWithDefinitionsAndMedia) => (
   <Tab.Pane attached="bottom">
     <ul>
-      {props.definitions.map(definition => (
-        <li>{definition.text.join(",")}</li>
+      {props.definitions.map((definition, index) => (
+        <li key={index}>{definition.text.join(", ")}</li>
       ))}
     </ul>
   </Tab.Pane>

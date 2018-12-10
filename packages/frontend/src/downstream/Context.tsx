@@ -25,6 +25,7 @@ interface IContextProps {
   definitions: {
     text: string[];
   }[];
+  className?: string;
 }
 
 const Tab = styled(TabTemplate)`
@@ -39,7 +40,7 @@ const EmphasisTab = styled(TabTemplate)`
   }
 `;
 
-class Context extends Component<IContextProps> {
+class ContextTemplate extends Component<IContextProps> {
   state = {
     femaleAudioIsOpen: false,
     maleAudioIsOpen: false
@@ -57,7 +58,7 @@ class Context extends Component<IContextProps> {
 
   render() {
     return (
-      <Grid columns={2} stackable>
+      <Grid columns={2} stackable className={this.props.className}>
         <Grid.Row stretched>
           <Grid.Column>
             <Tab
@@ -137,5 +138,15 @@ class Context extends Component<IContextProps> {
     );
   }
 }
+
+const Context = styled(ContextTemplate)`
+  width: 100% !important;
+  @media (min-width: 770px) {
+    min-width: 690px !important;
+  }
+  @media (max-width: 769px) {
+    min-width: 262px !important;
+  }
+`;
 
 export { Context, IContextProps, IVector };
