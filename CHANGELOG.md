@@ -1,5 +1,11 @@
-## <small>0.0.1-0-monorepo (2018-12-09)</small>
+## <small>0.0.1-0-monorepo (2018-12-10)</small>
 
+
+
+
+## <small>0.0.1-alpha.12 (2018-12-09)</small>
+
+* v0.0.1-alpha.12 ([f65ecf0](https://gitlab.com/pojntfx/learn-chinese-platform/commit/f65ecf0))
 * refactor(frontend): De-duplicate data ([e39e3ea](https://gitlab.com/pojntfx/learn-chinese-platform/commit/e39e3ea))
 * fix(site): Fix missing short name in manifest ([9f20a33](https://gitlab.com/pojntfx/learn-chinese-platform/commit/9f20a33))
 

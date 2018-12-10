@@ -11,6 +11,7 @@
     "start": "run-p web.prod::start",
     "install--binary": "sudo install bin/learn-chinese-platform-frontend /usr/bin",
     "test": "run-p app.prod::test web.prod::test",
+    "deploy": "exoframe",
     "dev--watch": "run-p dev",
     "build--watch": "run-p app.prod::build--watch web.prod::build--watch",
     "start--watch": "run-p app.prod::start--watch web.prod::start--watch",

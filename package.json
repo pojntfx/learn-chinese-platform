@@ -11,6 +11,7 @@
     "start": "lerna run start --parallel",
     "install--binary": "lerna run install--binary --parallel",
     "test": "lerna run test --parallel",
+    "deploy": "lerna run deploy --concurrency 1",
     "dev--watch": "lerna run dev--watch --parallel",
     "build--watch": "lerna run build--watch --parallel",
     "start--watch": "lerna run start--watch --parallel",
