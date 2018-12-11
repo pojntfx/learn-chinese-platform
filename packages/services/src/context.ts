@@ -1,6 +1,9 @@
 import { ServiceSchema } from "moleculer";
 import { getContextForPinyin } from "@learn-chinese-platform/core";
-import { getContextForHanzi } from "@learn-chinese-platform/core/dist/context";
+import {
+  getContextForHanzi,
+  getContextForEnglish
+} from "@learn-chinese-platform/core/dist/context";
 
 const Context: ServiceSchema = {
   name: "context",
@@ -29,6 +32,23 @@ const Context: ServiceSchema = {
       handler: async ctx => {
         await console.log(ctx.params);
         return await getContextForHanzi(ctx.params.hanzi, ctx.params.precise);
+      }
+    },
+    getContextForEnglish: {
+      params: {
+        english: "string",
+        precise: {
+          type: "boolean",
+          convert: true,
+          optional: true
+        }
+      },
+      handler: async ctx => {
+        await console.log(ctx.params);
+        return await getContextForEnglish(
+          ctx.params.english,
+          ctx.params.precise
+        );
       }
     }
   }

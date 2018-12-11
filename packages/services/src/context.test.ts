@@ -76,3 +76,39 @@ it("Should get inprecise context for hanzi", async () => {
     )
   ).toBe(true);
 });
+
+it("Should get precise context for english", async () => {
+  const broker = new ServiceBroker({
+    logLevel: "warn"
+  });
+  await broker.createService(Context);
+  await broker.start();
+  const context = await broker.call("v1.context.getContextForEnglish", {
+    english: "eat",
+    precise: true
+  });
+  // 摛 is chī (same pinyin as 吃, but different meaning)
+  expect(
+    context.find(
+      (context: IContextForPinyin) => context.hanzi.simplified.text === "摛"
+    )
+  ).toBe(false);
+});
+
+it("Should get inprecise context for english", async () => {
+  const broker = new ServiceBroker({
+    logLevel: "warn"
+  });
+  await broker.createService(Context);
+  await broker.start();
+  const context = await broker.call("v1.context.getContextForEnglish", {
+    english: "eat",
+    precise: false
+  });
+  // 摛 is chī (same pinyin as 吃, but different meaning)
+  expect(
+    context.find(
+      (context: IContextForPinyin) => context.hanzi.simplified.text === "摛"
+    )
+  ).toBe(true);
+});

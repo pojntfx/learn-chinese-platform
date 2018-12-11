@@ -2,7 +2,8 @@ import {
   getSimplifiedHanziForPinyin,
   getEnglishForHanzi,
   getTraditionalHanziForSimplifiedHanzi,
-  getPinyinForHanzi
+  getPinyinForHanzi,
+  getPinyinForEnglish
 } from "./translator";
 import { getVectorForHanzi, IVector } from "./character";
 import { getFemaleVoiceForHanzi, getMaleVoiceForHanzi } from "./voice";
@@ -71,15 +72,21 @@ const getContextForPinyin = async (
       );
 };
 
+function flatten(arr: any[]): any[] {
+  return arr.reduce(function(flat: any[], toFlatten: any[]) {
+    return flat.concat(
+      Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+    );
+  }, []);
+}
+
 const getContextForHanzi = async (
   hanzi: string,
   precise?: boolean
 ): Promise<IContextForPinyin[]> => {
   const pinyin = await getPinyinForHanzi(hanzi);
   return precise
-    ? [].concat.apply(
-        // Flatten the array
-        [],
+    ? flatten(
         await Promise.all(
           pinyin.map(async pinyin =>
             (await getContextForPinyin(pinyin)).filter(
@@ -88,12 +95,44 @@ const getContextForHanzi = async (
           )
         )
       )
-    : [].concat.apply(
-        [],
+    : flatten(
         await Promise.all(
           pinyin.map(async pinyin => await getContextForPinyin(pinyin))
         )
       );
 };
 
-export { getContextForPinyin, getContextForHanzi, IContextForPinyin };
+const getContextForEnglish = async (
+  english: string,
+  precise?: boolean
+): Promise<IContextForPinyin[]> => {
+  const pinyin = await getPinyinForEnglish(english);
+  return precise
+    ? flatten(
+        await Promise.all(
+          pinyin.map(async pinyin =>
+            (await getContextForPinyin(pinyin)).filter(pinyin =>
+              pinyin.definitions.find(definition =>
+                Boolean(
+                  definition.text.find(definition =>
+                    definition.includes(english)
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    : flatten(
+        await Promise.all(
+          pinyin.map(async pinyin => await getContextForPinyin(pinyin))
+        )
+      );
+};
+
+export {
+  getContextForPinyin,
+  getContextForHanzi,
+  getContextForEnglish,
+  IContextForPinyin
+};

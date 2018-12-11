@@ -1,4 +1,8 @@
-import { getContextForPinyin, getContextForHanzi } from "./context";
+import {
+  getContextForPinyin,
+  getContextForHanzi,
+  getContextForEnglish
+} from "./context";
 
 it("Should get the context for pinyin", async () => {
   const context = await getContextForPinyin("ma");
@@ -41,9 +45,25 @@ it("Should get precise context for hanzi", async () => {
 });
 
 it("Should get inprecise context for hanzi", async () => {
-  const context = await getContextForHanzi("吗", true);
+  const context = await getContextForHanzi("吗");
   // 号 is hào, which would be similar to 吗 (hǎo)
   expect(context.find(context => context.hanzi.simplified.text === "号")).toBe(
+    true
+  );
+});
+
+it("Should get precise context for english", async () => {
+  const context = await getContextForEnglish("eat", true);
+  // 摛 is chī (same pinyin as 吃, but different meaning)
+  expect(context.find(context => context.hanzi.simplified.text === "摛")).toBe(
+    false
+  );
+});
+
+it("Should get inprecise context for english", async () => {
+  const context = await getContextForEnglish("eat");
+  // 摛 is chī (same pinyin as 吃, but different meaning)
+  expect(context.find(context => context.hanzi.simplified.text === "摛")).toBe(
     true
   );
 });
