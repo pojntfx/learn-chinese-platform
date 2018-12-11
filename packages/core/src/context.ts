@@ -1,7 +1,8 @@
 import {
   getSimplifiedHanziForPinyin,
   getEnglishForHanzi,
-  getTraditionalHanziForSimplifiedHanzi
+  getTraditionalHanziForSimplifiedHanzi,
+  getPinyinForHanzi
 } from "./translator";
 import { getVectorForHanzi, IVector } from "./character";
 import { getFemaleVoiceForHanzi, getMaleVoiceForHanzi } from "./voice";
@@ -23,28 +24,76 @@ interface IContextForPinyin {
 }
 
 const getContextForPinyin = async (
-  pinyin: string
+  pinyin: string,
+  precise?: boolean // TODO: Implement less precise version
 ): Promise<IContextForPinyin[]> => {
   const hanzi = await getSimplifiedHanziForPinyin(pinyin);
-  return await Promise.all(
-    hanzi.map(async hanzi => ({
-      hanzi: {
-        simplified: { text: hanzi },
-        traditional: await getTraditionalHanziForSimplifiedHanzi(hanzi).then(
-          hanzi => ({ text: hanzi })
-        ),
-        stroke: await getVectorForHanzi(hanzi)
-      },
-      pinyin: {
-        text: pinyin,
-        female: { voice: await getFemaleVoiceForHanzi(hanzi) },
-        male: { voice: await getMaleVoiceForHanzi(hanzi) }
-      },
-      definitions: await getEnglishForHanzi(hanzi).then(english =>
-        english.map(english => ({ text: english }))
+  return precise
+    ? await Promise.all(
+        hanzi
+          .map(async hanzi => ({
+            hanzi: {
+              simplified: { text: hanzi },
+              traditional: await getTraditionalHanziForSimplifiedHanzi(
+                hanzi
+              ).then(hanzi => ({ text: hanzi })),
+              stroke: await getVectorForHanzi(hanzi)
+            },
+            pinyin: {
+              text: pinyin,
+              female: { voice: await getFemaleVoiceForHanzi(hanzi) },
+              male: { voice: await getMaleVoiceForHanzi(hanzi) }
+            },
+            definitions: await getEnglishForHanzi(hanzi).then(english =>
+              english.map(english => ({ text: english }))
+            )
+          }))
+          .filter(async hanzi => (await hanzi).pinyin.text === pinyin)
       )
-    }))
-  );
+    : await Promise.all(
+        hanzi.map(async hanzi => ({
+          hanzi: {
+            simplified: { text: hanzi },
+            traditional: await getTraditionalHanziForSimplifiedHanzi(
+              hanzi
+            ).then(hanzi => ({ text: hanzi })),
+            stroke: await getVectorForHanzi(hanzi)
+          },
+          pinyin: {
+            text: pinyin,
+            female: { voice: await getFemaleVoiceForHanzi(hanzi) },
+            male: { voice: await getMaleVoiceForHanzi(hanzi) }
+          },
+          definitions: await getEnglishForHanzi(hanzi).then(english =>
+            english.map(english => ({ text: english }))
+          )
+        }))
+      );
 };
 
-export { getContextForPinyin, IContextForPinyin };
+const getContextForHanzi = async (
+  hanzi: string,
+  precise?: boolean
+): Promise<IContextForPinyin[]> => {
+  const pinyin = await getPinyinForHanzi(hanzi);
+  return precise
+    ? [].concat.apply(
+        // Flatten the array
+        [],
+        await Promise.all(
+          pinyin.map(async pinyin =>
+            (await getContextForPinyin(pinyin)).filter(
+              pinyin => pinyin.hanzi.simplified.text === hanzi
+            )
+          )
+        )
+      )
+    : [].concat.apply(
+        [],
+        await Promise.all(
+          pinyin.map(async pinyin => await getContextForPinyin(pinyin))
+        )
+      );
+};
+
+export { getContextForPinyin, getContextForHanzi, IContextForPinyin };

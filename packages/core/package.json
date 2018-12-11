@@ -19,7 +19,7 @@
     "lib.prod::build--watch": "tsc -w -P tsconfig.json",
     "lib.prod::test--watch": "jest --watch",
     "lib.dev": "run-s lib.dev::build",
-    "lib.dev::build": "ts-node -P tsconfig.json src/index.ts",
+    "lib.dev::build": "ts-node --files -P tsconfig.json src/index.ts",
     "lib.dev::test": "run-s lib.prod::test",
     "lib.dev--watch": "run-s lib.dev::build--watch",
     "lib.dev::build--watch": "run-s lib.prod::build--watch",
