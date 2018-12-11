@@ -18,7 +18,8 @@ const start = async (
   wsGatewayPort: number | string
 ) => {
   const broker = new ServiceBroker({
-    transporter: "TCP"
+    transporter: "TCP",
+    cacher: process.env.NODE_ENV === "production" ? "Memory" : undefined
   });
 
   broker.createService(Translator);
