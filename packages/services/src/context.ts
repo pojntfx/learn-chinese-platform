@@ -56,17 +56,15 @@ const Context: ServiceSchema = {
         }
       },
       handler: async ctx =>
-        getContext(ctx.params.query, ctx.params.precise).then(async res => {
-          if (res.length === 0) {
-            throw new Errors.MoleculerError(
-              "No Context Found",
-              404,
-              "NO_CONTEXT_FOUND"
-            );
-          } else {
-            return res;
-          }
-        })
+        getContext(ctx.params.query, ctx.params.precise).then(async res =>
+          res.length === 0
+            ? new Errors.MoleculerError(
+                "No Context Found",
+                404,
+                "NO_CONTEXT_FOUND"
+              )
+            : res
+        )
     }
   }
 };

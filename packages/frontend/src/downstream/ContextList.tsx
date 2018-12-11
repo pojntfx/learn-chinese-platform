@@ -29,12 +29,23 @@ const ContextWrapper = styled(HorizontalScrollWrapper)`
 
 interface IContextListProps {
   endpoint: string;
-  pinyin: string;
+  query: string;
+  precise?: boolean;
 }
 
+const PRECISE = "&precise=true";
+
 const ContextList = (props: IContextListProps) =>
-  props.pinyin ? (
-    <Fetch url={`${props.endpoint}${props.pinyin}`}>
+  props.query ? (
+    <Fetch
+      url={
+        props.query !== ""
+          ? props.precise
+            ? `${props.endpoint}${props.query}${PRECISE}`
+            : `${props.endpoint}${props.query}`
+          : `${props.endpoint}${props.query}`
+      }
+    >
       {({ loading, error, data }) => (
         <>
           {/* browse, fade up, horizontal flip, scale, vertical flip, zoom */}

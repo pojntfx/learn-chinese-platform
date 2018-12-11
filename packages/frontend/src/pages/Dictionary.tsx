@@ -10,15 +10,24 @@ import { Link } from "../downstream/Link";
 import { ContextList } from "../downstream/ContextList";
 import { SearchInput } from "../downstream/SearchInput";
 import { common } from "../data/common";
+import { Button, Popup } from "semantic-ui-react";
+import { SearchInputWrapper } from "../downstream/SearchInputWrapper";
+import { SearchCheckbox } from "../downstream/SearchCheckbox";
 
 class Dictionary extends Component {
   state = {
-    pinyin: ""
+    query: "",
+    precise: false
   };
 
   handleInput = (e: any) =>
     this.setState({
-      pinyin: e.target.value
+      query: e.target.value
+    });
+
+  togglePrecise = () =>
+    this.setState({
+      precise: !this.state.precise
     });
 
   render() {
@@ -34,25 +43,43 @@ class Dictionary extends Component {
         {...this.props}
       >
         <>
-          {!this.state.pinyin && (
+          {!this.state.query && (
             <Header
               as="h1"
               content="The Learn Chinese Platform Dictionary"
               subheader="Search for Hanzi, Pinyin or English."
             />
           )}
-          <SearchInput
-            value={this.state.pinyin}
-            onChange={this.handleInput}
-            autoFocus
-            placeholder="Search for Pinyin, Hanzi or English"
-            icon="search"
-            theme={{ pristine: !this.state.pinyin }}
-            fluid
-          />
+          <SearchInputWrapper theme={{ pristine: !this.state.query }}>
+            <SearchInput
+              value={this.state.query}
+              onChange={this.handleInput}
+              autoFocus
+              placeholder="Search for Pinyin, Hanzi or English"
+              fluid
+              icon="search"
+            />
+            <Popup
+              header="Search options"
+              position="top right"
+              on="click"
+              hideOnScroll
+              trigger={<Button icon="options" />}
+              content={
+                <SearchCheckbox
+                  label={"Precise"}
+                  checked={this.state.precise}
+                  onClick={this.togglePrecise}
+                  toggle
+                />
+              }
+            />
+          </SearchInputWrapper>
+
           <ContextList
             endpoint={common.httpGatewayUrl}
-            pinyin={this.state.pinyin}
+            precise={this.state.precise}
+            query={this.state.query}
           />
         </>
       </Shell>
