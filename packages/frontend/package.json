@@ -46,7 +46,7 @@
     "web.prod::start--watch--binary": "nodemon -x 'run-s web.prod::start--binary'",
     "web.dev": "run-s web.dev::build web.dev::start",
     "web.dev::build": "run-s web.prod::build",
-    "web.dev::start": "ts-node -P tsconfig.json src/start.ts",
+    "web.dev::start": "ts-node --files -P tsconfig.json src/start.ts",
     "web.dev::test": "run-s web.prod::test",
     "web.dev--watch": "run-p web.dev::build--watch web.dev::start--watch",
     "web.dev::build--watch": "run-s web.prod::build--watch",

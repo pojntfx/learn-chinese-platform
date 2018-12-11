@@ -1,6 +1,12 @@
-## <small>0.0.1-0-monorepo (2018-12-10)</small>
+## <small>0.0.1-0-monorepo (2018-12-11)</small>
+
+
+
+
+## <small>0.0.1-alpha.14 (2018-12-10)</small>
 
 * feat(frontend, gateway): Fetch data from gateway, implement basic pinyin search, fix Docker containe ([95029ec](https://gitlab.com/pojntfx/learn-chinese-platform/commit/95029ec))
+* v0.0.1-alpha.14 ([341a82c](https://gitlab.com/pojntfx/learn-chinese-platform/commit/341a82c))
 
 
 

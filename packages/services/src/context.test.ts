@@ -40,3 +40,39 @@ it("Should get the context for pinyin", async () => {
     }
   });
 });
+
+it("Should get precise context for hanzi", async () => {
+  const broker = new ServiceBroker({
+    logLevel: "warn"
+  });
+  await broker.createService(Context);
+  await broker.start();
+  const context = await broker.call("v1.context.getContextForHanzi", {
+    hanzi: "吗",
+    precise: true
+  });
+  // 号 is hào, which would be similar to 吗 (hǎo)
+  expect(
+    context.find(
+      (context: IContextForPinyin) => context.hanzi.simplified.text === "号"
+    )
+  ).toBe(false);
+});
+
+it("Should get inprecise context for hanzi", async () => {
+  const broker = new ServiceBroker({
+    logLevel: "warn"
+  });
+  await broker.createService(Context);
+  await broker.start();
+  const context = await broker.call("v1.context.getContextForHanzi", {
+    hanzi: "吗",
+    precise: false
+  });
+  // 号 is hào, which would be similar to 吗 (hǎo)
+  expect(
+    context.find(
+      (context: IContextForPinyin) => context.hanzi.simplified.text === "号"
+    )
+  ).toBe(true);
+});
