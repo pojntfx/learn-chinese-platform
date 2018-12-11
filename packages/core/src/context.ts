@@ -130,9 +130,29 @@ const getContextForEnglish = async (
       );
 };
 
+const getContext = async (
+  hanziPinyinOrEnglish: string,
+  precise?: boolean
+): Promise<IContextForPinyin[]> => {
+  const hanziContext = await getContextForHanzi(
+    hanziPinyinOrEnglish,
+    precise
+  ).catch(() => []);
+  const pinyinContext = await getContextForPinyin(
+    hanziPinyinOrEnglish,
+    precise
+  ).catch(() => []);
+  const englishContext = await getContextForEnglish(
+    hanziPinyinOrEnglish,
+    precise
+  ).catch(() => []);
+  return flatten([hanziContext, pinyinContext, englishContext]);
+};
+
 export {
   getContextForPinyin,
   getContextForHanzi,
   getContextForEnglish,
+  getContext,
   IContextForPinyin
 };

@@ -1,8 +1,9 @@
-import { ServiceSchema } from "moleculer";
+import { ServiceSchema, Errors } from "moleculer";
 import { getContextForPinyin } from "@learn-chinese-platform/core";
 import {
   getContextForHanzi,
-  getContextForEnglish
+  getContextForEnglish,
+  getContext
 } from "@learn-chinese-platform/core/dist/context";
 
 const Context: ServiceSchema = {
@@ -18,7 +19,8 @@ const Context: ServiceSchema = {
           optional: true
         }
       },
-      handler: ctx => getContextForPinyin(ctx.params.pinyin, ctx.params.precise)
+      handler: async ctx =>
+        getContextForPinyin(ctx.params.pinyin, ctx.params.precise)
     },
     getContextForHanzi: {
       params: {
@@ -29,10 +31,8 @@ const Context: ServiceSchema = {
           optional: true
         }
       },
-      handler: async ctx => {
-        await console.log(ctx.params);
-        return await getContextForHanzi(ctx.params.hanzi, ctx.params.precise);
-      }
+      handler: async ctx =>
+        getContextForHanzi(ctx.params.hanzi, ctx.params.precise)
     },
     getContextForEnglish: {
       params: {
@@ -43,13 +43,30 @@ const Context: ServiceSchema = {
           optional: true
         }
       },
-      handler: async ctx => {
-        await console.log(ctx.params);
-        return await getContextForEnglish(
-          ctx.params.english,
-          ctx.params.precise
-        );
-      }
+      handler: async ctx =>
+        await getContextForEnglish(ctx.params.english, ctx.params.precise)
+    },
+    getContext: {
+      params: {
+        query: "string",
+        precise: {
+          type: "boolean",
+          convert: true,
+          optional: true
+        }
+      },
+      handler: async ctx =>
+        getContext(ctx.params.query, ctx.params.precise).then(async res => {
+          if (res.length === 0) {
+            throw new Errors.MoleculerError(
+              "No Context Found",
+              404,
+              "NO_CONTEXT_FOUND"
+            );
+          } else {
+            return res;
+          }
+        })
     }
   }
 };

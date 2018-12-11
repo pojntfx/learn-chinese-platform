@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-11)</small>
 
+* feat(core, services, gateway): Add context action to english service ([f4e275b](https://gitlab.com/pojntfx/learn-chinese-platform/commit/f4e275b))
 * feat(core, services): Add getContextForHanzi action to context service ([463e83a](https://gitlab.com/pojntfx/learn-chinese-platform/commit/463e83a))
 
 
