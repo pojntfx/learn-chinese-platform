@@ -1,6 +1,11 @@
 import * as React from "react";
 import { Component } from "react";
-import { Shell, IShellProps, Header } from "@libresat/frontend-components";
+import {
+  Shell,
+  IShellProps,
+  Header,
+  Help
+} from "@libresat/frontend-components";
 import { dictionary } from "../data/dictionary";
 import { navbar } from "../data/navbar";
 import { footer } from "../data/footer";
@@ -13,21 +18,17 @@ import { common } from "../data/common";
 import { Button, Popup } from "semantic-ui-react";
 import { SearchInputWrapper } from "../downstream/SearchInputWrapper";
 import { SearchCheckbox } from "../downstream/SearchCheckbox";
+import { Subscribe } from "unstated";
+import { SettingsContainer } from "../containers/Settings";
 
 class Dictionary extends Component {
   state = {
-    query: "",
-    precise: false
+    query: ""
   };
 
   handleInput = (e: any) =>
     this.setState({
       query: e.target.value
-    });
-
-  togglePrecise = () =>
-    this.setState({
-      precise: !this.state.precise
     });
 
   render() {
@@ -50,37 +51,48 @@ class Dictionary extends Component {
               subheader="Search for Hanzi, Pinyin or English."
             />
           )}
-          <SearchInputWrapper theme={{ pristine: !this.state.query }}>
-            <SearchInput
-              value={this.state.query}
-              onChange={this.handleInput}
-              autoFocus
-              placeholder="Search for Pinyin, Hanzi or English"
-              fluid
-              icon="search"
-            />
-            <Popup
-              header="Search options"
-              position="top right"
-              on="click"
-              hideOnScroll
-              trigger={<Button icon="options" />}
-              content={
-                <SearchCheckbox
-                  label={"Precise"}
-                  checked={this.state.precise}
-                  onClick={this.togglePrecise}
-                  toggle
+          <Subscribe to={[SettingsContainer]}>
+            {(settings: SettingsContainer) => (
+              <>
+                <SearchInputWrapper theme={{ pristine: !this.state.query }}>
+                  <SearchInput
+                    value={this.state.query}
+                    onChange={this.handleInput}
+                    autoFocus
+                    placeholder="Search for Pinyin, Hanzi or English"
+                    fluid
+                    icon="search"
+                  />
+                  <Popup
+                    header="Search options"
+                    position="top right"
+                    on="click"
+                    hideOnScroll
+                    trigger={<Button icon="options" />}
+                    content={
+                      <Help
+                        title="Precise search"
+                        text={`Show only closely related context (no reverse lookup, i.e. it won't show "hào" if you type "hǎo").`}
+                        docsLink={`${common.site}/docs/app/settings`}
+                      >
+                        <SearchCheckbox
+                          label={"Precise"}
+                          checked={settings.state.searchIsPrecise}
+                          onClick={settings.togglePreciseSearch}
+                          toggle
+                        />
+                      </Help>
+                    }
+                  />
+                </SearchInputWrapper>
+                <ContextList
+                  endpoint={settings.state.gatewayUrl}
+                  precise={settings.state.searchIsPrecise}
+                  query={this.state.query}
                 />
-              }
-            />
-          </SearchInputWrapper>
-
-          <ContextList
-            endpoint={common.httpGatewayUrl}
-            precise={this.state.precise}
-            query={this.state.query}
-          />
+              </>
+            )}
+          </Subscribe>
         </>
       </Shell>
     );

@@ -50,7 +50,7 @@ const ContextList = (props: IContextListProps) =>
         <>
           {/* browse, fade up, horizontal flip, scale, vertical flip, zoom */}
           <Transition.Group animation="horizontal flip">
-            {data &&
+            {Array.isArray(data) &&
               data.map((context: IContextProps, index: number) => (
                 <div key={index}>
                   <Paper>
