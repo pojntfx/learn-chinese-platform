@@ -5,6 +5,7 @@
     "module": "commonjs",
     "outDir": "dist/",
     "jsx": "react",
+    "lib": ["esnext", "dom"],
     "resolveJsonModule": true
   }
 }

@@ -5,3 +5,5 @@ public/
 # MDBG data
 cedict_db
 lerna-debug.log
+# Node Version Manager
+nvm

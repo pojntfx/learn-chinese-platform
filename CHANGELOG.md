@@ -1,5 +1,11 @@
-## <small>0.0.1-0-monorepo (2018-12-12)</small>
+## <small>0.0.1-0-monorepo (2018-12-15)</small>
 
+
+
+
+## <small>0.0.1-alpha.16 (2018-12-12)</small>
+
+* v0.0.1-alpha.16 ([43eac66](https://gitlab.com/pojntfx/learn-chinese-platform/commit/43eac66))
 * feat(frontend): Add Settings page ([4bf29a1](https://gitlab.com/pojntfx/learn-chinese-platform/commit/4bf29a1))
 
 
