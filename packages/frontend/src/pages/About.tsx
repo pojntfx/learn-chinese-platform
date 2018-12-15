@@ -14,6 +14,9 @@ import { shortcuts } from "../data/shortcuts";
 import { footer } from "../data/footer";
 import { apps } from "../data/apps";
 import { Link } from "../downstream/Link";
+import { NoAppFoundMessage } from "../downstream/NoAppFoundMessage";
+import { Subscribe } from "unstated";
+import { AppsContainer } from "../containers/Apps";
 
 const About = (props: any) => (
   <Shell
@@ -31,14 +34,35 @@ const About = (props: any) => (
     </Paper>
     <Paper>
       <h1>More Apps</h1>
-      <AppMenu
-        apps={apps.appMenu.apps as IAppMenuProps["apps"]}
-        search={{
-          onSearch: () => console.log("Searching for app ..."),
-          ...apps.appMenu.search
-        }}
-        linkComponent={(to, children) => <Link to={to}>{children}</Link>}
-      />
+      <Subscribe to={[AppsContainer]}>
+        {(appsContainer: AppsContainer) => (
+          <>
+            <AppMenu
+              apps={
+                (appsContainer.state.searchQuery !== ""
+                  ? appsContainer.state.filteredApps
+                  : appsContainer.state.apps) as IAppMenuProps["apps"]
+              }
+              search={
+                {
+                  ...apps.appMenu.search,
+                  onSearch: (e: any) => appsContainer.handleSearchQuery(e),
+                  value: appsContainer.state.searchQuery
+                } as any
+              }
+              linkComponent={(to, children) => <Link to={to}>{children}</Link>}
+            />
+            {appsContainer.state.filteredApps.length === 0 &&
+              appsContainer.state.searchQuery !== "" && (
+                <NoAppFoundMessage
+                  error
+                  header="Oh no!"
+                  content="No such app has been found!"
+                />
+              )}
+          </>
+        )}
+      </Subscribe>
     </Paper>
   </Shell>
 );

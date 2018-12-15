@@ -30,7 +30,7 @@ const apps = {
       icon: "search",
       text: "Search",
       value: "",
-      disabled: true,
+      disabled: false,
       help: {
         title: "Search for an app",
         text: "Filter all apps by a query.",

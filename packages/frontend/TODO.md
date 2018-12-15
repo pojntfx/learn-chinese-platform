@@ -3,6 +3,6 @@
 - [x] Settings
   - [x] Gateway endpoint selection
   - [x] Precise or inprecise search by default
-- [ ] Make apps searchable
+- [x] Make apps searchable
 - [ ] Fetch blogs posts from [learn-chinese.tk](https://learn-chinese.tk)
 - [ ] Get all text from config files
