@@ -15,7 +15,7 @@ import { Link } from "../downstream/Link";
 import { ContextList } from "../downstream/ContextList";
 import { SearchInput } from "../downstream/SearchInput";
 import { common } from "../data/common";
-import { Button, Popup } from "semantic-ui-react";
+import { Button, Popup, Sticky, Segment } from "semantic-ui-react";
 import { SearchInputWrapper } from "../downstream/SearchInputWrapper";
 import { SearchCheckbox } from "../downstream/SearchCheckbox";
 import { Subscribe } from "unstated";
@@ -23,7 +23,8 @@ import { SettingsContainer } from "../containers/Settings";
 
 class Dictionary extends Component {
   state = {
-    query: ""
+    query: "",
+    contextRef: {}
   };
 
   handleInput = (e: any) =>
@@ -31,7 +32,11 @@ class Dictionary extends Component {
       query: e.target.value
     });
 
+  handleContextRef = (contextRef: any) => this.setState({ contextRef });
+
   render() {
+    const { contextRef } = this.state;
+
     return (
       <Shell
         head={dictionary.head}
@@ -53,38 +58,43 @@ class Dictionary extends Component {
           )}
           <Subscribe to={[SettingsContainer]}>
             {(settings: SettingsContainer) => (
-              <>
-                <SearchInputWrapper theme={{ pristine: !this.state.query }}>
-                  <SearchInput
-                    value={this.state.query}
-                    onChange={this.handleInput}
-                    autoFocus
-                    placeholder="Search for Pinyin, Hanzi or English"
-                    fluid
-                    icon="search"
-                  />
-                  <Popup
-                    header="Search options"
-                    position="top right"
-                    on="click"
-                    hideOnScroll
-                    trigger={<Button icon="options" />}
-                    content={
-                      <Help
-                        title="Precise search"
-                        text={`Show only closely related context (no reverse lookup, i.e. it won't show "hào" if you type "hǎo").`}
-                        docsLink={`${common.site}/docs/app/settings`}
-                      >
-                        <SearchCheckbox
-                          label={"Precise"}
-                          checked={settings.state.searchIsPrecise}
-                          onClick={settings.togglePreciseSearch}
-                          toggle
-                        />
-                      </Help>
-                    }
-                  />
-                </SearchInputWrapper>
+              <div ref={this.handleContextRef}>
+                <Sticky context={contextRef} offset={50}>
+                  <SearchInputWrapper
+                    theme={{ pristine: !this.state.query }}
+                    raised
+                  >
+                    <SearchInput
+                      value={this.state.query}
+                      onChange={this.handleInput}
+                      autoFocus
+                      placeholder="Search for Pinyin, Hanzi or English"
+                      fluid
+                      icon="search"
+                    />
+                    <Popup
+                      header="Search options"
+                      position="top right"
+                      on="click"
+                      hideOnScroll
+                      trigger={<Button icon="options" />}
+                      content={
+                        <Help
+                          title="Precise search"
+                          text={`Show only closely related context (no reverse lookup, i.e. it won't show "hào" if you type "hǎo").`}
+                          docsLink={`${common.site}/docs/app/settings`}
+                        >
+                          <SearchCheckbox
+                            label={"Precise"}
+                            checked={settings.state.searchIsPrecise}
+                            onClick={settings.togglePreciseSearch}
+                            toggle
+                          />
+                        </Help>
+                      }
+                    />
+                  </SearchInputWrapper>
+                </Sticky>
                 <ContextList
                   endpoint={settings.state.gatewayUrl}
                   precise={settings.state.searchIsPrecise}
@@ -92,7 +102,7 @@ class Dictionary extends Component {
                   maxMediaPerDefinition={settings.state.maxMediaPerDefinition}
                   defaultStrokeSpeed={settings.state.defaultStrokeSpeed}
                 />
-              </>
+              </div>
             )}
           </Subscribe>
         </>

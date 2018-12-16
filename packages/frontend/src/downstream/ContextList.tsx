@@ -8,6 +8,7 @@ import { Context, IContextProps } from "./Context";
 import { ContextPlaceholder } from "./ContextPlaceholder";
 import Fetch from "react-fetch-component";
 import { Message, Transition } from "semantic-ui-react";
+import { ContextListErrorMessage } from "./ContextListErrorMessage";
 
 const ContextWrapper = styled(HorizontalScrollWrapper)`
   & .ui.grid {
@@ -79,7 +80,7 @@ const ContextList = (props: IContextListProps) =>
           <Transition.Group>
             {error && (
               <div>
-                <Message
+                <ContextListErrorMessage
                   error
                   header="Oh no!"
                   content="No Pinyin, Hanzi or English found!"
