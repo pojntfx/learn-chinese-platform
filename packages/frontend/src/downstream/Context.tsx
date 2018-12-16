@@ -80,6 +80,7 @@ class ContextTemplate extends Component<IContextProps> {
                     <TabWithStroke
                       hanzi={this.props.hanzi.traditional.text}
                       stroke={this.props.hanzi.stroke}
+                      traditional
                     />
                   )
                 }

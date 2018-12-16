@@ -4,5 +4,8 @@
   - [x] Gateway endpoint selection
   - [x] Precise or inprecise search by default
 - [x] Make apps searchable
-- [ ] Fetch blogs posts from [learn-chinese.tk](https://learn-chinese.tk)
+- [x] Show stroke
+- [ ] Show media
+- [ ] Add stroke quiz
+  - [ ] Show errors
 - [ ] Get all text from config files
