@@ -4,6 +4,8 @@ import { common } from "../data/common";
 interface ISettingsContainerProps {
   gatewayUrl: string;
   searchIsPrecise: boolean;
+  maxMediaPerDefinition: number;
+  defaultStrokeSpeed: number;
 }
 
 class SettingsContainer extends Container<ISettingsContainerProps> {
@@ -13,7 +15,11 @@ class SettingsContainer extends Container<ISettingsContainerProps> {
     searchIsPrecise:
       (window.localStorage.getItem("searchIsPrecise") === "true"
         ? true
-        : false) || false
+        : false) || false,
+    maxMediaPerDefinition:
+      Number(window.localStorage.getItem("maxMediaPerDefinition")) || 5,
+    defaultStrokeSpeed:
+      Number(window.localStorage.getItem("defaultStrokeSpeed")) || 1
   };
 
   setGatewayEndpoint = (endpoint: string) =>
@@ -29,6 +35,20 @@ class SettingsContainer extends Container<ISettingsContainerProps> {
         "searchIsPrecise",
         String(this.state.searchIsPrecise)
       )
+    );
+
+  setMaxMediaPerDefinition = (maxMedia: number) =>
+    this.setState({
+      maxMediaPerDefinition: maxMedia
+    }).then(() =>
+      window.localStorage.setItem("maxMediaPerDefinition", String(maxMedia))
+    );
+
+  setDefaultStrokeSpeed = (strokeSpeed: number) =>
+    this.setState({
+      defaultStrokeSpeed: strokeSpeed
+    }).then(() =>
+      window.localStorage.setItem("defaultStrokeSpeed", String(strokeSpeed))
     );
 }
 

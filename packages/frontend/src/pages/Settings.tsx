@@ -46,10 +46,40 @@ const Settings = (props: any) => (
                 docsLink={`${common.site}/docs/app/settings`}
               >
                 <Form.Checkbox
-                  label="Precise"
+                  label="Precise Search"
                   checked={settings.state.searchIsPrecise}
                   onChange={settings.togglePreciseSearch}
                   toggle
+                />
+              </Help>
+              <Help
+                title="Max Media per Definition"
+                text={`The maximum amount of media that should be shown per definition.`}
+                docsLink={`${common.site}/docs/app/settings`}
+              >
+                <Form.Input
+                  label="Max media per definition"
+                  type="number"
+                  placeholder="5"
+                  value={settings.state.maxMediaPerDefinition}
+                  onChange={(e: any) =>
+                    settings.setMaxMediaPerDefinition(e.target.value)
+                  }
+                />
+              </Help>
+              <Help
+                title="Default Hanzi Stroke Speed"
+                text={`How fast the hanzi should be animated by default.`}
+                docsLink={`${common.site}/docs/app/settings`}
+              >
+                <Form.Input
+                  label="Default Hanzi stroke speed"
+                  type="number"
+                  placeholder="1"
+                  value={settings.state.defaultStrokeSpeed}
+                  onChange={(e: any) =>
+                    settings.setDefaultStrokeSpeed(e.target.value)
+                  }
                 />
               </Help>
               <Divider

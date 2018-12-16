@@ -3,7 +3,8 @@ import {
   Grid,
   Tab as TabTemplate,
   Placeholder,
-  Button
+  Button,
+  Segment
 } from "semantic-ui-react";
 import { ContextTab, EmphasisTab } from "./Context";
 import styled from "styled-components";
@@ -80,32 +81,16 @@ const ContextPlaceholderTemplate = (props: any) => (
         />
       </Grid.Column>
       <Grid.Column>
-        <EmphasisTab
-          panes={[
-            {
-              menuItem: "Definitions",
-              key: "definitions",
-              render: () => (
-                <TabTemplate.Pane>
-                  <Placeholder>
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                    <Placeholder.Line />
-                  </Placeholder>
-                </TabTemplate.Pane>
-              )
-            },
-            {
-              menuItem: "Media",
-              key: "media",
-              render: () => (
-                <TabTemplate.Pane>Not yet implemented.</TabTemplate.Pane>
-              )
-            }
-          ]}
-        />
+        <Segment>
+          <Placeholder>
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Line />
+            <Placeholder.Image />
+            <Placeholder.Line />
+          </Placeholder>
+        </Segment>
       </Grid.Column>
     </Grid.Row>
   </Grid>
@@ -118,6 +103,9 @@ const ContextPlaceholder = styled(ContextPlaceholderTemplate)`
   }
   @media (max-width: 769px) {
     min-width: 262px !important;
+  }
+  & .placeholder {
+    max-width: 100% !important;
   }
 `;
 

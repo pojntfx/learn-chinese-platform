@@ -31,9 +31,12 @@ interface IContextListProps {
   endpoint: string;
   query: string;
   precise?: boolean;
+  maxMediaPerDefinition: number;
+  defaultStrokeSpeed: number;
 }
 
 const PRECISE = "&precise=true";
+const CONTEXT = "/v1/context/getContext?query=";
 
 const ContextList = (props: IContextListProps) =>
   props.query ? (
@@ -41,20 +44,25 @@ const ContextList = (props: IContextListProps) =>
       url={
         props.query !== ""
           ? props.precise
-            ? `${props.endpoint}${props.query}${PRECISE}`
-            : `${props.endpoint}${props.query}`
-          : `${props.endpoint}${props.query}`
+            ? `${props.endpoint}${CONTEXT}${props.query}${PRECISE}`
+            : `${props.endpoint}${CONTEXT}${props.query}`
+          : `${props.endpoint}${CONTEXT}${props.query}`
       }
     >
       {({ loading, error, data }) => (
         <>
           {/* browse, fade up, horizontal flip, scale, vertical flip, zoom */}
-          <Transition.Group animation="horizontal flip">
+          <Transition.Group animation="fade up">
             {Array.isArray(data) &&
               data.map((context: IContextProps, index: number) => (
                 <div key={index}>
                   <Paper>
-                    <Context {...context} />
+                    <Context
+                      {...context}
+                      maxMediaPerDefinition={props.maxMediaPerDefinition}
+                      endpoint={props.endpoint}
+                      defaultStrokeSpeed={props.defaultStrokeSpeed}
+                    />
                   </Paper>
                 </div>
               ))}

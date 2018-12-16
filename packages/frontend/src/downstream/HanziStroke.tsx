@@ -10,6 +10,7 @@ import { HanziWrapper } from "./HanziWrapper";
 interface IHanziStrokeProps {
   hanzi: string;
   stroke: IVector;
+  defaultStrokeSpeed: number;
 }
 
 class HanziStroke extends Component<IHanziStrokeProps> {
@@ -30,8 +31,17 @@ class HanziStroke extends Component<IHanziStrokeProps> {
   animate = () => this.writer.loopCharacterAnimation();
 
   componentDidMount() {
-    this.createHanzi(this.state.width, this.state.width, this.state.speed);
-    this.animate();
+    if (!(this.props.hanzi.length > 1)) {
+      this.createHanzi(
+        this.state.width,
+        this.state.width,
+        this.props.defaultStrokeSpeed
+      );
+      this.animate();
+      this.setState({
+        speed: this.props.defaultStrokeSpeed
+      });
+    }
   }
 
   zoomIn = () => {
