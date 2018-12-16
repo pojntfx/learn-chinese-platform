@@ -11,6 +11,7 @@ interface ITabWithStrokeProps {
   hanzi: string;
   stroke: IVector;
   traditional?: boolean;
+  defaultStrokeSpeed: number;
 }
 
 class TabWithStroke extends Component<ITabWithStrokeProps> {
@@ -42,7 +43,7 @@ class TabWithStroke extends Component<ITabWithStrokeProps> {
           <Message
             error
             header="Oh no!"
-            content="Strokes for traditional hanzi are not yet."
+            content="Strokes for traditional hanzi are not yet available."
             icon="warning"
           />
         )}

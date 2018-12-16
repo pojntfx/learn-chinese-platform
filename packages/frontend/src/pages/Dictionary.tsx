@@ -89,6 +89,8 @@ class Dictionary extends Component {
                   endpoint={settings.state.gatewayUrl}
                   precise={settings.state.searchIsPrecise}
                   query={this.state.query}
+                  maxMediaPerDefinition={settings.state.maxMediaPerDefinition}
+                  defaultStrokeSpeed={settings.state.defaultStrokeSpeed}
                 />
               </>
             )}

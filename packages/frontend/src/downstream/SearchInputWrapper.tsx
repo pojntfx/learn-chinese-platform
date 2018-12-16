@@ -9,8 +9,8 @@ const SearchInputWrapper = styled("div")`
       ? `
     margin-bottom: 1em;`
       : `
-  margin-top: 3em;
-  margin-bottom: 3em;
+    margin-top: 3em;
+    margin-bottom: 3em;
   `}
 `;
 

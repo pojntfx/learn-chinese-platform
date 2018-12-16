@@ -65,6 +65,7 @@
     "react-dom": "^16.5.2",
     "react-fetch-component": "^7.0.1",
     "react-html-id": "^0.1.5",
+    "react-lazyload": "^2.3.0",
     "react-router-dom": "^4.3.1",
     "semantic-ui-react": "^0.83.0",
     "styled-components": "^4.0.2",

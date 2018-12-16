@@ -1,6 +1,12 @@
 import * as React from "react";
 import { Component } from "react";
-import { Grid, Tab as TabTemplate, Button } from "semantic-ui-react";
+import {
+  Grid,
+  Tab as TabTemplate,
+  Button,
+  Image,
+  Segment
+} from "semantic-ui-react";
 import styled from "styled-components";
 import { TabWithStroke } from "./TabWithStroke";
 import { TabWithAudio } from "./TabWithAudio";
@@ -29,6 +35,9 @@ interface IContextProps {
     img: string[];
   }[];
   className?: string;
+  maxMediaPerDefinition: number;
+  endpoint: string;
+  defaultStrokeSpeed: number;
 }
 
 const ContextTab = styled(TabTemplate)`
@@ -73,6 +82,7 @@ class ContextTemplate extends Component<IContextProps> {
                     <TabWithStroke
                       hanzi={this.props.hanzi.simplified.text}
                       stroke={this.props.hanzi.stroke}
+                      defaultStrokeSpeed={this.props.defaultStrokeSpeed}
                     />
                   )
                 },
@@ -84,6 +94,7 @@ class ContextTemplate extends Component<IContextProps> {
                       hanzi={this.props.hanzi.traditional.text}
                       stroke={this.props.hanzi.stroke}
                       traditional
+                      defaultStrokeSpeed={this.props.defaultStrokeSpeed}
                     />
                   )
                 }
@@ -116,30 +127,14 @@ class ContextTemplate extends Component<IContextProps> {
             />
           </Grid.Column>
           <Grid.Column>
-            <EmphasisTab
-              panes={[
-                {
-                  menuItem: "Definitions",
-                  key: "definitions",
-                  render: () => (
-                    <TabWithDefinitions definitions={this.props.definitions} />
-                  )
-                },
-                {
-                  menuItem: "Media",
-                  key: "media",
-                  render: () => (
-                    <TabTemplate.Pane>
-                      {this.props.media ? (
-                        JSON.stringify(this.props.media)
-                      ) : (
-                        <i>Coming soon</i>
-                      )}
-                    </TabTemplate.Pane>
-                  )
-                }
-              ]}
-            />
+            <Segment>
+              <b>Definition{this.props.definitions.length > 1 && "s"}</b>
+              <TabWithDefinitions
+                definitions={this.props.definitions}
+                maxMediaPerDefinition={this.props.maxMediaPerDefinition}
+                endpoint={this.props.endpoint}
+              />
+            </Segment>
           </Grid.Column>
         </Grid.Row>
       </Grid>

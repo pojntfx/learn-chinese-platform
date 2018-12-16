@@ -18,8 +18,7 @@ const common = {
   color,
   favicon,
   background,
-  httpGatewayUrl:
-    "https://gateway.exoframe.services.learn-chinese.tk/v1/context/getContext?query="
+  httpGatewayUrl: "https://gateway.exoframe.services.learn-chinese.tk"
 };
 
 export { common };

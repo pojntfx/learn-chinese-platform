@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-16)</small>
 
+* feat(frontend, gateway, services, core): Add media service and add withMedia parameter to context se ([5fddbe5](https://gitlab.com/pojntfx/learn-chinese-platform/commit/5fddbe5))
 * feat(frontend): Show stroke animation ([9b1c71b](https://gitlab.com/pojntfx/learn-chinese-platform/commit/9b1c71b))
 
 
