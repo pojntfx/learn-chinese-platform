@@ -19,4 +19,11 @@ export {
 } from "./voice";
 export { getVectorForHanzi } from "./character";
 export { createDeck, createCard, assignCardToDeck } from "./entity";
-export { getContextForPinyin, IContextForPinyin } from "./context";
+export {
+  getContextForPinyin,
+  getContextForHanzi,
+  getContextForEnglish,
+  getContext,
+  IContextForPinyin
+} from "./context";
+export { getMediaForEnglish } from "./media";
