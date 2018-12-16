@@ -2,11 +2,11 @@ import * as React from "react";
 import { IContextProps } from "./Context";
 import { Tab } from "semantic-ui-react";
 
-interface ITabWithDefinitionsAndMedia {
+interface ITabWithDefinitionsProps {
   definitions: IContextProps["definitions"];
 }
 
-const TabWithDefinitionsAndMedia = (props: ITabWithDefinitionsAndMedia) => (
+const TabWithDefinitions = (props: ITabWithDefinitionsProps) => (
   <Tab.Pane attached="bottom">
     <ul>
       {props.definitions.map((definition, index) => (
@@ -16,4 +16,4 @@ const TabWithDefinitionsAndMedia = (props: ITabWithDefinitionsAndMedia) => (
   </Tab.Pane>
 );
 
-export { TabWithDefinitionsAndMedia };
+export { TabWithDefinitions };

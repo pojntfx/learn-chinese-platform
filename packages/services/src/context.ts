@@ -17,10 +17,19 @@ const Context: ServiceSchema = {
           type: "boolean",
           convert: true,
           optional: true
+        },
+        withMedia: {
+          type: "boolean",
+          convert: true,
+          optional: true
         }
       },
       handler: async ctx =>
-        getContextForPinyin(ctx.params.pinyin, ctx.params.precise)
+        getContextForPinyin(
+          ctx.params.pinyin,
+          ctx.params.precise,
+          ctx.params.withMedia
+        )
     },
     getContextForHanzi: {
       params: {
@@ -29,10 +38,19 @@ const Context: ServiceSchema = {
           type: "boolean",
           convert: true,
           optional: true
+        },
+        withMedia: {
+          type: "boolean",
+          convert: true,
+          optional: true
         }
       },
       handler: async ctx =>
-        getContextForHanzi(ctx.params.hanzi, ctx.params.precise)
+        getContextForHanzi(
+          ctx.params.hanzi,
+          ctx.params.precise,
+          ctx.params.withMedia
+        )
     },
     getContextForEnglish: {
       params: {
@@ -41,10 +59,19 @@ const Context: ServiceSchema = {
           type: "boolean",
           convert: true,
           optional: true
+        },
+        withMedia: {
+          type: "boolean",
+          convert: true,
+          optional: true
         }
       },
       handler: async ctx =>
-        await getContextForEnglish(ctx.params.english, ctx.params.precise)
+        await getContextForEnglish(
+          ctx.params.english,
+          ctx.params.precise,
+          ctx.params.withMedia
+        )
     },
     getContext: {
       params: {
@@ -53,10 +80,19 @@ const Context: ServiceSchema = {
           type: "boolean",
           convert: true,
           optional: true
+        },
+        withMedia: {
+          type: "boolean",
+          convert: true,
+          optional: true
         }
       },
       handler: async ctx =>
-        getContext(ctx.params.query, ctx.params.precise).then(async res => {
+        getContext(
+          ctx.params.query,
+          ctx.params.precise,
+          ctx.params.withMedia
+        ).then(async res => {
           if (res.length === 0) {
             throw new Errors.MoleculerError(
               "No Context Found",

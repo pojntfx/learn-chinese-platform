@@ -3,7 +3,8 @@ import {
   Translator,
   Voice,
   Character,
-  Context
+  Context,
+  Media
 } from "@learn-chinese-platform/services";
 import * as WSGateway from "moleculer-io";
 import * as HTTPGateway from "moleculer-web";
@@ -26,6 +27,7 @@ const start = async (
   broker.createService(Voice);
   broker.createService(Character);
   broker.createService(Context);
+  broker.createService(Media);
 
   broker.createService({
     name: "httpgateway",

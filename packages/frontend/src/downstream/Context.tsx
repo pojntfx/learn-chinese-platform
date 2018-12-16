@@ -4,7 +4,7 @@ import { Grid, Tab as TabTemplate, Button } from "semantic-ui-react";
 import styled from "styled-components";
 import { TabWithStroke } from "./TabWithStroke";
 import { TabWithAudio } from "./TabWithAudio";
-import { TabWithDefinitionsAndMedia } from "./TabWithDefinitonsAndMedia";
+import { TabWithDefinitions } from "./TabWithDefinitonsAndMedia";
 
 interface IVector {
   strokes: string[];
@@ -24,6 +24,9 @@ interface IContextProps {
   };
   definitions: {
     text: string[];
+  }[];
+  media: {
+    img: string[];
   }[];
   className?: string;
 }
@@ -119,16 +122,20 @@ class ContextTemplate extends Component<IContextProps> {
                   menuItem: "Definitions",
                   key: "definitions",
                   render: () => (
-                    <TabWithDefinitionsAndMedia
-                      definitions={this.props.definitions}
-                    />
+                    <TabWithDefinitions definitions={this.props.definitions} />
                   )
                 },
                 {
                   menuItem: "Media",
                   key: "media",
                   render: () => (
-                    <TabTemplate.Pane>Not yet implemented.</TabTemplate.Pane>
+                    <TabTemplate.Pane>
+                      {this.props.media ? (
+                        JSON.stringify(this.props.media)
+                      ) : (
+                        <i>Coming soon</i>
+                      )}
+                    </TabTemplate.Pane>
                   )
                 }
               ]}
