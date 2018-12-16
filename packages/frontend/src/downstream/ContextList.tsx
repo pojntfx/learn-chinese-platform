@@ -48,6 +48,7 @@ const ContextList = (props: IContextListProps) =>
             : `${props.endpoint}${CONTEXT}${props.query}`
           : `${props.endpoint}${CONTEXT}${props.query}`
       }
+      cache={true}
     >
       {({ loading, error, data }) => (
         <>

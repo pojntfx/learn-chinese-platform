@@ -1,12 +1,13 @@
-import { img } from "google-parser";
+import { Bing } from "images-scraper";
 
 /**
  * Get media for english
  * @param english English to get media for
  */
 const getMediaForEnglish = async (english: string) =>
-  img(english)
-    .then(data => data.map(result => result.img))
-    .then(imgs => imgs.filter(img => img.includes("https://")));
+  new Bing()
+    .list({ keyword: english, num: 10, detail: false })
+    .then((data: any) => data.map((result: any) => result.url))
+    .then((imgs: any) => imgs.filter((img: any) => img.includes("https://")));
 
 export { getMediaForEnglish };

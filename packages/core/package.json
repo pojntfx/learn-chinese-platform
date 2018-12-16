@@ -28,9 +28,9 @@
   },
   "dependencies": {
     "baidu-translate-api": "^0.3.1",
-    "google-parser": "^2.0.4",
     "google-tts-api": "0.0.4",
     "hanzi-writer-data": "^2.0.1",
+    "images-scraper": "^2.0.11",
     "md-to-pdf": "^2.4.2",
     "mdbg": "^1.36.0",
     "mkanki": "^1.1.0",
