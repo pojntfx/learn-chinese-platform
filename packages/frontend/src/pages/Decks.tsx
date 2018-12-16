@@ -21,6 +21,7 @@ const Decks = (props: any) => (
   >
     <Paper>
       <h1>Decks</h1>
+      <i>Coming soon!</i>
     </Paper>
   </Shell>
 );

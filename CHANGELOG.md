@@ -1,5 +1,11 @@
-## <small>0.0.1-0-monorepo (2018-12-15)</small>
+## <small>0.0.1-0-monorepo (2018-12-16)</small>
 
+
+
+
+## <small>0.0.1-alpha.17 (2018-12-15)</small>
+
+* v0.0.1-alpha.17 ([ce2e908](https://gitlab.com/pojntfx/learn-chinese-platform/commit/ce2e908))
 * feat(frontend): Add notifications list to notifications page ([a2fd7f5](https://gitlab.com/pojntfx/learn-chinese-platform/commit/a2fd7f5))
 * feat(frontend): Make apps menu searchable ([b8a560a](https://gitlab.com/pojntfx/learn-chinese-platform/commit/b8a560a))
 

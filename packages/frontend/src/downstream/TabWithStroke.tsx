@@ -1,17 +1,19 @@
 import * as React from "react";
 import { Component } from "react";
 import styled from "styled-components";
-import { Tab } from "semantic-ui-react";
+import { Tab, Message } from "semantic-ui-react";
 import { Button } from "@libresat/frontend-components";
 import { TabWrapper } from "./TabWrapper";
 import { IVector } from "./Context";
+import { HanziStroke } from "./HanziStroke";
 
-interface ITabWithStroke {
+interface ITabWithStrokeProps {
   hanzi: string;
   stroke: IVector;
+  traditional?: boolean;
 }
 
-class TabWithStroke extends Component<ITabWithStroke> {
+class TabWithStroke extends Component<ITabWithStrokeProps> {
   state = {
     strokeIsOpen: false
   };
@@ -26,13 +28,27 @@ class TabWithStroke extends Component<ITabWithStroke> {
       <Tab.Pane attached="bottom">
         <TabWrapper>
           <DisplayText>{this.props.hanzi}</DisplayText>
-          <Button
-            icon="paint brush"
-            active={this.state.strokeIsOpen}
-            onClick={this.toggleStroke}
-          />
+          {!this.props.traditional ? (
+            <Button
+              icon="paint brush"
+              active={this.state.strokeIsOpen}
+              onClick={this.toggleStroke}
+            />
+          ) : (
+            <Button icon="paint brush" disabled />
+          )}
         </TabWrapper>
-        {this.state.strokeIsOpen && "Not yet implemented."}
+        {this.props.traditional && (
+          <Message
+            error
+            header="Oh no!"
+            content="Strokes for traditional hanzi are not yet."
+            icon="warning"
+          />
+        )}
+        {!this.props.traditional && this.state.strokeIsOpen && (
+          <HanziStroke {...this.props} />
+        )}
       </Tab.Pane>
     );
   }

@@ -23,7 +23,9 @@ class TabWithAudio extends Component<ITabWithAudio> {
     return (
       <Tab.Pane attached="top">
         <TabWrapper>
-          <SmallerDisplayText>{this.props.text}</SmallerDisplayText>
+          <SmallerDisplayText>
+            <b>{this.props.text}</b>
+          </SmallerDisplayText>
           <Button
             icon="sound"
             active={this.state.audioIsOpen}
