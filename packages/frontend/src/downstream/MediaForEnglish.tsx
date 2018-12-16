@@ -42,7 +42,7 @@ const MediaForEnglish = ({
               .map((img: string, index: number) => (
                 <Grid.Column key={index}>
                   <Link to={img}>
-                    <LazyLoad height={500} once>
+                    <LazyLoad height={200} once>
                       <Image fluid src={img} />
                     </LazyLoad>
                   </Link>
