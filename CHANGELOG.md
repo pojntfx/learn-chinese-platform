@@ -1,10 +1,16 @@
-## <small>0.0.1-0-monorepo (2018-12-16)</small>
+## <small>0.0.1-0-monorepo (2018-12-17)</small>
 
+
+
+
+## <small>0.0.1-alpha.18 (2018-12-16)</small>
+
+* feat(frontend, gateway, services, core): Add media service and add withMedia parameter to context se ([5fddbe5](https://gitlab.com/pojntfx/learn-chinese-platform/commit/5fddbe5))
+* refactor(core, frontend): Use alternative image search engine ([26d2e97](https://gitlab.com/pojntfx/learn-chinese-platform/commit/26d2e97))
+* v0.0.1-alpha.18 ([861b486](https://gitlab.com/pojntfx/learn-chinese-platform/commit/861b486))
 * feat(frontend): Make search bar sticky ([0cf523c](https://gitlab.com/pojntfx/learn-chinese-platform/commit/0cf523c))
 * feat(frontend): Merge media and definitions ([9dc1952](https://gitlab.com/pojntfx/learn-chinese-platform/commit/9dc1952))
 * feat(frontend): Show stroke animation ([9b1c71b](https://gitlab.com/pojntfx/learn-chinese-platform/commit/9b1c71b))
-* feat(frontend, gateway, services, core): Add media service and add withMedia parameter to context se ([5fddbe5](https://gitlab.com/pojntfx/learn-chinese-platform/commit/5fddbe5))
-* refactor(core, frontend): Use alternative image search engine ([26d2e97](https://gitlab.com/pojntfx/learn-chinese-platform/commit/26d2e97))
 
 
 

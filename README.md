@@ -70,6 +70,27 @@ $ npm run deploy -- --scope @learn-chinese-platform/gateway
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
+## Credits
+
+The following FLOSS libraries, among many others, have played an especially important role in the development of the Learn Chinese Platform:
+
+- `hanzi-writer`: [Website](https://chanind.github.io/hanzi-writer/)
+- `hanzi-writer-data`: [Website](https://chanind.github.io/hanzi-writer/)
+- `mdbg`: [GitHub](https://github.com/pepebecker/mdbg)
+- `mkanki`: [GitHub](https://github.com/nornagon/mkanki)
+- `oddcast-tts-demo`: [GitHub](https://github.com/RauliL/oddcast-tts-demo)
+- `images-scraper`: [GitHub](https://github.com/pevers/images-scraper)
+- `md-to-pdf`: [GitHub](https://github.com/simonhaenisch/md-to-pdf)
+- `@mdx-js/tag`: [Website](https://mdxjs.com/)
+- `unstated`: [GitHub](https://github.com/jamiebuilds/unstated)
+- `moleculer`: [Website](https://moleculer.services/)
+- `react`: [Website](https://reactjs.org/)
+- `semantic-ui-react`: [Website](https://react.semantic-ui.com/)
+- `parcel-bundler`: [Website](https://parceljs.org/)
+- `gatsby`: [Website](https://www.gatsbyjs.org/)
+
+Thanks to everyone who contributes to these libraries!
+
 ## Licenses
 
 [![Code License AGPL-3.0](https://img.shields.io/badge/Code%20License-AGPL--3.0-brightgreen.svg)](https://www.gnu.org/licenses/agpl-3.0.en.html)
