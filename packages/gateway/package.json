@@ -1,6 +1,6 @@
 {
   "name": "@learn-chinese-platform/gateway",
-  "version": "0.0.1-alpha.18",
+  "version": "0.0.1-alpha.19",
   "description": "A central entry point for all services of the Learn Chinese Platform",
   "author": "Felicitas Pojtinger <felicitas@pojtinger.com>",
   "license": "AGPL-3.0",
@@ -42,7 +42,7 @@
     "prepare": "run-s build"
   },
   "dependencies": {
-    "@learn-chinese-platform/services": "^0.0.1-alpha.18",
+    "@learn-chinese-platform/services": "^0.0.1-alpha.19",
     "moleculer": "^0.13.5",
     "moleculer-io": "^0.13.1",
     "moleculer-web": "^0.8.5",
