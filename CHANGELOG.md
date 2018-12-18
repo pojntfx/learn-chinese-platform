@@ -1,5 +1,6 @@
-## <small>0.0.1-0-monorepo (2018-12-17)</small>
+## <small>0.0.1-0-monorepo (2018-12-18)</small>
 
+* docs: Add credits ([7dc65fb](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7dc65fb))
 
 
 

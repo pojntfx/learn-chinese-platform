@@ -16,13 +16,23 @@ interface ITabWithStrokeProps {
 
 class TabWithStroke extends Component<ITabWithStrokeProps> {
   state = {
-    strokeIsOpen: false
+    strokeIsOpen: false,
+    quizIsOpen: false
   };
 
-  toggleStroke = () =>
+  toggleStroke = () => {
     this.setState({
       strokeIsOpen: !this.state.strokeIsOpen
     });
+    this.state.quizIsOpen && this.toggleQuiz();
+  };
+
+  toggleQuiz = () => {
+    this.setState({
+      quizIsOpen: !this.state.quizIsOpen
+    });
+    this.state.strokeIsOpen && this.toggleStroke();
+  };
 
   render() {
     return (
@@ -30,13 +40,23 @@ class TabWithStroke extends Component<ITabWithStrokeProps> {
         <TabWrapper>
           <DisplayText>{this.props.hanzi}</DisplayText>
           {!this.props.traditional ? (
-            <Button
-              icon="paint brush"
-              active={this.state.strokeIsOpen}
-              onClick={this.toggleStroke}
-            />
+            <div>
+              <Button
+                icon="student"
+                active={this.state.quizIsOpen}
+                onClick={this.toggleQuiz}
+              />
+              <Button
+                icon="paint brush"
+                active={this.state.strokeIsOpen}
+                onClick={this.toggleStroke}
+              />
+            </div>
           ) : (
-            <Button icon="paint brush" disabled />
+            <div>
+              <Button icon="student" disabled />
+              <Button icon="paint brush" disabled />
+            </div>
           )}
         </TabWrapper>
         {this.props.traditional && (
@@ -49,6 +69,9 @@ class TabWithStroke extends Component<ITabWithStrokeProps> {
         )}
         {!this.props.traditional && this.state.strokeIsOpen && (
           <HanziStroke {...this.props} />
+        )}
+        {!this.props.traditional && this.state.quizIsOpen && (
+          <HanziStroke quiz {...this.props} />
         )}
       </Tab.Pane>
     );
