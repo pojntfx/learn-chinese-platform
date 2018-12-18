@@ -5,7 +5,9 @@
   - [x] Precise or inprecise search by default
 - [x] Make apps searchable
 - [x] Show stroke
-- [-] Show media
-- [ ] Add stroke quiz
-  - [ ] Show errors
+- [x] Show media
+- [x] Add stroke quiz
+  - [x] Show errors
+- [ ] Refactor and standardize
 - [ ] Get all text from config files
+- [ ] Make smaller, reusable components with provider-consumer-paradigm

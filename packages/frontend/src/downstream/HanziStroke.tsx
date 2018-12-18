@@ -4,23 +4,47 @@ import HanziWriter from "hanzi-writer";
 import uniqueId from "react-html-id";
 import { Button, Message } from "semantic-ui-react";
 import { IVector } from "./Context";
-import { HorizontalScrollWrapper } from "@libresat/frontend-components/dist/components";
 import { HanziWrapper } from "./HanziWrapper";
+import {
+  Paper,
+  Statistics,
+  IStatisticsProps
+} from "@libresat/frontend-components";
+import { VerticalScrollContainer } from "./VerticalScrollContainer";
 
 interface IHanziStrokeProps {
   hanzi: string;
   stroke: IVector;
   defaultStrokeSpeed: number;
+  quiz?: boolean;
+}
+
+interface IHanziStrokeState {
+  width: number;
+  height: number;
+  speed: number;
+  quizIsRunning: boolean;
+  quizMessages: string[];
+  totalMistakesInThisStroke: number;
+  totalMistakesInQuiz: number;
+  strokesRemaining: number;
+  quizIsSuccessfullyDone: boolean;
 }
 
 class HanziStroke extends Component<IHanziStrokeProps> {
   writer: any;
   lastUniqueId: any;
 
-  state = {
+  state: IHanziStrokeState = {
     width: 220,
     height: 220,
-    speed: 1
+    speed: 1,
+    quizIsRunning: false,
+    quizMessages: [],
+    totalMistakesInThisStroke: 0,
+    totalMistakesInQuiz: 0,
+    strokesRemaining: 0,
+    quizIsSuccessfullyDone: false
   };
 
   constructor(props: IHanziStrokeProps) {
@@ -37,9 +61,12 @@ class HanziStroke extends Component<IHanziStrokeProps> {
         this.state.width,
         this.props.defaultStrokeSpeed
       );
-      this.animate();
+      !this.props.quiz && this.animate();
       this.setState({
         speed: this.props.defaultStrokeSpeed
+      });
+      this.setState({
+        strokesRemaining: this.props.stroke.strokes.length
       });
     }
   }
@@ -118,50 +145,163 @@ class HanziStroke extends Component<IHanziStrokeProps> {
     this.animate();
   };
 
+  toggleQuiz = () => {
+    this.setState({
+      quizMessages: [],
+      quizIsSuccessfullyDone: false,
+      quizIsRunning: true,
+      strokesRemaining: this.props.stroke.strokes.length,
+      totalMistakesInQuiz: 0,
+      totalMistakesInThisStroke: 0
+    });
+    this.writer.quiz({
+      onMistake: (strokeData: any) => {
+        this.state.quizMessages.push(
+          `Oh no! you made a mistake on stroke ${strokeData.strokeNum}`
+        );
+        this.setState({
+          totalMistakesInThisStroke: strokeData.mistakesOnStroke
+        });
+        this.setState({
+          totalMistakesInQuiz: strokeData.totalMistakes
+        });
+        this.setState({
+          strokesRemaining: strokeData.strokesRemaining
+        });
+      },
+      onCorrectStroke: (strokeData: any) => {
+        this.setState({
+          strokesRemaining: strokeData.strokesRemaining
+        });
+        this.setState({
+          totalMistakesInThisStroke: 0
+        });
+      },
+      onComplete: () => {
+        this.setState({
+          quizIsSuccessfullyDone: true
+        });
+      }
+    });
+  };
+
   render() {
     return (
       <>
         {!(this.props.hanzi.length > 1) ? (
-          <>
-            <HanziWrapper>
-              <Button.Group fluid>
-                <Button
-                  content="Zoom out"
-                  icon="zoom out"
-                  onClick={this.zoomOut}
-                />
+          this.props.quiz ? (
+            <>
+              <HanziWrapper>
+                <Button.Group fluid>
+                  <Button
+                    content="Zoom out"
+                    icon="zoom out"
+                    onClick={this.zoomOut}
+                  />
 
-                <Button
-                  content="Zoom in"
-                  icon="zoom in"
-                  onClick={this.zoomIn}
-                />
-              </Button.Group>
-            </HanziWrapper>
-            <HanziWrapper>
-              <div id={this.lastUniqueId()} />
-            </HanziWrapper>
-            <HanziWrapper>
-              <Button.Group fluid>
-                <Button
-                  content="Slower"
-                  icon="minus"
-                  onClick={this.decreaseSpeed}
-                />
-                <Button
-                  content="Replay animation"
-                  icon="refresh"
-                  onClick={this.animate}
-                  primary
-                />
-                <Button
-                  content="Faster"
-                  icon="add"
-                  onClick={this.increaseSpeed}
-                />
-              </Button.Group>
-            </HanziWrapper>
-          </>
+                  <Button
+                    content="Zoom in"
+                    icon="zoom in"
+                    onClick={this.zoomIn}
+                  />
+                </Button.Group>
+              </HanziWrapper>
+              <HanziWrapper>
+                <div id={this.lastUniqueId()} />
+              </HanziWrapper>
+              <HanziWrapper>
+                <Button.Group fluid>
+                  <Button
+                    content={
+                      this.state.quizIsRunning ? "Restart quiz" : "Start quiz"
+                    }
+                    icon={this.state.quizIsRunning ? "redo" : "play"}
+                    onClick={this.toggleQuiz}
+                    primary={
+                      !this.state.quizIsRunning ||
+                      this.state.quizIsSuccessfullyDone
+                    }
+                    color={this.state.quizIsRunning ? "orange" : undefined}
+                  />
+                </Button.Group>
+              </HanziWrapper>
+              {this.state.quizIsSuccessfullyDone ? (
+                <Paper color="green">
+                  Congratulations! You finished the quiz.
+                </Paper>
+              ) : (
+                <VerticalScrollContainer theme={{ maxHeight: "200px" }}>
+                  {this.state.quizMessages.map((message, index) => (
+                    <Paper color="red" key={index}>
+                      {message}
+                    </Paper>
+                  ))}
+                </VerticalScrollContainer>
+              )}
+              <Statistics
+                statistics={
+                  [
+                    {
+                      icon: "list",
+                      title: "Remaining strokes",
+                      value: String(this.state.strokesRemaining)
+                    },
+                    {
+                      icon: "warning",
+                      title: "Total mistakes in this quiz",
+                      value: String(this.state.totalMistakesInQuiz)
+                    },
+                    {
+                      icon: "warning sign",
+                      title: "Total mistakes in this stroke",
+                      value: String(this.state.totalMistakesInThisStroke)
+                    }
+                  ] as IStatisticsProps["statistics"]
+                }
+              />
+            </>
+          ) : (
+            <>
+              <HanziWrapper>
+                <Button.Group fluid>
+                  <Button
+                    content="Zoom out"
+                    icon="zoom out"
+                    onClick={this.zoomOut}
+                  />
+
+                  <Button
+                    content="Zoom in"
+                    icon="zoom in"
+                    onClick={this.zoomIn}
+                  />
+                </Button.Group>
+              </HanziWrapper>
+              <HanziWrapper>
+                <div id={this.lastUniqueId()} />
+              </HanziWrapper>
+              <HanziWrapper>
+                <Button.Group fluid>
+                  <Button
+                    content="Slower"
+                    icon="minus"
+                    onClick={this.decreaseSpeed}
+                  />
+                  <Button
+                    content="Replay animation"
+                    icon="refresh"
+                    onClick={this.animate}
+                    primary
+                  />
+                  <Button
+                    content="Faster"
+                    icon="add"
+                    onClick={this.increaseSpeed}
+                  />
+                </Button.Group>
+              </HanziWrapper>
+            </>
+          )
         ) : (
           <Message
             error

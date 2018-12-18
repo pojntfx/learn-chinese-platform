@@ -24,7 +24,10 @@ const ContextPlaceholderTemplate = (props: any) => (
                   <Placeholder>
                     <TabWrapper>
                       <Placeholder.Line />
-                      <Button icon="paint brush" disabled />
+                      <div>
+                        <Button icon="student" disabled />
+                        <Button icon="paint brush" disabled />
+                      </div>
                     </TabWrapper>
                   </Placeholder>
                 </TabTemplate.Pane>
@@ -38,7 +41,10 @@ const ContextPlaceholderTemplate = (props: any) => (
                   <Placeholder>
                     <TabWrapper>
                       <Placeholder.Line />
-                      <Button icon="paint brush" disabled />
+                      <div>
+                        <Button icon="student" disabled />
+                        <Button icon="paint brush" disabled />
+                      </div>
                     </TabWrapper>
                   </Placeholder>
                 </TabTemplate.Pane>
