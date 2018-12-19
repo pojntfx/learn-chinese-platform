@@ -12,9 +12,9 @@ import { TabWithStroke } from "./TabWithStroke";
 import { TabWithAudio } from "./TabWithAudio";
 import { TabWithDefinitions } from "./TabWithDefinitonsAndMedia";
 
-import { Wrapper as Pinyin } from "./Search/Output/Pinyin/Wrapper";
-import { Wrapper as Definition } from "./Search/Output/Definitions/Wrapper";
-import { Wrapper as Character } from "./Search/Output/Character/Wrapper";
+import { Wrapper as Pinyin } from "./Context/Output/Pinyin/Wrapper";
+import { Wrapper as Definition } from "./Context/Output/Definitions/Wrapper";
+import { Wrapper as Character } from "./Context/Output/Character/Wrapper";
 
 interface IVector {
   strokes: string[];

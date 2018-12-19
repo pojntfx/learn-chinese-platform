@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2018-12-19)</small>
 
+* feat(frontend): Start refactoring character ([217cd78](https://gitlab.com/pojntfx/learn-chinese-platform/commit/217cd78))
 * feat(frontend): Start refactoring definitions ([d8b193d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/d8b193d))
 * feat(frontend): Start refactoring search ([2edd1f3](https://gitlab.com/pojntfx/learn-chinese-platform/commit/2edd1f3))
 
