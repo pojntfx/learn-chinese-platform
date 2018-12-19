@@ -14,6 +14,7 @@ import { TabWithDefinitions } from "./TabWithDefinitonsAndMedia";
 
 import { Wrapper as Pinyin } from "./Search/Output/Pinyin/Wrapper";
 import { Wrapper as Definition } from "./Search/Output/Definitions/Wrapper";
+import { Wrapper as Character } from "./Search/Output/Character/Wrapper";
 
 interface IVector {
   strokes: string[];
@@ -82,10 +83,9 @@ class ContextTemplate extends Component<IContextProps> {
                   menuItem: "Simplified",
                   key: "simplified",
                   render: () => (
-                    <TabWithStroke
-                      hanzi={this.props.hanzi.simplified.text}
+                    <Character
+                      text={this.props.hanzi.simplified.text}
                       stroke={this.props.hanzi.stroke}
-                      defaultStrokeSpeed={this.props.defaultStrokeSpeed}
                     />
                   )
                 },
@@ -93,11 +93,9 @@ class ContextTemplate extends Component<IContextProps> {
                   menuItem: "Traditional",
                   key: "traditional",
                   render: () => (
-                    <TabWithStroke
-                      hanzi={this.props.hanzi.traditional.text}
+                    <Character
+                      text={this.props.hanzi.traditional.text}
                       stroke={this.props.hanzi.stroke}
-                      traditional
-                      defaultStrokeSpeed={this.props.defaultStrokeSpeed}
                     />
                   )
                 }
