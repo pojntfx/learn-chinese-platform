@@ -1,5 +1,11 @@
-## <small>0.0.1-0-monorepo (2018-12-18)</small>
+## <small>0.0.1-0-monorepo (2018-12-19)</small>
 
+
+
+
+## <small>0.0.1-alpha.19 (2018-12-18)</small>
+
+* v0.0.1-alpha.19 ([8c9d6ed](https://gitlab.com/pojntfx/learn-chinese-platform/commit/8c9d6ed))
 * feat(frontend): Add quiz to hanzi ([e4ba696](https://gitlab.com/pojntfx/learn-chinese-platform/commit/e4ba696))
 * docs: Add credits ([7dc65fb](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7dc65fb))
 

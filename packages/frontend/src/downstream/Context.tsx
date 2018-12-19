@@ -12,6 +12,8 @@ import { TabWithStroke } from "./TabWithStroke";
 import { TabWithAudio } from "./TabWithAudio";
 import { TabWithDefinitions } from "./TabWithDefinitonsAndMedia";
 
+import { Wrapper as Pinyin } from "./Search/Output/Pinyin/Wrapper";
+
 interface IVector {
   strokes: string[];
   medians: string[] | string[][];
@@ -107,9 +109,9 @@ class ContextTemplate extends Component<IContextProps> {
                   menuItem: "Male",
                   key: "male",
                   render: () => (
-                    <TabWithAudio
-                      text={this.props.pinyin.text}
+                    <Pinyin
                       audioSrc={this.props.pinyin.male.voice}
+                      text={this.props.pinyin.text}
                     />
                   )
                 },
@@ -117,9 +119,9 @@ class ContextTemplate extends Component<IContextProps> {
                   menuItem: "Female",
                   key: "female",
                   render: () => (
-                    <TabWithAudio
-                      text={this.props.pinyin.text}
+                    <Pinyin
                       audioSrc={this.props.pinyin.female.voice}
+                      text={this.props.pinyin.text}
                     />
                   )
                 }
