@@ -13,6 +13,7 @@ import { TabWithAudio } from "./TabWithAudio";
 import { TabWithDefinitions } from "./TabWithDefinitonsAndMedia";
 
 import { Wrapper as Pinyin } from "./Search/Output/Pinyin/Wrapper";
+import { Wrapper as Definition } from "./Search/Output/Definitions/Wrapper";
 
 interface IVector {
   strokes: string[];
@@ -131,11 +132,13 @@ class ContextTemplate extends Component<IContextProps> {
           <Grid.Column>
             <Segment>
               <b>Definition{this.props.definitions.length > 1 && "s"}</b>
-              <TabWithDefinitions
-                definitions={this.props.definitions}
-                maxMediaPerDefinition={this.props.maxMediaPerDefinition}
-                endpoint={this.props.endpoint}
-              />
+              {this.props.definitions.map((definition, index) => (
+                <Definition
+                  text={definition.text[0]}
+                  images={definition.text}
+                  key={index}
+                />
+              ))}
             </Segment>
           </Grid.Column>
         </Grid.Row>
