@@ -1,11 +1,16 @@
 import * as React from "react";
+import styled from "styled-components";
 
 interface IDisplay {
-  src: string;
+  title: string;
 }
 
-const Display = ({ src, ...otherProps }: IDisplay) => (
-  <img src={src} {...otherProps} />
+const DisplayView = styled("b")`
+  text-align: center;
+`;
+
+const Display = ({ title, ...otherProps }: IDisplay) => (
+  <DisplayView {...otherProps}>{title}</DisplayView>
 );
 
 export { IDisplay, Display };
