@@ -1,39 +1,33 @@
 import * as React from "react";
-import { Component } from "react";
 import styled from "styled-components";
-import { Trigger } from "./Trigger";
-import { Image } from "./Image";
-import { Display } from "./Display";
+import { List } from "./List";
+
+interface IDefinition {
+  text: string[];
+}
 
 interface IWrapper {
-  text: string;
-  images: string[];
+  definitions: IDefinition[];
+  endpoint: string;
 }
 
 const WrapperView = styled("div")``;
 
-class Wrapper extends Component<IWrapper> {
-  state = {
-    open: false
-  };
-
-  toggleDefinitions = () =>
-    this.setState({
-      open: !this.state.open
-    });
-
-  render() {
-    const { text, images } = this.props;
-
-    return (
-      <WrapperView {...this.props}>
-        <Display title={text} />
-        <Trigger onTrigger={this.toggleDefinitions} active={this.state.open} />
-        {this.state.open &&
-          images.map((image, index) => <Image src={image} key={index} />)}
-      </WrapperView>
-    );
-  }
-}
+const Wrapper = ({ definitions, endpoint, ...otherProps }: IWrapper) => (
+  <WrapperView {...otherProps}>
+    {definitions.length <= 1
+      ? definitions.map((definition, index) => (
+          <List definitions={definition.text} endpoint={endpoint} key={index} />
+        ))
+      : definitions.map((definition, index) => (
+          <List
+            multiple
+            definitions={definition.text}
+            endpoint={endpoint}
+            key={index}
+          />
+        ))}
+  </WrapperView>
+);
 
 export { IWrapper, Wrapper };

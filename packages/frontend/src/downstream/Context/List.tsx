@@ -26,7 +26,10 @@ const List = ({ endpoint, query, ...otherProps }: IList) => (
               text: data.pinyin.text,
               audioSrc: data.pinyin.male.voice
             }}
-            definitions={data.definitions}
+            definitions={{
+              definitions: data.definitions
+            }}
+            endpoint={endpoint}
             key={index}
           />
         ))

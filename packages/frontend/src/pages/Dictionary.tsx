@@ -7,6 +7,8 @@ import { noscript } from "../data/noscript";
 import { shortcuts } from "../data/shortcuts";
 import { Link } from "../downstream/Link";
 import { IShellProps, Shell } from "@libresat/frontend-components";
+import { SettingsContainer } from "../containers/Settings";
+import { Subscribe } from "unstated";
 
 const Dictionary = (props: any) => (
   <Shell
@@ -19,7 +21,11 @@ const Dictionary = (props: any) => (
     linkComponent={Link as any}
     {...props}
   >
-    <List endpoint="http://localhost:8080" query="ma" />
+    <Subscribe to={[SettingsContainer]}>
+      {({ state: { gatewayUrl } }: SettingsContainer) => (
+        <List endpoint={gatewayUrl} query="nǐ" />
+      )}
+    </Subscribe>
   </Shell>
 );
 
