@@ -17,7 +17,10 @@ import { Paper } from "@libresat/frontend-components";
 interface IWrapper {
   character: ICharacter;
   pinyin: IPinyin;
-  definitions: IDefinitions;
+  definitions: {
+    definitions: IDefinitions["definitions"];
+  };
+  endpoint: string;
 }
 
 const WrapperView = styled(Paper)``;
@@ -26,12 +29,13 @@ const Wrapper = ({
   character,
   pinyin,
   definitions,
+  endpoint,
   ...otherProps
 }: IWrapper) => (
   <WrapperView {...otherProps}>
     <Character {...character} />
     <Pinyin {...pinyin} />
-    <Definitions {...definitions} />
+    <Definitions endpoint={endpoint} {...definitions} />
   </WrapperView>
 );
 
