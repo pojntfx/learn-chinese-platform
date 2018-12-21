@@ -9,5 +9,6 @@
 - [x] Add stroke quiz
   - [x] Show errors
 - [ ] Refactor and standardize
+- [ ] Set max results
 - [ ] Get all text from config files
 - [ ] Make smaller, reusable components with provider-consumer-paradigm

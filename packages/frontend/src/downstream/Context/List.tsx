@@ -16,7 +16,7 @@ const List = ({ endpoint, query, ...otherProps }: IList) => (
       {({ data }) =>
         data &&
         Array.isArray(data) &&
-        data.map((data, index) => (
+        data.slice(0, 5).map((data, index) => (
           <Wrapper
             character={{
               text: data.hanzi.simplified.text,

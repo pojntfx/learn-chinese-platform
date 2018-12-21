@@ -17,10 +17,10 @@ const HeaderView = styled(Grid)``;
 const Header = ({ definition, withTitle, ...otherProps }: IHeader) =>
   withTitle ? (
     <HeaderView stackable columns={2} {...otherProps}>
-      <Grid.Column tablet={8} computer={12}>
+      <Grid.Column tablet={8} computer={10}>
         <strong>{definition}</strong>
       </Grid.Column>
-      <Grid.Column textAlign="right" tablet={8} computer={4}>
+      <Grid.Column textAlign="right" tablet={8} computer={6}>
         <Link to={`${wikipedia}${definition}`}>
           <Button icon="book" content="Definition" fluid />
         </Link>
