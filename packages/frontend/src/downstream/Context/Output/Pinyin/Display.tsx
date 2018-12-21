@@ -5,11 +5,10 @@ interface IDisplay {
   text: string;
 }
 
-const DisplayView = styled("b")`
+const DisplayView = styled("div")`
   font-size: 3em;
-  margin: 0.5em;
-  margin-left: 0.5em;
-  margin-left: inherit;
+  font-style: italic;
+  font-weight: bold;
 `;
 
 const Display = ({ text, ...otherProps }: IDisplay) => (

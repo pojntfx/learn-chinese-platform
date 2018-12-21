@@ -6,8 +6,8 @@ interface IAudio {
 }
 
 const AudioView = styled("audio")`
-  margin-top: 1em;
   width: 100%;
+  border-radius: 0.28571429rem;
 `;
 
 const Audio = ({ src, ...otherProps }: IAudio) => (

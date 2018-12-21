@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Button } from "@libresat/frontend-components";
 
 interface ITrigger {
   onTrigger: any;
@@ -6,9 +7,13 @@ interface ITrigger {
 }
 
 const Trigger = ({ onTrigger, active, ...otherProps }: ITrigger) => (
-  <button {...otherProps} onClick={onTrigger}>
-    {active ? "Close" : "Open"}
-  </button>
+  <Button
+    icon={active ? "stop" : "play"}
+    circular
+    active={active}
+    onClick={onTrigger}
+    {...otherProps}
+  />
 );
 
 export { ITrigger, Trigger };

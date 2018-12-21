@@ -21,12 +21,9 @@ const Header = ({ definition, withTitle, ...otherProps }: IHeader) =>
         <strong>{definition}</strong>
       </Grid.Column>
       <Grid.Column textAlign="right" tablet={8} computer={4}>
-        <Button
-          as={Link}
-          to={`${wikipedia}${definition}`}
-          icon="book"
-          content="Definition"
-        />
+        <Link to={`${wikipedia}${definition}`}>
+          <Button icon="book" content="Definition" fluid />
+        </Link>
       </Grid.Column>
     </HeaderView>
   ) : (
