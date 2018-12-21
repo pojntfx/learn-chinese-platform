@@ -5,8 +5,10 @@ interface ITitle {
   title: string;
 }
 
-const TitleView = styled("b")`
-  text-align: center;
+const TitleView = styled("div")`
+  font-size: 5em;
+  line-height: 1.5em;
+  font-weight: bold;
 `;
 
 const Title = ({ title, ...otherProps }: ITitle) => (

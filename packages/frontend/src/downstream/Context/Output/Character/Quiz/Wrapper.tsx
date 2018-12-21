@@ -3,14 +3,12 @@ import { Component } from "react";
 import styled from "styled-components";
 import { Trigger } from "./Trigger";
 import { Display } from "./Display";
-import { Title } from "./Title";
 import { Options } from "./Options";
 import { Controls } from "./Controls";
 import { Statistics } from "./Statistics";
 import { Message } from "./Message";
 
 interface IWrapper {
-  text: string;
   stroke: any;
 }
 
@@ -18,7 +16,6 @@ const WrapperView = styled("div")``;
 
 class Wrapper extends Component<IWrapper> {
   state = {
-    open: false,
     running: false,
     finishedOnce: false,
     width: 100,
@@ -36,11 +33,6 @@ class Wrapper extends Component<IWrapper> {
       }
     ]
   };
-
-  toggleQuiz = () =>
-    this.setState({
-      open: !this.state.open
-    });
 
   startOrRestart = () => {
     this.setState({
@@ -67,34 +59,28 @@ class Wrapper extends Component<IWrapper> {
     });
 
   render() {
-    const { text, stroke } = this.props;
+    const { stroke } = this.props;
 
     return (
       <WrapperView {...this.props}>
-        <Title title={text} />
-        {this.state.open && (
-          <>
-            <Options onZoomIn={this.zoomIn} onZoomOut={this.zoomOut} />
-            <Display stroke={stroke} />
-            <Controls
-              onStartQuiz={this.startOrRestart}
-              running={this.state.finishedOnce}
-            />
-            {this.state.messages.map((message, index) => (
-              <Message
-                text={message.text}
-                positive={message.positive}
-                key={index}
-              />
-            ))}
-            <Statistics
-              remaining={this.state.remaining}
-              mistakesInQuiz={this.state.mistakesInQuiz}
-              mistakesInStroke={this.state.mistakesInStroke}
-            />
-          </>
-        )}
-        <Trigger onTrigger={this.toggleQuiz} active={this.state.open} />
+        <Options onZoomIn={this.zoomIn} onZoomOut={this.zoomOut} />
+        <Display stroke={stroke} />
+        <Controls
+          onStartQuiz={this.startOrRestart}
+          running={this.state.finishedOnce}
+        />
+        {this.state.messages.map((message, index) => (
+          <Message
+            text={message.text}
+            positive={message.positive}
+            key={index}
+          />
+        ))}
+        <Statistics
+          remaining={this.state.remaining}
+          mistakesInQuiz={this.state.mistakesInQuiz}
+          mistakesInStroke={this.state.mistakesInStroke}
+        />
       </WrapperView>
     );
   }

@@ -4,6 +4,7 @@ import styled from "styled-components";
 import LazyLoad from "react-lazyload";
 import Fetch from "react-fetch-component";
 import { Image } from "./Image";
+import { Error } from "../Error";
 
 interface IList {
   definition: string;
@@ -41,13 +42,16 @@ const List = ({ definition, endpoint, ...otherProps }: IList) => (
         cache
       >
         {({ data }) =>
-          data &&
-          Array.isArray(data) &&
-          data.map((data, index) => (
-            <Grid.Column>
-              <Image src={data} key={index} />
-            </Grid.Column>
-          ))
+          data && data.length <= 1 ? (
+            <Error text="No images could be found." />
+          ) : (
+            Array.isArray(data) &&
+            data.map((data: any, index: number) => (
+              <Grid.Column key={index}>
+                <Image src={data} />
+              </Grid.Column>
+            ))
+          )
         }
       </Fetch>
     </LazyLoad>
