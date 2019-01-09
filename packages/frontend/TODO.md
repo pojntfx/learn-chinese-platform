@@ -10,7 +10,10 @@
   - [x] Show errors
 - [x] Add placeholder
 - [x] Fix margins on top of definitions (for `hǎo`)
-- [ ] Add refactored quiz and stroke orders
+- [-] Add refactored quiz and stroke orders
+  - [x] Add correct styling for buttons
+  - [ ] Add stroke display
+  - [ ] Add quiz logic
 - [ ] Refactor and standardize
 - [ ] Fix styling for messages/errors
 - [ ] Add simplified/traditional, male/female settings to search options

@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { Button } from "semantic-ui-react";
 
 interface IControls {
   onSlower: any;
@@ -18,11 +19,16 @@ const Controls = ({
   ...otherProps
 }: IControls) => (
   <ControlsView {...otherProps}>
-    <button onClick={onSlower}>Slower</button>
-    <button onClick={onReplay}>
-      {running ? "Replay animation" : "Play animation"}
-    </button>
-    <button onClick={onFaster}>Faster</button>
+    <Button.Group fluid>
+      <Button content="Slower" icon="minus" onClick={onSlower} />
+      <Button
+        content={running ? "Replay animation" : "Play animation"}
+        icon="refresh"
+        onClick={onReplay}
+        primary
+      />
+      <Button content="Faster" icon="plus" onClick={onFaster} />
+    </Button.Group>
   </ControlsView>
 );
 
