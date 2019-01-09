@@ -77,6 +77,8 @@
     "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "outdated": "lerna exec npm outdated",
     "update": "lerna exec npm update",
+    "audit": "lerna exec npm audit",
+    "audit--fix": "lerna exec npm audit fix",
     "publish": "lerna publish"
   },
   "devDependencies": {
@@ -84,7 +86,7 @@
     "conventional-changelog-cli": "^2.0.5",
     "cz-conventional-changelog": "^2.1.0",
     "ghooks": "^2.0.4",
-    "lerna": "^3.5.1"
+    "lerna": "^3.10.1"
   },
   "main": "lerna.json",
   "repository": {

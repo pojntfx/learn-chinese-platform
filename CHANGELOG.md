@@ -1,12 +1,13 @@
 ## <small>0.0.1-0-monorepo (2019-01-09)</small>
 
-* refactor(frontend): Add better layout for context ([b4442fe](https://gitlab.com/pojntfx/learn-chinese-platform/commit/b4442fe))
-* refactor(frontend): Add refactored header to context ([9a22329](https://gitlab.com/pojntfx/learn-chinese-platform/commit/9a22329))
-* refactor(frontend): Add search bar ([1dea89b](https://gitlab.com/pojntfx/learn-chinese-platform/commit/1dea89b))
+* feat(frontend): Add placeholder ([5b052d2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/5b052d2))
 * feat(frontend): Continue refactoring dictionary ([4e30bf7](https://gitlab.com/pojntfx/learn-chinese-platform/commit/4e30bf7))
 * feat(frontend): Start refactoring character ([217cd78](https://gitlab.com/pojntfx/learn-chinese-platform/commit/217cd78))
 * feat(frontend): Start refactoring definitions ([d8b193d](https://gitlab.com/pojntfx/learn-chinese-platform/commit/d8b193d))
 * feat(frontend): Start refactoring search ([2edd1f3](https://gitlab.com/pojntfx/learn-chinese-platform/commit/2edd1f3))
+* refactor(frontend): Add better layout for context ([b4442fe](https://gitlab.com/pojntfx/learn-chinese-platform/commit/b4442fe))
+* refactor(frontend): Add refactored header to context ([9a22329](https://gitlab.com/pojntfx/learn-chinese-platform/commit/9a22329))
+* refactor(frontend): Add search bar ([1dea89b](https://gitlab.com/pojntfx/learn-chinese-platform/commit/1dea89b))
 
 
 

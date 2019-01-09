@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { Button } from "@libresat/frontend-components";
 
 interface IControls {
   onStartQuiz: any;
@@ -10,9 +11,13 @@ const ControlsView = styled("div")``;
 
 const Controls = ({ onStartQuiz, running, ...otherProps }: IControls) => (
   <ControlsView {...otherProps}>
-    <button onClick={onStartQuiz}>
-      {running ? "Restart quiz" : "Start quiz"}
-    </button>
+    <Button
+      content={running ? "Restart quiz" : "Start quiz"}
+      icon={running ? "redo" : "play"}
+      color={running ? "orange" : "blue"}
+      onClick={onStartQuiz}
+      fluid
+    />
   </ControlsView>
 );
 

@@ -27,17 +27,17 @@
     "prepare": "run-s build"
   },
   "dependencies": {
-    "@learn-chinese-platform/core": "^0.0.1-alpha.19",
+    "@learn-chinese-platform/core": "0.0.1-alpha.19",
     "moleculer": "^0.13.5",
-    "moleculer-io": "^0.13.1",
+    "moleculer-io": "^0.13.2",
     "moleculer-web": "^0.8.5"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.24",
-    "@types/jest": "^23.3.10",
-    "@types/node": "^10.12.12",
+    "@types/bluebird": "^3.5.25",
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
     "jest": "^23.6.0",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.9",
     "npm-run-all": "^4.1.3",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
