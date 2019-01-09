@@ -8,7 +8,12 @@
 - [x] Show media
 - [x] Add stroke quiz
   - [x] Show errors
+- [x] Add placeholder
+- [x] Fix margins on top of definitions (for `hǎo`)
+- [ ] Add refactored quiz and stroke orders
 - [ ] Refactor and standardize
+- [ ] Fix styling for messages/errors
+- [ ] Add simplified/traditional, male/female settings to search options
 - [ ] Set max results
 - [ ] Get all text from config files
 - [ ] Make smaller, reusable components with provider-consumer-paradigm

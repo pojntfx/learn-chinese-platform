@@ -2,8 +2,9 @@ import * as React from "react";
 import { Button } from "@libresat/frontend-components";
 
 interface ITrigger {
-  onTrigger: any;
+  onTrigger?: any;
   active?: boolean;
+  disabled?: boolean;
 }
 
 const Trigger = ({ onTrigger, active, ...otherProps }: ITrigger) => (
