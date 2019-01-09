@@ -1,5 +1,6 @@
 ## <small>0.0.1-0-monorepo (2019-01-09)</small>
 
+* feat(frontend): Add correct styling for buttons ([7cf9bec](https://gitlab.com/pojntfx/learn-chinese-platform/commit/7cf9bec))
 * feat(frontend): Add placeholder ([5b052d2](https://gitlab.com/pojntfx/learn-chinese-platform/commit/5b052d2))
 * feat(frontend): Continue refactoring dictionary ([4e30bf7](https://gitlab.com/pojntfx/learn-chinese-platform/commit/4e30bf7))
 * feat(frontend): Start refactoring character ([217cd78](https://gitlab.com/pojntfx/learn-chinese-platform/commit/217cd78))

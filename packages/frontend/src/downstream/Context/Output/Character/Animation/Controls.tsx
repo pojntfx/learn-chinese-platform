@@ -6,7 +6,6 @@ interface IControls {
   onSlower: any;
   onReplay: any;
   onFaster: any;
-  running?: boolean;
 }
 
 const ControlsView = styled("div")``;
@@ -15,14 +14,13 @@ const Controls = ({
   onSlower,
   onReplay,
   onFaster,
-  running,
   ...otherProps
 }: IControls) => (
   <ControlsView {...otherProps}>
     <Button.Group fluid>
       <Button content="Slower" icon="minus" onClick={onSlower} />
       <Button
-        content={running ? "Replay animation" : "Play animation"}
+        content="Replay animation"
         icon="refresh"
         onClick={onReplay}
         primary

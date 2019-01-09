@@ -13,7 +13,7 @@ const Options = ({ onZoomOut, onZoomIn, ...otherProps }: IOptions) => (
   <OptionsView {...otherProps}>
     <Button.Group fluid>
       <Button content="Zoom in" icon="zoom in" onClick={onZoomIn} />
-      <Button content="Zoom out" icon="zoom out" onClick={onZoomIn} />
+      <Button content="Zoom out" icon="zoom out" onClick={onZoomOut} />
     </Button.Group>
   </OptionsView>
 );
