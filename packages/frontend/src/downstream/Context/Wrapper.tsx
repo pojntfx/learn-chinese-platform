@@ -1,13 +1,7 @@
 import * as React from "react";
 import { Component } from "react";
-import {
-  IWrapper as ICharacter,
-  Wrapper as Character
-} from "./Output/Character/Wrapper";
-import {
-  IWrapper as IPinyin,
-  Wrapper as Pinyin
-} from "./Output/Pinyin/Wrapper";
+import { IWrapper as ICharacter } from "./Output/Character/Wrapper";
+import { IWrapper as IPinyin } from "./Output/Pinyin/Wrapper";
 import {
   IWrapper as IDefinitions,
   Wrapper as Definitions
@@ -156,7 +150,7 @@ class Wrapper extends Component<IWrapper> {
                   </TriggerView>
                 </Grid.Column>
                 <Grid.Column verticalAlign="middle">
-                  <PinyinDisplay text={pinyin.text} />{" "}
+                  <PinyinDisplay text={pinyin.text} />
                 </Grid.Column>
               </ContextPart>
               {this.state.pinyinIsOpen && (
@@ -177,4 +171,12 @@ class Wrapper extends Component<IWrapper> {
   }
 }
 
-export { IWrapper, Wrapper };
+export {
+  IWrapper,
+  Wrapper,
+  CharacterDisplayView,
+  CharacterDisplay,
+  PinyinDisplay,
+  TriggerView,
+  DefinitionView
+};
