@@ -7,6 +7,7 @@ import { Options } from "./Options";
 import { Controls } from "./Controls";
 import { Statistics } from "./Statistics";
 import { Message } from "./Message";
+import { SectionView } from "../Animation/Wrapper";
 
 interface IWrapper {
   stroke: any;
@@ -18,8 +19,8 @@ class Wrapper extends Component<IWrapper> {
   state = {
     running: false,
     finishedOnce: false,
-    width: 100,
-    height: 100,
+    width: 220,
+    height: 220,
     remaining: 0,
     mistakesInQuiz: 0,
     mistakesInStroke: 0,
@@ -63,12 +64,24 @@ class Wrapper extends Component<IWrapper> {
 
     return (
       <WrapperView {...this.props}>
-        <Options onZoomIn={this.zoomIn} onZoomOut={this.zoomOut} />
-        <Display stroke={stroke} />
-        <Controls
-          onStartQuiz={this.startOrRestart}
-          running={this.state.finishedOnce}
-        />
+        <SectionView>
+          <Options onZoomIn={this.zoomIn} onZoomOut={this.zoomOut} />
+        </SectionView>
+        <SectionView theme={{ hanzi: true }}>
+          <Display
+            stroke={stroke}
+            width={this.state.width}
+            height={this.state.height}
+            speed={1}
+            quiz
+          />
+        </SectionView>
+        <SectionView>
+          <Controls
+            onStartQuiz={this.startOrRestart}
+            running={this.state.finishedOnce}
+          />
+        </SectionView>
         {this.state.messages.map((message, index) => (
           <Message
             text={message.text}
@@ -76,11 +89,13 @@ class Wrapper extends Component<IWrapper> {
             key={index}
           />
         ))}
-        <Statistics
-          remaining={this.state.remaining}
-          mistakesInQuiz={this.state.mistakesInQuiz}
-          mistakesInStroke={this.state.mistakesInStroke}
-        />
+        <SectionView>
+          <Statistics
+            remaining={this.state.remaining}
+            mistakesInQuiz={this.state.mistakesInQuiz}
+            mistakesInStroke={this.state.mistakesInStroke}
+          />
+        </SectionView>
       </WrapperView>
     );
   }

@@ -5,6 +5,7 @@ import { Trigger } from "./Trigger";
 import { Controls } from "./Controls";
 import { Options } from "../Quiz/Options";
 import { Display } from "../Quiz/Display";
+import { HorizontalScrollWrapper } from "@libresat/frontend-components/dist/components";
 
 interface IWrapper {
   stroke: any;
@@ -12,12 +13,22 @@ interface IWrapper {
 
 const WrapperView = styled("div")``;
 
+const SectionView = styled(HorizontalScrollWrapper)`
+  & > div {
+    margin: 0 auto !important;
+    ${props => !props.theme.hanzi && `width: 100%;`}
+  }
+  &::after {
+    padding: 0 !important;
+  }
+`;
+
 class Wrapper extends Component<IWrapper> {
   state = {
     running: false,
     ranOnce: false,
-    width: 100,
-    height: 100,
+    width: 220,
+    height: 220,
     speed: 1
   };
 
@@ -50,21 +61,31 @@ class Wrapper extends Component<IWrapper> {
     });
 
   render() {
-    const { stroke } = this.props;
+    const { stroke, ...otherProps } = this.props;
 
     return (
-      <WrapperView {...this.props}>
-        <Options onZoomIn={this.zoomIn} onZoomOut={this.zoomOut} />
-        <Display stroke={stroke} />
-        <Controls
-          onSlower={this.decreaseSpeed}
-          onReplay={this.replay}
-          onFaster={this.increaseSpeed}
-          running={this.state.ranOnce}
-        />
+      <WrapperView {...otherProps}>
+        <SectionView>
+          <Options onZoomIn={this.zoomIn} onZoomOut={this.zoomOut} />
+        </SectionView>
+        <SectionView theme={{ hanzi: true }}>
+          <Display
+            stroke={stroke}
+            width={this.state.width}
+            height={this.state.height}
+            speed={this.state.speed}
+          />
+        </SectionView>
+        <SectionView>
+          <Controls
+            onSlower={this.decreaseSpeed}
+            onReplay={this.replay}
+            onFaster={this.increaseSpeed}
+          />
+        </SectionView>
       </WrapperView>
     );
   }
 }
 
-export { IWrapper, Wrapper };
+export { IWrapper, Wrapper, SectionView };
